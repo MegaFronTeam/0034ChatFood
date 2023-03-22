@@ -549,15 +549,7 @@ iframe {
 		--bs-btn-color: #fff;
 		--bs-btn-hover-color: #fff;
 		--bs-btn-active-color: #fff;
-		// --bs-btn-border-width: 0;
-	}
-	&-primary {
-		--bs-btn-hover-bg: #{rgba($primary, 0.86)};
-		--bs-btn-hover-border-color: #{rgba($primary, 0.86)};
-	}
-	&-secondary {
-		--bs-btn-hover-bg: #{rgba($secondary, 0.86)};
-		--bs-btn-hover-border-color: #{rgba($secondary, 0.86)};
+		opacity: .86;
 	}
 	&-outline-primary, &-outline-secondary {
 		--bs-btn-hover-color: #fff;
