@@ -10,7 +10,9 @@
 			}
 	],
 	"social":[
-		"fb","instagram","telegram"
+		{ "icon": "telegram", "iconColor": "#009FE3"},
+		{ "icon": "youtube", "iconColor": "#E21A20"},
+		{ "icon": "vk", "iconColor": "#0077FF"}
 	],
 	"index":{
 		"head": {

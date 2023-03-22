@@ -1,7 +1,7 @@
  
 	  
 .soc{
-	@include roww(10px, m);
+	@include roww(6px, m);
 	display: flex;
 	&__item{
 		text-decoration: none !important; 
@@ -9,14 +9,23 @@
 		@include mt;
 		display: grid;
 		place-items: center;
+		padding: rem(5);
+		border-radius: 50%;
+		background-color: $gray-100;
+		color: var(--iconColor);
+		@include media-breakpoint-up(lg) {
+			padding: rem(6);
+		}
 		&:hover{
 		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
 			// opacity: .6 ;
+			background-color: var(--iconColor);
+			color: #fff;
 		}
 		
 	}
 	.icon{
-		font-size: rem(30);
+		font-size: rem(20);
 	}
 
 
