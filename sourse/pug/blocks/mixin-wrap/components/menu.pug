@@ -10,13 +10,15 @@ mixin mnu()
 						ul.sub-menu
 							each sublink in link.subnav
 								li.menu-item(itemprop="item" ): a(href= sublink.url itemprop="url")= sublink.name
-			//- li.menu-item.menu-dropdown--js
-			//- 	a(href='#' itemprop="url") Еще
-			//- 	.dropdown-container
-			//- 		a(href="#") Чат-бот под ключ
-			//- 		a(href="#") Пункт 2
-			//- 		a(href="#") Пункт 3
-			//- 		a(href="#") Пункт 4
-			//- 		a(href="#") Заказать еду
+			li.menu-item.menu-dropdown.menu-dropdown--js
+				a(href='#' itemprop="url") Еще
+				.dropdown-container
+					a(href="#") Чат-бот под ключ
+						span.badge.bg-info PRO
+					a(href="#") Пункт 2
+					a(href="#") Пункт 3
+					a(href="#") Пункт 4
+					a(href="#").disabled Заказать еду
+						span.badge.bg-success скоро
 
 //- menu

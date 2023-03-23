@@ -3,10 +3,12 @@
 
 		display: flex;
 		text-align: center;
-		@include roww(20px);
+		@include roww(18px, m);
 		flex-wrap: wrap;
 	}
-
+	@include media-breakpoint-up(xl) {
+		--bs-gutter-x: 24px;
+	}
 	list-style: none;
 	position: relative;
 	margin-bottom: 0;
@@ -16,19 +18,72 @@
 		// margin-left: 0;
 		// margin-right: 0;
 		padding: 0;
+		&.menu-dropdown {
+			&.active {
+				& > a {
+					color: $secondary;
+					&::before {
+						transform: translateY(-50%) rotate(-180deg);
+					}
+				}
+			}
+			& > a {
+				padding-right: rem(23);
+				&::before {
+					@include mt;
+					content: '';
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					width: rem(20);
+					height: rem(20);
+					background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.84959 12.8502C9.67037 12.8502 9.49117 12.7818 9.35453 12.6452L5.05475 8.34536C4.78123 8.07184 4.78123 7.62837 5.05475 7.35496C5.32816 7.08155 5.77154 7.08155 6.04509 7.35496L9.84959 11.1597L13.6541 7.35509C13.9276 7.08168 14.371 7.08168 14.6444 7.35509C14.918 7.62851 14.918 8.07198 14.6444 8.3455L10.3447 12.6453C10.2079 12.7819 10.0287 12.8502 9.84959 12.8502Z' fill='%23FF7A00'/%3E%3C/svg%3E%0A");
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center;
+				}
+				&::after {
+					width: calc(100% - rem(23));
+				}
+			}
+		}
 	}
 	a{
+		position: relative;
 		display: block;
-		padding: rem(20) calc(var(--bs-gutter-x) / 2);
+		padding: rem(23) 0;
+		// padding: rem(23) calc(var(--bs-gutter-x) / 2);
+		&:after {
+			@include mt;
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: rem(3);
+			left: 0;
+			bottom: rem(-1);
+			background-color: transparent;
+			border-radius: 5px 5px 0px 0px;
+			transform-origin: bottom;
+    	transform: scaleX(0.3) scaleY(0);
+		}
+		&:hover {
+			&:after {
+				background-color: $secondary;
+				opacity: 1;
+    		transform: scaleX(1.0) scaleY(1.0);
+			}
+		}
 	}
 }
 
 
 
 .toggle-menu-mobile {
-	--h: #{em(2)};
-	--color: #{$primary};
-	--position: calc(var(--h) * 2);
+	--h: #{rem(2)};
+	--color: #{$body-color};
+	--position: calc(var(--h) * 3);
 	&.on span {
 		--color: transparent;
 	}
@@ -38,9 +93,9 @@
 		--rotate: 45deg;
 	}
 	display: block;
-	height: calc(var(--h)* 12);
+	height: calc(var(--h)* 10);
 	position: relative; 
-	font-size: 32px;
+	font-size: 20px;
 	width: 1em;
 	cursor: pointer;
 	span:after,

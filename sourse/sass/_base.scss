@@ -540,10 +540,13 @@ iframe {
 }
 
 .btn {
-	@include media-breakpoint-down(lg) {
-		--bs-btn-font-size: #{rem(14)};
-		--bs-btn-padding-y: #{rem(9)};
-		--bs-btn-border-radius: #{rem(10)};
+	--bs-btn-font-size: #{rem(14)};
+	--bs-btn-padding-y: #{rem(9)};
+	--bs-btn-border-radius: #{rem(10)};
+	@include media-breakpoint-up(lg) {
+		--bs-btn-font-size: #{rem(18)};
+		--bs-btn-padding-y: #{rem(16)};
+		--bs-btn-border-radius: #{rem(12)};
 	}
 	&-primary, &-secondary {
 		--bs-btn-color: #fff;

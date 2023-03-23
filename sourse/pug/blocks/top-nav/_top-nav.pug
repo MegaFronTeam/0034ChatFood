@@ -22,16 +22,16 @@ mixin top-nav()
 	+b.top-nav.block-with-lazy
 		.container
 			+e.row.row
-				.col-auto
+				.col.col-lg-auto
 					+e.logo(href='/'): +img('img/svg/logo.svg')
-				.col.order-lg-0.order-last
+				.col-0.col-lg.order-lg-0.order-last
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
 							+menu-toggle()
 							+mnu()
-				.col-auto
+				.col-auto.ms-auto
 					+e.btn-reg.btn.btn-outline-primary(href='#') Начать бесплатно
-					+e.btn(href='#') Войти 12380
+					+e.btn.d-none.d-lg-inline(href='#') Войти
 				.col-auto.d-lg-none
 					+menu-toggle()
 	// end top-nav

@@ -1,12 +1,23 @@
 .top-nav {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	padding-top: #{rem(14)};
+	padding-bottom: #{rem(14)};
 	// --sTPB: #{rem()};
+	border-bottom: rem(1) solid $gray-200;
+	@include media-breakpoint-up(lg) {
+		padding-top: #{rem(0)};
+		padding-bottom: #{rem(0)};
+	}
 	&__row{
-		// --bs-gutter-x: #{rem()};
+		--bs-gutter-x: #{rem(18)};
 		// --bs-gutter-y: var(--bs-gutter-x);
 
 		align-items: center;
+		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(24)};
+		}
+		@include media-breakpoint-up(xl) {
+			--bs-gutter-x: #{rem(48)};
+		}
 	}
 	.section-title{
 		
@@ -21,14 +32,82 @@
 		height: auto;
 	}
 	&__logo {
+		display: block;
 		width: 100%;
-		max-width: rem(180);
+		max-width: rem(124);
+		@include media-breakpoint-up(lg) {
+			max-width: rem(140);
+		}
+		@include media-breakpoint-up(xl) {
+			max-width: rem(180);
+		}
 		img {
 			width: 100%;
 		}
 	}
 	&__btn-reg {
-		--bs-btn-font-size: #{rem(16)};
+		--bs-btn-font-size: #{rem(12)};
+		--bs-btn-padding-y: #{rem(6)};
+		--bs-btn-border-radius: #{rem(8)};
+
+		@include media-breakpoint-up(lg) {
+			--bs-btn-font-size: #{rem(16)};
+			--bs-btn-padding-y: #{rem(10.4)};
+			--bs-btn-border-radius: #{rem(12)};
+
+			margin-right: rem(24);
+		}
+	}
+	&__btn {
+
+	}
+	.menu-dropdown {
+		position: relative;
+		&.active {
+			.dropdown-container {
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+		.dropdown-container {
+			@include mt;
+			position: absolute;
+			min-width: rem(233);
+			right: 0;
+			top: calc(100% - rem(6));
+			background-color: #fff;
+			border: 1px solid $gray-200;
+			box-shadow: 0px 5px 20px rgba(25, 28, 31, 0.15);
+			border-radius: 12px;
+			padding: rem(12) 0;
+			opacity: 0;
+			pointer-events: none;
+			@include media-breakpoint-up(lg) {
+				left: 50%;
+				transform: translateX(-50%);
+				right: unset;
+			}
+			a {
+				padding: rem(10) rem(23);
+				text-align: left;
+				transition-duration: 0s;
+				line-height: 1.25em;
+				color: $body-color;
+				&::after {
+					content: unset;
+				}
+				&:hover:not(.disabled) {
+					background-color: $gray-100;
+				}
+				&.disabled {
+					pointer-events: none;
+					color: $gray-500;
+				}
+				.badge {
+					margin-left: rem(6);
+				}
+			}
+		}
 	}
 	@include media-breakpoint-up(md) {}
 
