@@ -20,15 +20,20 @@
 		padding: 0;
 		&.menu-dropdown {
 			&.active {
-				& > a {
+				.dropdownBtn {
 					color: $secondary;
 					&::before {
 						transform: translateY(-50%) rotate(-180deg);
 					}
 				}
 			}
-			& > a {
+			.dropdownBtn {
+				@include mt;
+				cursor: pointer;
 				padding-right: rem(23);
+				&:hover {
+					color: $secondary;
+				}
 				&::before {
 					@include mt;
 					content: '';
@@ -49,7 +54,7 @@
 			}
 		}
 	}
-	a{
+	a, .dropdownBtn{
 		position: relative;
 		display: block;
 		padding: rem(23) 0;

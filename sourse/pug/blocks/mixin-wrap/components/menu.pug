@@ -11,7 +11,7 @@ mixin mnu()
 							each sublink in link.subnav
 								li.menu-item(itemprop="item" ): a(href= sublink.url itemprop="url")= sublink.name
 			li.menu-item.menu-dropdown.menu-dropdown--js
-				a(href='#' itemprop="url") Еще
+				.dropdownBtn.dropdownBtn--js(href='#' itemprop="url") Еще
 				.dropdown-container
 					a(href="#") Чат-бот под ключ
 						span.badge.bg-info PRO

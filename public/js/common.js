@@ -380,7 +380,7 @@ function eventHandler() {
 	// modal window
 
 	document.addEventListener('click', function(event) {
-		let dropdownBtnTarget = event.target.closest('.menu-dropdown--js > a');
+		let dropdownBtnTarget = event.target.closest('.dropdownBtn--js');
 		let dropdownContainer = event.target.closest('.menu-dropdown--js');
 		if(dropdownBtnTarget) dropdownBtnTarget.closest('.menu-dropdown--js').classList.toggle('active');
 		if(!dropdownBtnTarget && !dropdownContainer) {

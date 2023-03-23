@@ -17,7 +17,7 @@ mixin mob-mnu()
 		+e.inner
 			+mnu()
 	//  мобильное меню
-mixin top-nav() 
+mixin top-nav(auth) 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
@@ -30,8 +30,21 @@ mixin top-nav()
 							+menu-toggle()
 							+mnu()
 				.col-auto.ms-auto
-					+e.btn-reg.btn.btn-outline-primary(href='#') Начать бесплатно
-					+e.btn.d-none.d-lg-inline(href='#') Войти
+					if auth
+						+e.authorized.menu-dropdown--js
+							+e.authorized-wrap.dropdownBtn--js
+								+e.img-wrap
+									span М
+									+img('img/avatar.jpg')
+							.dropdown-container
+								a(href="#") Личный кабинет
+								a(href="#") Мои чат-боты
+								a(href="#") Заказы
+								a(href="#") Бронирование столов
+								a(href="#") Выйти
+					else
+						+e.btn-reg.btn.btn-outline-primary(href='#') Начать бесплатно
+						+e.btn.d-none.d-lg-inline(href='#') Войти
 				.col-auto.d-lg-none
 					+menu-toggle()
 	// end top-nav
