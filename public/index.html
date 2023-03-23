@@ -13,62 +13,24 @@
 	</head>
 	<body class="main-page">
 		<div class="main-wrapper">
-			<!-- start header-->
-			<header class="header" id="header">
-				<!-- start top-nav-->
-				<div class="top-nav block-with-lazy">
-					<div class="container">
-						<div class="row">
-							<div class="col order-lg-0 order-last">
-								<div class="menu-mobile menu-mobile--js">
-									<div class="menu-mobile__inner">
-										<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
-										</div>
-										<nav>
-											<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
-											</ul>
-										</nav>
-									</div>
-								</div>
-							</div>
-							<div class="col-auto d-lg-none">
-								<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- end top-nav-->
-				<!-- start topLine-->
-				<div class="topLine section" id="topLine">
-					<div class="container">
-						<div class="section-title text-center">
-							<h2>topLine</h2>
-						</div>
-						<div class="row"></div>
-					</div>
-				</div>
-				<!-- end topLine-->
-			</header>
-			<!-- end header-->
-			<main>
-				<script>
-					fetch('00-modal.html').then(
-					response => {
+			<script>
+				//- let fetchElem = `${elem} + .html`;
+				fetch(`parts/header.html`).then(
+				response => {
 					return response.text();
-					}
-					).then(
-					text => {
-					document.querySelector("#div").innerHTML = text;
-					}
-					);
-				</script>
-				<div id="div"></div>
+				}
+				).then(
+				text => {
+				document.querySelector(`#headerWrap`).insertAdjacentHTML(
+					'afterend',
+					text,
+				);
+				document.querySelector(`#headerWrap`).remove();
+				}
+				);
+			</script>
+			<div id="headerWrap"></div>
+			<main>
 				<!-- start headerBlock-->
 				<div class="headerBlock section" id="headerBlock">
 					<div class="container">
@@ -308,16 +270,23 @@
 				</section>
 				<!-- end sContact-->
 			</main>
-			<footer class="footer section">
-				<div class="container">
-					<div class="row">
-						<div class="col"></div>
-						<div class="col">Footer</div>
-						<div class="col"></div>
-						<div class="col-auto"></div>
-					</div>
-				</div>
-			</footer>
+			<script>
+				//- let fetchElem = `${elem} + .html`;
+				fetch(`parts/footer.html`).then(
+				response => {
+					return response.text();
+				}
+				).then(
+				text => {
+				document.querySelector(`#footerWrap`).insertAdjacentHTML(
+					'afterend',
+					text,
+				);
+				document.querySelector(`#footerWrap`).remove();
+				}
+				);
+			</script>
+			<div id="footerWrap"></div>
 		</div>
 		<!--  start modals--><a class="link-modal-js" href="modal-call">modal-call </a>
 		<div id="modal-call" style="display: none">

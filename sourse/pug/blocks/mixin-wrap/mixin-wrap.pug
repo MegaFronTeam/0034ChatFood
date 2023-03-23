@@ -45,3 +45,21 @@ mixin page-head(t,...items)
 			+breadcrumb('Главная',...items)
 
 			h1= t
+
+mixin parts(elem)
+	script.
+		//- let fetchElem = `${elem} + .html`;
+		fetch(`parts/#{elem}.html`).then(
+		response => {
+			return response.text();
+		}
+		).then(
+		text => {
+		document.querySelector(`##{elem}Wrap`).insertAdjacentHTML(
+			'afterend',
+			text,
+		);
+		document.querySelector(`##{elem}Wrap`).remove();
+		}
+		);
+	div(id=`${elem}Wrap`)
