@@ -48,17 +48,5 @@ mixin page-head(t,...items)
 
 mixin parts(elem)
 	script.
-		fetch(`parts/#{elem}.html`).then(
-		response => {
-			return response.text();
-		}
-		).then(
-		text => {
-		document.querySelector(`##{elem}Wrap`).insertAdjacentHTML(
-			'afterend',
-			text,
-		);
-		document.querySelector(`##{elem}Wrap`).remove();
-		}
-		);
+		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)

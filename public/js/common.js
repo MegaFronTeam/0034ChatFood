@@ -71,13 +71,9 @@ const JSCCommon = {
 	closeMenu() {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
-		// if (!menu) return;
 		toggle.forEach(element => element.classList.remove("on"));
 		menu.classList.remove("active");
 		[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
-		if (menu.classList.contains("active")) {
-		}
-
 	},
 	mobileMenu() { 
 		document.addEventListener('click', (event) => {
