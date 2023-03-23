@@ -48,7 +48,6 @@ mixin page-head(t,...items)
 
 mixin parts(elem)
 	script.
-		//- let fetchElem = `${elem} + .html`;
 		fetch(`parts/#{elem}.html`).then(
 		response => {
 			return response.text();
