@@ -3,6 +3,12 @@
 	padding-bottom: #{rem(14)};
 	// --sTPB: #{rem()};
 	border-bottom: rem(1) solid $gray-200;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	z-index: 100;
 	@include media-breakpoint-up(lg) {
 		padding-top: #{rem(0)};
 		padding-bottom: #{rem(0)};

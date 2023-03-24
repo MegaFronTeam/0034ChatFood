@@ -99,7 +99,13 @@ body {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	padding-top: rem(71);
+	padding-top: rem(61);
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(69.5);
+	}
+	@include media-breakpoint-up(xl) {
+		padding-top: rem(71);
+	}
 	// display: flex;
 	// flex-direction: row; 
 // /	overflow: scroll;

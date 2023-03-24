@@ -1,11 +1,7 @@
 
 // start .header
 .header {
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: #fff;
-	position: fixed;
+	
 	// &.fixed {
 	// }
 	@include media-breakpoint-up(xl) {}
