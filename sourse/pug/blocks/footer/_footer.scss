@@ -148,7 +148,8 @@
 		font-size: rem(12);
 		margin-bottom: rem(18);
 		@include media-breakpoint-up(md) {
-			margin-bottom: rem(16);
+			margin-bottom: rem(12);
+			font-size: rem(16);
 		}
 	}
 	&__tech-help {
