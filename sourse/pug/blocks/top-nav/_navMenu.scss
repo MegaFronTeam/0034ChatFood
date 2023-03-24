@@ -53,6 +53,16 @@
 				}
 			}
 		}
+		&.menu-item-active {
+			a {
+				color: $secondary;
+				&:after {
+					background-color: $secondary;
+					opacity: 1;
+					transform: scaleX(1.0) scaleY(1.0);
+				}
+			}
+		}
 	}
 	a, .dropdownBtn{
 		position: relative;

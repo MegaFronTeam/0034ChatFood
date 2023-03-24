@@ -304,6 +304,7 @@ function eventHandler() {
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
+	JSCCommon.getCurrentYear('.footer__bottom-row p span');
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
@@ -316,7 +317,7 @@ function eventHandler() {
 	}
 
 	function setFixedNav() {
-		let topNav = document.querySelector('.top-nav  ');
+		let topNav = document.querySelector('.top-nav');
 		if (!topNav) return;
 		window.scrollY > 0
 			? topNav.classList.add('fixed')
@@ -389,6 +390,10 @@ function eventHandler() {
 		}
 	})
 
+	document.addEventListener('click', function(event) {
+		let scrollTopBtn = event.target.closest('.footer__scrollTop--js');
+		if(scrollTopBtn) window.scrollTo(0, 0);
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

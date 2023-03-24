@@ -48,6 +48,7 @@
 	&__btn-reg {
 		--bs-btn-font-size: #{rem(12)};
 		--bs-btn-padding-y: #{rem(6)};
+		--bs-btn-padding-x: #{rem(20)};
 		--bs-btn-border-radius: #{rem(8)};
 
 		@include media-breakpoint-up(lg) {
