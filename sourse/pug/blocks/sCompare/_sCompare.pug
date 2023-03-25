@@ -1,0 +1,36 @@
+mixin sCompare(data)
+	// start sCompare
+	+b.SECTION.sCompare.section#sCompare&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Сравните чат-бот<br>с&nbsp;конкурентными решениями
+				p Мы&nbsp;учли все детали в&nbsp;сервисе, чтобы владельцы ресторанного бизнеса получали максимум пользы и&nbsp;поддержки
+			+e.table-wrap
+				table
+					thead
+						tr
+							th
+							th: +img('img/svg/logo2.svg')
+							th Агрегатор
+							th Свой сайт или мобильное приложение
+					tbody
+						mixin tr(tr1, tr2, tr3, tr4)
+							tr
+								td!= tr1 
+								td!= tr2
+								td!= tr3
+								td!= tr4
+						+tr('Комиссия с заказов', '0%', '30-40%', '0%')
+						+tr('Срок запуска', '1 день', '7-14 дней', '30+ дней')
+						+tr('Потребность в программисте', 'Нет', 'Нет', 'Да')
+						+tr('Стоимость разработки', 'от 0 ₽ в месяц', '-', 'от 60 000 ₽')
+						+tr('Обновления и улучшения', 'Ежемесячно автоматически', 'Зависят от агрегатора', 'от 30 000 ₽ /год')
+					tfoot
+						tr
+							td.active(colspan="4")
+								span.hide Свернуть
+								span.show Развернуть
+								+icon('chevron-up')
+			+e.text Для максимального эффекта вы&nbsp;можете использовать чат-бота для получения заказов параллельно с&nbsp;агрегаторами
+			+e.btn.btn.btn-primary(href='#') Попробовать бесплатно
+	// end sCompare

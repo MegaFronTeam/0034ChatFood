@@ -5,6 +5,10 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sContent/_sContent.pug
  
 include ../blocks/sCapabilities/_sCapabilities.pug
+include ../blocks/sReasons/_sReasons.pug
+include ../blocks/sControl/_sControl.pug
+include ../blocks/sCompare/_sCompare.pug
+include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -20,7 +24,11 @@ block pagecontent
 	+parts('header')
 	main
 		+headerBlock() 
+		+sReasons()
 		+sCapabilities()
+		+sControl()
+		+sCompare()
+		+sWhyTelegramBot()
 	+parts('footer')
 
 

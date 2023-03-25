@@ -1,0 +1,25 @@
+mixin sWhyTelegramBot(data)
+	// start sWhyTelegramBot
+	+b.SECTION.sWhyTelegramBot.section#sWhyTelegramBot&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Почему вам выгодно использовать чат-бота в&nbsp;Telegram
+				p Заказ еды через мессенджер — будущее в сфере общепита
+			+e.slider.swiper.defaultSwiper-js
+				.swiper-wrapper
+					mixin item(icon, title, text)
+						+e.item
+							+e.icon-wrap: +img(`img/svg/${icon}`)
+							+e.title!= title
+							p!= text
+					+e.slide.swiper-slide 
+						+item('sWhyTelegramBot-icon-1.svg', 'Не платите комиссию сервису с каждого заказа', 'Вы&nbsp;оплачиваете сервис за&nbsp;месяц, как абонентскую плату за&nbsp;интернет. Мы&nbsp;не&nbsp;берем комиссию с&nbsp;заказов или обращений, вся прибыль остается у&nbsp;вас')
+					+e.slide.swiper-slide 
+						+item('sWhyTelegramBot-icon-2.svg', 'Экономите на&nbsp;разработке сайта и&nbsp;приложения', 'Если у&nbsp;вас нет собственного сайта и&nbsp;приложения, то&nbsp;вы&nbsp;экономите на&nbsp;их&nbsp;разработке и&nbsp;поддержке&nbsp;&mdash; получаете решение ценностью не&nbsp;менее 60000₽, от&nbsp;0₽&nbsp;в&nbsp;месяц')
+					+e.slide.swiper-slide 
+						+item('sWhyTelegramBot-icon-3.svg', 'Сервис в&nbsp;популярном мессенджере', 'Количество пользователей мессенджера Telegram растет с&nbsp;каждым днем, а&nbsp;вы&nbsp;получаете конкурентное преимущество, заказы и&nbsp;лояльность клиентов')
+					+e.slide.swiper-slide 
+						+item('sWhyTelegramBot-icon-4.svg', 'Вашим клиентам не&nbsp;нужно скачивать приложение', 'Ваши клиенты один раз сканируют QR-код, который перенаправит их&nbsp;на&nbsp;чат-бота, авторизовавшись в&nbsp;котором один раз, они останутся с&nbsp;вами для будущих заказов')
+				+e.arrow-wrap
+					+arrow
+	// end sWhyTelegramBot

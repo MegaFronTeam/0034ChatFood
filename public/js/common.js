@@ -258,12 +258,12 @@ const JSCCommon = {
 								$(this).toggleClass('active');
 							});
 						}
-						else {
-							$(this.parentElement).removeClass('active');
-							$(this.parentElement).find('.dd-content-js').slideUp(function () {
-								$(this).removeClass('active');
-							});
-						}
+						// else {
+						// 	$(this.parentElement).removeClass('active');
+						// 	$(this.parentElement).find('.dd-content-js').slideUp(function () {
+						// 		$(this).removeClass('active');
+						// 	});
+						// }
 					});
 
 				});
@@ -394,6 +394,47 @@ function eventHandler() {
 		let scrollTopBtn = event.target.closest('.footer__scrollTop--js');
 		if(scrollTopBtn) window.scrollTo(0, 0);
 	});
+
+	// let animateBlocks = document.querySelectorAll("[data-json]");
+	// for (const animateBlock of animateBlocks) { 
+	// 	lottie.loadAnimation({
+	// 		container: animateBlock, // the dom element that will contain the animation
+	// 		renderer: 'svg',
+	// 		loop: true,
+	// 		autoplay: true,
+	// 		path: animateBlock.dataset.json // the path to the animation json
+	// 	});
+	// }
+
+	let tableWrap = document.querySelector('.sCompare__table-wrap');
+	if (tableWrap) {
+		tableWrap.querySelector('tfoot td').addEventListener('click', function() {
+			$('tbody').toggle();
+			$(this).toggleClass('active');
+		})
+	}
+
+	const defaultSlider = new Swiper('.breadcrumb-slider--js', {
+		slidesPerView: 'auto',
+	});
+
+	let defaultSliders = document.querySelectorAll('.defaultSwiper-js');
+	if(defaultSliders) {
+		for (const defaultSlider of defaultSliders) {
+			const defaultSwiper = new Swiper(defaultSlider, {
+				slidesPerView: 'auto',
+				navigation: {
+					nextEl: defaultSlider.querySelector('.swiper-button-next'),
+					prevEl: defaultSlider.querySelector('.swiper-button-prev'),
+				},
+				pagination: {
+					el: ' .swiper-pagination',
+					type: 'bullets',
+					clickable: true,
+				},
+			});
+		}
+	}
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

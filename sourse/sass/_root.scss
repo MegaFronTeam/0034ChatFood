@@ -16,15 +16,19 @@
 
 
 	--fancybox-content-color: var(--bs-body-color);
-		--swiperArrowSize: #{rem(68)};
-		--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
-		--swiperBorderColorDef: var(--bs-primary);
-		--swiperColorDef: var(--bs-primary);
-		--swiperBgDef: #ffffff;
-	
-		--swiperBorderColorDefHover: var(--bs-primary);
-		--swiperColorDefHover: var(--bs-primary);
-		--swiperBgDefHover: #ffffff;
+	--swiperArrowSize: #{rem(40)};
+	--swiperArrowPosition: calc(var(--swiperArrowSize) / 2);
+	--swiperBorderColorDef: var(--bs-secondary);
+	--swiperColorDef: var(--bs-secondary);
+	--swiperBgDef: #ffffff;
+
+	--swiperBorderColorDefHover: var(--bs-secondary);
+	--swiperColorDefHover: #fff;
+	--swiperBgDefHover: var(--bs-secondary);
+
+	@include media-breakpoint-up(md) {
+		--swiperArrowSize: #{rem(60)};
+	}
 
 
 	--fancybox-bg: rgba(24, 24, 27, .77);
