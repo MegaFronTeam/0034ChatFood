@@ -1,0 +1,26 @@
+mixin sConnected(data)
+	// start sConnected
+	+b.SECTION.sConnected.section#sConnected&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Более 400 ресторанов уже подключены к&nbsp;ChatFood с&nbsp;2021 года
+			+e.row.row
+				mixin item(img, title, text)
+					+e.col.col-md-6.col-lg-4
+						+e.item(href='#')
+							+img(`img/${img}`)
+							+e.content
+								+e.title!= title
+								p!= text
+							+icon('telegram')
+				+item('sConnected-img-1.png', 'Прага | Доставка ❤️', '@prahacafebot')
+				+item('sConnected-img-2.png', 'VremyaEst', '@VremyaEstKrd_bot')
+				+item('sConnected-img-3.png', 'Суши шоп 51 🍱', '@Sushishop51bot')
+				+item('sConnected-img-4.png', 'Завтрак ПО ЖК ВТБ Арена', '@foodncleanbot')
+				+item('sConnected-img-5.png', 'Omnomnom', '@OmNomNomDelieryBot')
+				+item('sConnected-img-6.png', 'ГРЕЧКА БОТ', '@GRECHKAHLEB_bot')
+				+item('sConnected-img-7.png', 'EVA Sushi', '@Evasushi_bot')
+				+item('sConnected-img-8.png', 'Salmon_Roll', '@salmon_rall_bot')
+				+item('sConnected-img-9.png', 'Шаурма Р. Акташ', '@Kafemangal_bot')
+			+e.btn.btn.btn-primary(href="#") Показать еще
+	// end sConnected

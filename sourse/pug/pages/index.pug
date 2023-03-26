@@ -9,6 +9,7 @@ include ../blocks/sReasons/_sReasons.pug
 include ../blocks/sControl/_sControl.pug
 include ../blocks/sCompare/_sCompare.pug
 include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
+include ../blocks/sConnected/_sConnected.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -29,6 +30,7 @@ block pagecontent
 		+sControl()
 		+sCompare()
 		+sWhyTelegramBot()
+		+sConnected()
 	+parts('footer')
 
 

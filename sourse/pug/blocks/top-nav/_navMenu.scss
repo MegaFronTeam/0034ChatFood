@@ -18,7 +18,7 @@
 		// margin-left: 0;
 		// margin-right: 0;
 		padding: 0;
-		&.menu-dropdown {
+		&.menu-dropdown, &.menu-item-has-children {
 			&.active {
 				.dropdownBtn {
 					color: $secondary;
@@ -30,7 +30,7 @@
 			.dropdownBtn {
 				@include mt;
 				cursor: pointer;
-				padding-right: rem(23);
+				padding: rem(23) rem(23) rem(23) 0;
 				&:hover {
 					color: $secondary;
 				}

@@ -2,17 +2,17 @@
 :root {
 	--animate-delay: 1.2s;
 	--bs-body-font-size: #{$em-base};
+	
+	--sPT: #{rem(24)};
+	--sPB: #{rem(24)};
+	--sTPB: #{rem(24)};
+	@include media-breakpoint-up(lg) {
 
-	@include media-breakpoint-up(md) {
-
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
-		--sTPB: #{rem(40)};
+		--sPT: #{rem(45)};
+		--sPB: #{rem(45)};
+		--sTPB: #{rem(48)};
 	}
 
-	--sPT: #{rem(80 * .5)};
-	--sPB: #{rem(90 * .5)};
-	--sTPB: #{rem(40 * .5)};
 
 
 	--fancybox-content-color: var(--bs-body-color);
