@@ -398,12 +398,27 @@ function eventHandler() {
 	let animateBlocks = document.querySelectorAll("[data-json]");
 	if(animateBlocks) {
 		for (const animateBlock of animateBlocks) { 
+			// lottie.loadAnimation({
+			// 	container: animateBlock, // the dom element that will contain the animation
+			// 	renderer: 'svg',
+			// 	loop: true,
+			// 	autoplay: true,
+			// 	path: animateBlock.dataset.json // the path to the animation json
+			// });
 			lottie.loadAnimation({
-				container: animateBlock, // the dom element that will contain the animation
+				container: animateBlock, // the dom element
 				renderer: 'svg',
 				loop: true,
 				autoplay: true,
-				path: animateBlock.dataset.json // the path to the animation json
+				animationData: animateBlock.dataset.json, // the animation data
+				// path: animateBlock.dataset.json, // the path to the animation json
+				rendererSettings: {
+					// context: canvasContext, // the canvas context
+					scaleMode: 'noScale',
+					clearCanvas: false,
+					progressiveLoad: false, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
+					hideOnTransparent: true //Boolean, only svg renderer, hides elements when opacity reaches 0 (defaults to true)
+				}
 			});
 		}
 	}

@@ -65,8 +65,8 @@
 		}
 	}
 	&__slider {
-		padding: rem(20) 0;
-		margin: rem(-20) calc(var(--sliderGutter) * -1) rem(28) 0;
+		padding: rem(20) 0 rem(48) 0;
+		margin: rem(-20) calc(var(--sliderGutter) * -1) 0 0;
 	}
 	&__item{
 		position: relative;
@@ -142,6 +142,9 @@
 				}
 			}
 		}
+	}
+	.swiper-pagination {
+		--swiper-pagination-bottom: #{rem(11)};
 	}
 	&__wrap {
 		display: flex;
