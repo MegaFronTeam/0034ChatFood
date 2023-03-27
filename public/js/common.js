@@ -395,16 +395,18 @@ function eventHandler() {
 		if(scrollTopBtn) window.scrollTo(0, 0);
 	});
 
-	// let animateBlocks = document.querySelectorAll("[data-json]");
-	// for (const animateBlock of animateBlocks) { 
-	// 	lottie.loadAnimation({
-	// 		container: animateBlock, // the dom element that will contain the animation
-	// 		renderer: 'svg',
-	// 		loop: true,
-	// 		autoplay: true,
-	// 		path: animateBlock.dataset.json // the path to the animation json
-	// 	});
-	// }
+	let animateBlocks = document.querySelectorAll("[data-json]");
+	if(animateBlocks) {
+		for (const animateBlock of animateBlocks) { 
+			lottie.loadAnimation({
+				container: animateBlock, // the dom element that will contain the animation
+				renderer: 'svg',
+				loop: true,
+				autoplay: true,
+				path: animateBlock.dataset.json // the path to the animation json
+			});
+		}
+	}
 
 	let tableWrap = document.querySelector('.sCompare__table-wrap');
 	if (tableWrap) {
