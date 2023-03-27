@@ -1,0 +1,16 @@
+mixin sFAQBlock(data)
+	// start sFAQBlock
+	+b.SECTION.sFAQBlock.section#sFAQBlock&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Ответы на популярные вопросы
+			+e.wrap
+				h4 Как запустить чат-бота в&nbsp;Telegram?
+				ol
+					mixin item(icon, text)
+						li
+							+e.icon-wrap: +img(`img/svg/${icon}`)
+							p!= text
+					+item('sFAQBlock-icon-1.svg', 'Регистрируетесь на&nbsp;платформе ChatFood')
+					+item('sFAQBlock-icon-1.svg', 'Регистрируетесь на&nbsp;платформе ChatFood')
+	// end sFAQBlock

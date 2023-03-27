@@ -418,7 +418,7 @@ function eventHandler() {
 		slidesPerView: 'auto',
 	});
 
-	let defaultSliders = document.querySelectorAll('.defaultSwiper-js');
+	let defaultSliders = document.querySelectorAll('.defaultSwiper--js');
 	if(defaultSliders) {
 		for (const defaultSlider of defaultSliders) {
 			const defaultSwiper = new Swiper(defaultSlider, {

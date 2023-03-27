@@ -35,7 +35,7 @@
 							<div class="col-md-6 order-1 order-md-0">
 								<div class="headerBlock__img-wrap">
 									<div class="img-wrap-center">
-										<video loading="loading" preload="preload" no-controls="no-controls" autoplay="autoplay" loop="loop" playsinline="playsinline" muted="muted">
+										<video autoplay="autoplay" loop="loop" playsinline="playsinline" muted="muted">
 											<source src="./video/headerBlock-bg-video.webm" type="video/webm"/>
 											<source src="./video/headerBlock-bg-video.mp4" type="video/mp4"/>
 										</video>
@@ -420,7 +420,7 @@
 							<h2>Почему вам выгодно использовать чат-бота в&nbsp;Telegram</h2>
 							<p>Заказ еды через мессенджер — будущее в сфере общепита</p>
 						</div>
-						<div class="sWhyTelegramBot__slider swiper defaultSwiper-js">
+						<div class="sWhyTelegramBot__slider swiper defaultSwiper defaultSwiper--js">
 							<div class="swiper-wrapper">
 								<div class="sWhyTelegramBot__slide swiper-slide"> 
 										<div class="sWhyTelegramBot__item">
@@ -591,11 +591,162 @@
 								</a>
 							</div>
 						</div>
-						<a class="sConnected__btn btn btn-primary" href="#">Показать еще
+						<a class="sConnected__btn btn btn-outline-primary" href="#">Показать еще
 						</a>
 					</div>
 				</section>
 				<!-- end sConnected-->
+				<!-- start sChooseTariff-->
+				<section class="sChooseTariff section" id="sChooseTariff">
+					<div class="container">
+						<div class="section-title text-center">
+							<h2>Выберите свой тариф</h2>
+							<div class="section-title__switch form-check form-switch">
+								<label class="form-check-label" for="flexSwitchCheckDefault">За месяц</label>
+								<input class="form-check-input" id="flexSwitchCheckDefault" type="checkbox" role="switch"/>
+								<label class="form-check-label" for="flexSwitchCheckDefault">За год</label>
+							</div>
+						</div>
+						<div class="sChooseTariff__slider swiper defaultSwiper defaultSwiper--js">
+							<div class="swiper-wrapper">
+								<div class="sChooseTariff__slide swiper-slide"> 
+										<div class="sChooseTariff__item">
+											<div class="sChooseTariff__wrap">
+												<div class="sChooseTariff__type">Бесплатный
+												</div>
+												<div class="h4">0 ₽</div>
+												<p>За одного чат-бота</p>
+											</div>
+											<ul>
+												<li style="--mark: url('../img/svg/corret.svg')">До 15 товаров</li>
+												<li style="--mark: url('../img/svg/corret.svg')">1 рассылка в месяц</li>
+												<li style="--mark: url('../img/svg/corret.svg')">1 управляющий пользователь</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Опции товаров</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Расчет стоимости доставки</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Скрытие логотипа ChatFood</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Вариативные товары</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Онлайн-оплата</li>
+												<li style="--mark: url('../img/svg/bad.svg')">API</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Премиум поддержка</li>
+											</ul>
+											<a class="sChooseTariff__inner-btn btn btn-success" href="#">Выбрать тариф
+											</a>
+										</div>
+								</div>
+								<div class="sChooseTariff__slide swiper-slide"> 
+										<div class="sChooseTariff__item">
+											<div class="sChooseTariff__wrap">
+												<div class="sChooseTariff__type">Старт
+												</div>
+												<div class="h4">19 200 ₽</div>
+												<div class="sChooseTariff__price-per-day">89 ₽ в день
+												</div>
+												<p>За одного чат-бота</p>
+											</div>
+											<ul>
+												<li style="--mark: url('../img/svg/corret.svg')">До 30 товаров</li>
+												<li style="--mark: url('../img/svg/corret.svg')">До 5 рассылок в месяц</li>
+												<li style="--mark: url('../img/svg/corret.svg')">До 3 управляющих пользователей</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Опции товаров</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Расчет стоимости доставки</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Скрытие логотипа ChatFood</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Вариативные товары</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Онлайн-оплата</li>
+												<li style="--mark: url('../img/svg/bad.svg')">API</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Премиум поддержка</li>
+											</ul>
+											<a class="sChooseTariff__inner-btn btn btn-success" href="#">Выбрать тариф
+											</a>
+										</div>
+								</div>
+								<div class="sChooseTariff__slide swiper-slide"> 
+										<div class="sChooseTariff__item sChooseTariff__item--most-popular">
+											<div class="sChooseTariff__popular">Популярный
+											</div>
+											<div class="sChooseTariff__wrap">
+												<div class="sChooseTariff__type"><img src="img/fire.png" alt="" loading="lazy"/>Стандарт
+												</div>
+												<div class="h4">28 800 ₽</div>
+												<div class="sChooseTariff__price-per-day">119 ₽ в день
+												</div>
+												<p>За одного чат-бота</p>
+											</div>
+											<ul>
+												<li style="--mark: url('../img/svg/corret.svg')">До 80 товаров</li>
+												<li style="--mark: url('../img/svg/corret.svg')">До 10 рассылок в месяц</li>
+												<li style="--mark: url('../img/svg/corret.svg')">До 7 управляющих пользователей</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Опции товаров</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Расчет стоимости доставки</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Скрытие логотипа ChatFood</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Вариативные товары</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Онлайн-оплата</li>
+												<li style="--mark: url('../img/svg/corret.svg')">API</li>
+												<li style="--mark: url('../img/svg/bad.svg')">Премиум поддержка</li>
+											</ul>
+											<a class="sChooseTariff__inner-btn btn btn-success" href="#">Выбрать тариф
+											</a>
+										</div>
+								</div>
+								<div class="sChooseTariff__slide swiper-slide"> 
+										<div class="sChooseTariff__item">
+											<div class="sChooseTariff__wrap">
+												<div class="sChooseTariff__type">Профи
+												</div>
+												<div class="h4">57 600 ₽</div>
+												<div class="sChooseTariff__price-per-day">149 ₽ в день
+												</div>
+												<p>За одного чат-бота</p>
+											</div>
+											<ul>
+												<li style="--mark: url('../img/svg/infinity.svg')">Товары не ограничены</li>
+												<li style="--mark: url('../img/svg/infinity.svg')">Рассылки не ограничены</li>
+												<li style="--mark: url('../img/svg/corret.svg')">До 10 управляющих пользователей</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Опции товаров</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Расчет стоимости доставки</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Скрытие логотипа ChatFood</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Вариативные товары</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Онлайн-оплата</li>
+												<li style="--mark: url('../img/svg/corret.svg')">API</li>
+												<li style="--mark: url('../img/svg/corret.svg')">Премиум поддержка</li>
+											</ul>
+											<a class="sChooseTariff__inner-btn btn btn-success" href="#">Выбрать тариф
+											</a>
+										</div>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<div class="sChooseTariff__text">Оплата по тарифу списывается ежедневно с баланса личного кабинета. Минимальная сумма пополнения - 500 ₽
+						</div>
+						<a class="sChooseTariff__btn btn btn-outline-primary" href="#">Все тарифы списком
+						</a>
+					</div>
+				</section>
+				<!-- end sChooseTariff-->
+				<!-- start sFAQBlock-->
+				<section class="sFAQBlock section" id="sFAQBlock">
+					<div class="container">
+						<div class="section-title text-center">
+							<h2>Ответы на популярные вопросы</h2>
+						</div>
+						<div class="sFAQBlock__wrap">
+							<h4>Как запустить чат-бота в&nbsp;Telegram?</h4>
+							<ol>
+									<li>
+										<div class="sFAQBlock__icon-wrap"><img src="img/svg/sFAQBlock-icon-1.svg" alt="" loading="lazy"/>
+										</div>
+										<p>Регистрируетесь на&nbsp;платформе ChatFood</p>
+									</li>
+									<li>
+										<div class="sFAQBlock__icon-wrap"><img src="img/svg/sFAQBlock-icon-1.svg" alt="" loading="lazy"/>
+										</div>
+										<p>Регистрируетесь на&nbsp;платформе ChatFood</p>
+									</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+				<!-- end sFAQBlock-->
 			</main>
 			<script>addBlock(`footer`)</script>
 			<div id="footerWrap"></div>

@@ -10,6 +10,8 @@ include ../blocks/sControl/_sControl.pug
 include ../blocks/sCompare/_sCompare.pug
 include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
 include ../blocks/sConnected/_sConnected.pug
+include ../blocks/sChooseTariff/_sChooseTariff.pug
+include ../blocks/sFAQBlock/_sFAQBlock.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -31,6 +33,8 @@ block pagecontent
 		+sCompare()
 		+sWhyTelegramBot()
 		+sConnected()
+		+sChooseTariff()
+		+sFAQBlock()
 	+parts('footer')
 
 

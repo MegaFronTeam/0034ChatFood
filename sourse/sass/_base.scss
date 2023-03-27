@@ -554,14 +554,14 @@ iframe {
 
 .btn {
 	--bs-btn-font-size: #{rem(14)};
-	--bs-btn-padding-y: #{rem(7)};
+	--bs-btn-padding-y: #{rem(8.600)};
 	--bs-btn-border-radius: #{rem(10)};
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(md) {
 		--bs-btn-font-size: #{rem(18)};
 		--bs-btn-padding-y: #{rem(16)};
 		--bs-btn-border-radius: #{rem(12)};
 	}
-	&-primary, &-secondary {
+	&-primary, &-secondary, &-success {
 		--bs-btn-color: #fff;
 		--bs-btn-hover-color: #fff;
 		--bs-btn-active-color: #fff;

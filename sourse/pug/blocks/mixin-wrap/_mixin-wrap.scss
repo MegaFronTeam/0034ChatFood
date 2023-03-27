@@ -181,3 +181,12 @@
 		}
 	}
 }
+
+.defaultSwiper {
+	margin-right: calc(var(--sliderGutter) * -1);
+	.swiper-slide {
+		margin-right: var(--sliderGutter);
+		height: auto;
+		width: calc((100% / var(--slideCount)) - var(--sliderGutter));
+	}
+}

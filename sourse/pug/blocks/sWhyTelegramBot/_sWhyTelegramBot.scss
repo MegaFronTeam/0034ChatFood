@@ -4,7 +4,7 @@
 	--sPB: #{rem(24)};
 	--sTPB: #{rem(24)};
 	@include media-breakpoint-up(lg) {
-		--sPT: #{rem(37)};
+		--sPT: #{rem(42)};
 		--sPB: #{rem(45)};
 		--sTPB: #{rem(48)};
 	}
@@ -42,17 +42,10 @@
 		--sliderGutter: #{rem(24)};
 		--slideCount: 4;
 	}
-	&__slider {
-		margin-right: calc(var(--sliderGutter) * -1);
-	}
-	&__slide {
-		margin-right: var(--sliderGutter);
-		height: auto;
-		width: calc((100% / var(--slideCount)) - var(--sliderGutter));
-	}
 	&__item {
 		text-align: center;
 		height: 100%;
+		line-height: 1.26;
 		@include media-breakpoint-down(md) {
 			border: 1px solid $gray-200;
 			border-radius: 12px;
