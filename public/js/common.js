@@ -452,6 +452,13 @@ function eventHandler() {
 			});
 		}
 	}
+
+	let cookies = document.querySelector('.cookies');
+	if(cookies) {
+		cookies.querySelector('.cookies__close').addEventListener('click', function() {
+			cookies.classList.add('hide');
+		})
+	}
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
