@@ -12,6 +12,7 @@ include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
 include ../blocks/sConnected/_sConnected.pug
 include ../blocks/sChooseTariff/_sChooseTariff.pug
 include ../blocks/sFAQBlock/_sFAQBlock.pug
+include ../blocks/sReviews/_sReviews.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -35,6 +36,7 @@ block pagecontent
 		+sConnected()
 		+sChooseTariff()
 		+sFAQBlock()
+		+sReviews()
 	+parts('footer')
 
 

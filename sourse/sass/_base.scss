@@ -565,7 +565,9 @@ iframe {
 		--bs-btn-color: #fff;
 		--bs-btn-hover-color: #fff;
 		--bs-btn-active-color: #fff;
-		opacity: .86;
+		&:hover {
+			opacity: .86;
+		}
 	}
 	&-outline-primary, &-outline-secondary {
 		--bs-btn-hover-color: #fff;

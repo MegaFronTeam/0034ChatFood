@@ -2,12 +2,7 @@
 .sChooseTariff {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
-	&__row{
-		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
-
-	}
+	// --sTPB: #{rem(44.800)};
 	--sliderGutter: #{rem(0)};
 	--slideCount: 1;
 	@include media-breakpoint-up(sm) {
@@ -19,6 +14,7 @@
 	}
 	@include media-breakpoint-up(lg) {
 		--sliderGutter: #{rem(24)};
+		--sTPB: #{rem(44.800)};
 	}
 	@include media-breakpoint-up(xl) {
 		--slideCount: 4;
@@ -82,17 +78,18 @@
 		}
 		.h4 {
 			line-height: 1.25;
-			margin-bottom: rem(6);
+			margin-bottom: rem(2.800);
 			@include media-breakpoint-down(md) {
 				font-size: rem(20);
 			}
 		}
 		p {
 			margin-top: auto;
-			padding-bottom: rem(18);
+			padding-bottom: rem(14.800);
 			border-bottom: 1px solid $gray-200;
 			color: $gray-500;
 			font-size: rem(12);
+			margin-bottom: 0;
 			@include media-breakpoint-up(md) {
 				font-size: rem(16);
 			}
@@ -152,7 +149,7 @@
 		min-height: rem(112);
 		margin-bottom: rem(17);
 		@include media-breakpoint-up(md) {
-			min-height: rem(148);
+			min-height: rem(147.281);
 			margin-bottom: rem(18);
 		}
 	}
@@ -181,7 +178,7 @@
 		margin-bottom: rem(7);
 		@include media-breakpoint-up(md) {
 			font-size: rem(16);
-			margin-bottom: rem(12);
+			margin-bottom: rem(8.800);
 		}
 	}
 	&__inner-btn {
@@ -227,7 +224,7 @@
 		text-align: center;
 		@include media-breakpoint-up(md) {
 			font-size: rem(16);
-			margin-bottom: rem(32);
+			margin-bottom: rem(28.800);
 		}
 	}
 	&__btn {
