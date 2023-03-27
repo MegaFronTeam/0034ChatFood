@@ -43,6 +43,10 @@
 		&__item {
 			height: 100%;
 			border-bottom: 1px solid $gray-200;
+			@include mt;
+			&:hover {
+				box-shadow: 0px 5px 20px rgba(25, 28, 31, 0.15);
+			}
 			@include media-breakpoint-up(lg) {
 				text-align: center;
 				border: 1px solid $gray-200;
