@@ -71,6 +71,11 @@
 	}
  	&__btn{
  		cursor: pointer;
+		 @include media-breakpoint-up(md) {
+			--bs-btn-font-size: #{rem(18)};
+			--bs-btn-padding-y: #{rem(16)};
+			--bs-btn-border-radius: #{rem(12)};
+		}
  	}
  	label{
  		width: 100%;

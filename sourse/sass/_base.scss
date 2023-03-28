@@ -328,7 +328,7 @@ ul {
 	box-shadow: none;
 	@include mt;
 	user-select: none;
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		border-radius: rem(12);
 	}
 
@@ -340,7 +340,7 @@ ul {
 
 	.icon {
 		font-size: rem(14);
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			font-size: rem(20);
 		}
 	}
