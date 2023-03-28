@@ -447,7 +447,7 @@ function eventHandler() {
 					prevEl: defaultSlider.querySelector('.swiper-button-prev'),
 				},
 				pagination: {
-					el: ' .swiper-pagination',
+					el: defaultSlider.querySelector(' .swiper-pagination'),
 					type: 'bullets',
 					clickable: true,
 				},
