@@ -81,8 +81,19 @@
 				}
 			}
 		}
+		&.active {
+			.top-nav__authorized-wrap {
+				@include media-breakpoint-up(md) {
+					box-shadow: 0px 2px 10px rgba(25, 28, 31, 0.1);
+				}
+				&::after {
+					transform: translateY(-50%) rotate(-180deg);
+				}
+			}
+		}
 	}
 	&__authorized-wrap {
+		@include mt;
 		position: relative;
 		border-radius: 60px;
 		cursor: pointer;
@@ -90,6 +101,7 @@
 			padding: rem(5) rem(38) rem(5) rem(4);
 			border: 1px solid $gray-200;
 			&:after {
+				@include mt;
 				content: '';
 				position: absolute;
 				top: 50%;
