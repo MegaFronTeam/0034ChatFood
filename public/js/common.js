@@ -302,7 +302,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask();
+	// JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
@@ -469,6 +469,16 @@ function eventHandler() {
 				this.classList.toggle('active');
 				passInput.querySelector('input').type = (passInput.querySelector('input').type == 'password') ? 'text' : 'password';
 			})
+		})
+	}
+
+	var telInputs = document.querySelectorAll(".tel--js");
+	if(telInputs) {
+		telInputs.forEach(telInput => {
+			intlTelInput(telInput, {
+				separateDialCode: true,
+				initialCountry: "ru",
+			});
 		})
 	}
 };

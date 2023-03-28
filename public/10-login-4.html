@@ -35,8 +35,8 @@
 							<div class="img-wrap-center" data-json="json/Hero_Right.json"></div>
 						</div>
 						<div class="authorization__footer">
-							<h5>Добро пожаловать</h5>
-							<p>Войдите в аккаунт, чтобы продолжить работу</p>
+							<h5>Начните бесплатно</h5>
+							<p>Зарегистрируйтесь и создайте чат-бота за 5 минут</p>
 						</div>
 					</div>
 					<div class="authorization__right-side">
@@ -48,26 +48,38 @@
 							</svg>На главную
 						</a>
 						<div class="authorization__content">
-							<h4>Вход</h4>
-							<p>Впервые в ChatFood? <a href="#">Регистрация</a></p>
+							<h4>Регистрация</h4>
+							<p>Уже есть аккаунт? <a href="#">Войти</a></p>
+							<div class="authorization__error">Текст ошибки.
+							</div>
 							<div class="form-wrap">
 								<form>
 									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="email" type="email" placeholder="Email"/><span class="form-wrap__input-inavlid">Текст ошибки.</span>
 									</div>
 									<!-- +e.input-wrap-->
-									<div class="form-wrap__input-wrap form-wrap__input-wrap--pass form-group"><input class="form-wrap__input form-control" name="password" type="password" placeholder="Пароль"/>
+									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control tel tel--js" name="tel" type="tel" placeholder=""/><span class="form-wrap__input-inavlid">Текст ошибки.</span>
+									</div>
+									<!-- +e.input-wrap-->
+									<div class="form-wrap__input-wrap form-wrap__input-wrap--pass form-group"><input class="form-wrap__input form-control is-invalid" name="password" type="password" placeholder="Пароль"/>
+										<div class="form-wrap__pass-btn">
+											<svg class="icon icon-eye ">
+												<use xlink:href="img/svg/sprite.svg#eye"></use>
+											</svg>
+										</div><span class="form-wrap__input-inavlid">Текст ошибки.</span>
+									</div>
+									<div class="form-wrap__input-wrap form-wrap__input-wrap--pass form-group"><input class="form-wrap__input form-control" name="password" type="password" placeholder="Повторите пароль"/>
 										<div class="form-wrap__pass-btn">
 											<svg class="icon icon-eye ">
 												<use xlink:href="img/svg/sprite.svg#eye"></use>
 											</svg>
 										</div>
 									</div>
-									<button class="form-wrap__btn btn btn-primary" type="submit">Войти
+									<button class="form-wrap__btn btn btn-primary" type="submit">Зарегистрироваться
 									</button>
+									<div class="form-wrap__policy">Регистрируясь на сайте, вы даете согласие на <a href="#">обработку персональных данных </a>, и подтверждаете, что ознакомились с <a href="#">пользовательским соглашением</a>
+									</div>
 								</form>
 							</div>
-							<a class="authorization__forgot" href="#">Забыли пароль?
-							</a>
 						</div>
 					</div>
 				</div>

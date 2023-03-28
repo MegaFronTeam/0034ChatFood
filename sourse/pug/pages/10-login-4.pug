@@ -30,20 +30,26 @@ block pagecontent
 	main
 		+authorization({
 			json: 'Hero_Right.json',
-			title: 'Добро пожаловать',
-			text: 'Войдите в аккаунт, чтобы продолжить работу',
+			title: 'Начните бесплатно',
+			text: 'Зарегистрируйтесь и создайте чат-бота за 5 минут',
 		})
 			+e.content
-				h4 Вход
-				p Впервые в ChatFood? 
-					a(href="#") Регистрация
+				h4 Регистрация
+				p Уже есть аккаунт? 
+					a(href="#") Войти
+				+e.error Текст ошибки.
 				+form-wrap
 					+input('Email', 'email')
+					+input('', 'tel').tel--js
 					+e.input-wrap--pass.form-group
-						+e.INPUT.input.form-control(name='password' type='password' placeholder='Пароль')
+						+e.INPUT.input.form-control.is-invalid(name='password' type='password' placeholder='Пароль')
 						+e.pass-btn: +icon('eye')
-					+e.btn.btn.btn-primary(type='submit') Войти
-				+e.forgot(href='#') Забыли пароль?
+						+e.SPAN.input-inavlid Текст ошибки.
+					+e.input-wrap--pass.form-group
+						+e.INPUT.input.form-control(name='password' type='password' placeholder='Повторите пароль')
+						+e.pass-btn: +icon('eye')
+					+e.btn.btn.btn-primary(type='submit') Зарегистрироваться
+					+policy()
 	//- +parts('footer')
 
 

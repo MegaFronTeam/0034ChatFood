@@ -2,6 +2,38 @@
  	&__input-wrap{
 		// @extend .form-group;
 		text-align: left;
+		.iti {
+			width: 100%;
+			display: block;
+		}
+		.iti--separate-dial-code .iti__selected-flag {
+			background-color: #fff;
+			border-radius: 12px 0 0 12px;
+		}
+		.iti__selected-dial-code {
+			order: 2;
+			font-size: rem(12);
+			@include media-breakpoint-up(md) {
+				font-size: rem(16);
+			}
+		}
+		.iti__arrow {
+			margin-left: rem(9);
+			border-top: 4px solid $gray-400;
+			&--up {
+				border-top: none;
+				border-bottom: 4px solid $gray-400;
+			}
+		}
+		&.disabled {
+			pointer-events: none;
+			.iti--separate-dial-code .iti__selected-flag {
+				background-color: $gray-100;
+			}
+			.form-wrap__input {
+				// background-color: $gray-200;
+			}
+		}
 	}
 	&__input{
 		// @extend .form-control;
@@ -23,6 +55,9 @@
 				display: block;
 			}
 		}
+		&.tel {
+			padding-left: rem(71) !important;
+		}
  	}
 	&__input-inavlid {
 		display: none;
@@ -36,11 +71,56 @@
 	}
  	&__btn{
  		cursor: pointer;
+		 @include media-breakpoint-up(md) {
+			--bs-btn-font-size: #{rem(18)};
+			--bs-btn-padding-y: #{rem(16)};
+			--bs-btn-border-radius: #{rem(12)};
+		}
  	}
  	label{
  		width: 100%;
  		display: block;
  	}
+	&__policy {
+		font-size: rem(14);
+		line-height: 1.4;
+		a {
+			color: $secondary;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+	&__repeat {
+		line-height: 1.25;
+		color: $gray-500;
+		font-size: rem(12);
+		text-align: left;
+		margin-bottom: rem(12);
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
+	}
+	&__pass-btn {
+		@include mt;
+		cursor: pointer;
+		position: absolute;
+		top: rem(7.374);
+		right: rem(12);
+		color: $gray-400;
+		@include media-breakpoint-up(md) {
+			top: rem(18);
+		}
+		&.active, &:hover {
+			color: $primary;
+		}
+		.icon {
+			font-size: rem(20);
+			@include media-breakpoint-up(md) {
+				font-size: rem(24);
+			}
+		}
+	}
 }
 
 
