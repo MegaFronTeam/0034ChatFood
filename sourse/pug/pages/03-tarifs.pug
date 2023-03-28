@@ -17,7 +17,7 @@ block pagecontent
 	+parts('headerAuth')
 	main
 		+page-head(`Выберите тариф для вашего чат-бота в&nbsp;ChatFood`, `Тарифы`)
-		+sChooseTariffPage()
+		+sChooseTariff().sChooseTariff--page
 		+sTryIt()
 	+parts('footer')
 	//- +cookies()
