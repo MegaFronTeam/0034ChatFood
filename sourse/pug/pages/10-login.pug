@@ -1,0 +1,50 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sCapabilities/_sCapabilities.pug
+include ../blocks/sReasons/_sReasons.pug
+include ../blocks/sControl/_sControl.pug
+include ../blocks/sCompare/_sCompare.pug
+include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
+include ../blocks/sConnected/_sConnected.pug
+include ../blocks/sChooseTariff/_sChooseTariff.pug
+include ../blocks/sFAQBlock/_sFAQBlock.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sTryIt/_sTryIt.pug
+
+block variables
+	- let  mainPage= 'login-page' 
+	- let  bg= '10-login.jpg'
+
+block title
+	- let  title= 'Login page'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	//- +parts('header')
+	main
+		+authorization({
+			json: 'Hero_Right.json',
+			title: 'Добро пожаловать',
+			text: 'Войдите в аккаунт, чтобы продолжить работу',
+		})
+			+e.content
+				h4 Вход
+				p Впервые в ChatFood? 
+					a(href="#") Регистрация
+				+form-wrap
+					+input('Email', 'email')
+					+e.input-wrap--pass.form-group
+						+e.INPUT.input.form-control(name='password' type='password' placeholder='Пароль')
+						+e.pass-btn: +icon('eye')
+						+e.SPAN.input-inavlid Текст ошибки.
+					+e.btn.btn.btn-primary(type='submit') Войти
+				+e.forgot(href='#') Забыли пароль?
+	//- +parts('footer')
+
+

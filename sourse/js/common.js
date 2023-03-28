@@ -72,8 +72,10 @@ const JSCCommon = {
 		const toggle = document.querySelectorAll(".toggle-menu-mobile--js");
 		const menu = document.querySelector(".menu-mobile--js");
 		toggle.forEach(element => element.classList.remove("on"));
-		menu.classList.remove("active");
-		[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
+		if(menu) {
+			menu.classList.remove("active");
+			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
+		}
 	},
 	mobileMenu() { 
 		document.addEventListener('click', (event) => {
@@ -400,7 +402,7 @@ function eventHandler() {
 		for (const animateBlock of animateBlocks) { 
 			lottie.loadAnimation({
 				container: animateBlock, // the dom element that will contain the animation
-				renderer: 'svg',
+				renderer: 'canvas',
 				loop: true,
 				autoplay: true,
 				path: animateBlock.dataset.json // the path to the animation json
@@ -457,6 +459,16 @@ function eventHandler() {
 	if(cookies) {
 		cookies.querySelector('.cookies__close').addEventListener('click', function() {
 			cookies.classList.add('hide');
+		})
+	}
+
+	let passInputs = document.querySelectorAll('.form-wrap__input-wrap--pass');
+	if (passInputs) {
+		passInputs.forEach(passInput => {
+			passInput.querySelector('.form-wrap__pass-btn').addEventListener('click', function() {
+				this.classList.toggle('active');
+				passInput.querySelector('input').type = (passInput.querySelector('input').type == 'password') ? 'text' : 'password';
+			})
 		})
 	}
 };
