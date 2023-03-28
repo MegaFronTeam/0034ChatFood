@@ -556,7 +556,7 @@ iframe {
 	--bs-btn-font-size: #{rem(14)};
 	--bs-btn-padding-y: #{rem(8.600)};
 	--bs-btn-border-radius: #{rem(10)};
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		--bs-btn-font-size: #{rem(18)};
 		--bs-btn-padding-y: #{rem(16)};
 		--bs-btn-border-radius: #{rem(12)};

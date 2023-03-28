@@ -392,24 +392,6 @@
 			&__input {
 				padding-right: rem(30);
 			}
-			&__pass-btn {
-				@include mt;
-				cursor: pointer;
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				right: rem(12);
-				color: $gray-400;
-				&.active, &:hover {
-					color: $primary;
-				}
-				.icon {
-					font-size: rem(20);
-					@include media-breakpoint-up(md) {
-						font-size: rem(24);
-					}
-				}
-			}
 			&__btn {
 				margin-top: rem(6);
 				margin-bottom: rem(18);
@@ -429,6 +411,14 @@
 		}
 		&:hover {
 			color: $primary;
+		}
+	}
+	&__error {
+		color: $red;
+		margin-bottom: rem(12);
+		font-size: rem(12);
+		@include media-breakpoint-up(md) {
+			font-size: rem(12);
 		}
 	}
 }
