@@ -1,0 +1,48 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sCapabilities/_sCapabilities.pug
+include ../blocks/sReasons/_sReasons.pug
+include ../blocks/sControl/_sControl.pug
+include ../blocks/sCompare/_sCompare.pug
+include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
+include ../blocks/sConnected/_sConnected.pug
+include ../blocks/sChooseTariff/_sChooseTariff.pug
+include ../blocks/sFAQBlock/_sFAQBlock.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sTryIt/_sTryIt.pug
+
+block variables
+	- let  mainPage= 'login-page' 
+	- let  bg= '10-login.jpg'
+
+block title
+	- let  title= 'Login page'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	//- +parts('header')
+	main
+		+authorization({
+			empty: true,
+		}).--fullscreen
+			+e.content
+				h4 Установка пароля
+				p Установка нового пароля для аккаунта 
+					strong mail@mail.ru
+				+form-wrap
+					+e.input-wrap--pass.form-group
+						+e.INPUT.input.form-control(name='password' type='password' placeholder='Новый пароль')
+						+e.pass-btn: +icon('eye')
+					+e.input-wrap--pass.form-group
+						+e.INPUT.input.form-control(name='password' type='password' placeholder='Повторите новый пароль')
+						+e.pass-btn: +icon('eye')
+					+e.btn.btn.btn-primary(type='submit') Установить пароль
+	//- +parts('footer')
+
+
