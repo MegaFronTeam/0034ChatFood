@@ -50,3 +50,9 @@ mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+mixin cookies()
+	+b.cookies
+		+img('img/cookie.png')
+		p На нашем сайте мы едим используем <strong>cookie</strong> для быстрой работы сайта
+		+e.close

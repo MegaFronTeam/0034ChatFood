@@ -29,11 +29,16 @@
 		@include media-breakpoint-up(md) {
 			padding: rem(48) rem(24);
 			border-radius: 24px;
-			margin-bottom: rem(16);
+			margin-bottom: rem(14.400);
 		}
 		h4 {
 			text-align: center;
-			margin-bottom: rem(48);
+			font-size: rem(20);
+			margin-bottom: rem(24);
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(48);
+				font-size: rem(32);
+			}
 		}
 	}
 	ol {
@@ -134,7 +139,7 @@
 			max-width: rem(30);
 		}
 		@include media-breakpoint-up(md) {
-			margin-bottom: rem(18);
+			margin-bottom: rem(22.870);
 			width: rem(96);
 			height: rem(96);
 			img {
@@ -148,13 +153,13 @@
 		}
 		&__head {
 			position: relative;
-			padding: rem(22) rem(30) rem(22) 0;
+			padding: rem(22) rem(30) rem(22) rem(12);
 			font-weight: 700;
 			font-size: rem(14);
-			line-height: 1.4;
+			line-height: 1.3;
 			cursor: pointer;
 			@include media-breakpoint-up(md) {
-				padding: rem(32) rem(48) rem(32) 0;
+				padding: rem(32) rem(48) rem(32) rem(32);
 				font-size: rem(18);
 			}
 			&:after {
@@ -168,8 +173,10 @@
 		}
 		&__content {
 			padding-bottom: rem(18);
+			padding-left: rem(12);
 			@include media-breakpoint-up(md) {
 				padding-bottom: rem(32);
+				padding-left: rem(32);
 			}
 			p {
 				line-height: 1.25;
