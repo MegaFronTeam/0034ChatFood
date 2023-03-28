@@ -39,10 +39,12 @@ block pagecontent
 					a(href="#") Изменить
 				+form-wrap
 					+e.input-wrap.disabled.form-group
-						+e.INPUT.input.form-control.tel--js(name='tel' type='tel' placeholder='Пароль' value='919 811-28-40' disabled)
+						+e.INPUT.input.form-control.tel-js(name='tel' type='tel' placeholder='Пароль' value='919 811-28-40' disabled)
 						+e.SPAN.input-inavlid Текст ошибки.
 					+input('Код из SMS', 'text')
-					+e.repeat Отправить код повторно через 0:59
+					+e.repeat 
+						p Отправить код повторно через 0:59
+						a(href='#') Отправить код повторно
 					+e.btn.btn.btn-primary(type='submit') Зарегистрироваться
 					+policy()
 	//- +parts('footer')

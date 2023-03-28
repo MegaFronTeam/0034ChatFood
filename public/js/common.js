@@ -472,7 +472,7 @@ function eventHandler() {
 		})
 	}
 
-	var telInputs = document.querySelectorAll(".tel--js");
+	var telInputs = document.querySelectorAll(".tel-js");
 	if(telInputs) {
 		telInputs.forEach(telInput => {
 			intlTelInput(telInput, {
