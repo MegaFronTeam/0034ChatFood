@@ -313,7 +313,7 @@
 		bottom: rem(96);
 		text-align: center;
 		width: calc(100% - rem(40));
-		max-width: rem(400);
+		max-width: rem(420.797);
 		h5 {
 			line-height: 1.22;
 			margin-bottom: rem(24);
@@ -419,6 +419,35 @@
 		font-size: rem(12);
 		@include media-breakpoint-up(md) {
 			font-size: rem(12);
+		}
+	}
+	&__btn {
+		width: 100%;
+		margin-top: rem(2);
+		@include media-breakpoint-up(md) {
+			--bs-btn-font-size: #{rem(18)};
+			--bs-btn-padding-y: #{rem(16)};
+			--bs-btn-border-radius: #{rem(12)};
+			margin-top: rem(8);
+		}
+	}
+	&--fullscreen {
+		.authorization {
+			&__right-side {
+				padding: rem(50) rem(20);
+				@include media-breakpoint-up(md) {
+					max-width: none;
+					padding: rem(94) rem(20);
+				}
+			}
+			&__back-btn {
+				display: none;
+			}
+			&__logo {
+				@include media-breakpoint-up(md) {
+					display: block !important;
+				}
+			}
 		}
 	}
 }

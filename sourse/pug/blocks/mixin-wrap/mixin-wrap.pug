@@ -58,14 +58,16 @@ mixin cookies()
 		+e.close
 
 mixin authorization(data)
-	+b.authorization
-		+e.left-side
-			+e.logo(href='/'): +img('img/svg/logo.svg')
-			+e.img-wrap
-				.img-wrap-center(data-json= `json/${data.json}`)
-			+e.footer
-				h5!= data.title
-				p!= data.text
+	+b.authorization&attributes(attributes)
+		if data.empty
+		else
+			+e.left-side
+				+e.logo(href='/'): +img('img/svg/logo.svg')
+				+e.img-wrap
+					.img-wrap-center(data-json= `json/${data.json}`)
+				+e.footer
+					h5!= data.title
+					p!= data.text
 		+e.right-side
 			+e.logo.d-md-none(href='/'): +img('img/svg/logo.svg')
 			+e.back-btn(href='/')
