@@ -1,0 +1,27 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/s404Block/_s404Block.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= '404'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('headerAuth')
+	main
+		+page-head(``, `Ошибка 404`)
+		+s404Block()
+		+parts('sTryItPart')
+	+parts('footer')
+
+

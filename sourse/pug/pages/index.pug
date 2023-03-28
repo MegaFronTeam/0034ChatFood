@@ -13,7 +13,6 @@ include ../blocks/sConnected/_sConnected.pug
 include ../blocks/sChooseTariff/_sChooseTariff.pug
 include ../blocks/sFAQBlock/_sFAQBlock.pug
 include ../blocks/sReviews/_sReviews.pug
-include ../blocks/sTryIt/_sTryIt.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -38,7 +37,7 @@ block pagecontent
 		+sChooseTariff()
 		+sFAQBlock()
 		+sReviews()
-		+sTryIt()
+		+parts('sTryItPart')
 	+parts('footer')
 	+cookies()
 
