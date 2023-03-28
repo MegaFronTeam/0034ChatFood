@@ -56,3 +56,19 @@ mixin cookies()
 		+img('img/cookie.png')
 		p На нашем сайте мы едим используем <strong>cookie</strong> для быстрой работы сайта
 		+e.close
+
+mixin authorization(data)
+	+b.authorization
+		+e.left-side
+			+e.logo(href='/'): +img('img/svg/logo.svg')
+			+e.img-wrap
+				.img-wrap-center(data-json= `json/${data.json}`)
+			+e.footer
+				h5!= data.title
+				p!= data.text
+		+e.right-side
+			+e.logo.d-md-none(href='/'): +img('img/svg/logo.svg')
+			+e.back-btn(href='/')
+				+icon('chevron-left')
+				| На главную
+			block

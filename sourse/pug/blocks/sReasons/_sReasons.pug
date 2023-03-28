@@ -8,7 +8,8 @@ mixin sReasons(data)
 				mixin item(title, text, json)
 					.col-6.col-lg-4
 						+e.item
-							+e.img-wrap(data-json= json)
+							+e.img-wrap
+								.img-wrap-center(data-json= json)
 							//- +img('img/svg/sReasons-img-1.svg')
 							h6!= title
 							p!= text
