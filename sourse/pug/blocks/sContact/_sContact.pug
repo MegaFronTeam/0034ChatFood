@@ -1,9 +1,49 @@
 mixin sContact()
 	// start sContact
-	+b.SECTION.sContact.section#sContact&attributes(attributes)
+	+b.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
 			+e.row.row
+				mixin contactItem(data)
+					+b.contactItem(style=`--bgColor:${data.bgc};`)
+						+e.img-wrap
+							+img(`img/svg/contact-${data.img}.svg`)
+						if data.descr
+							+e.descr!= data.descr
+						if data.link
+							+e.link(href="#")!= data.link
+						if data.time
+							+e.schedule!= data.time
+						if data.btn
+							+e.btn.btn.btn-outline-secondary(href="#")!= data.btn
+				.col-md-6
+					+contactItem({
+						bgc: `var(--bs-secondary)`,
+						img: `telegram`,
+						descr: `Технические проблемы и&nbsp;оперативная связь с&nbsp;поддержкой`,
+						link: `t.me/chatfood`,
+						time: `Отвечаем каждый день с 10:00 до 18:00`,
+					})
+				.col-md-6
+					+contactItem({
+						bgc: `var(--bs-warning)`,
+						img: `mail`,
+						descr: `Ваши предложения, сотрудничество с&nbsp;нами и&nbsp;вакансии в&nbsp;компании`,
+						link: `info@chatfood.ru`,
+						time: `Отвечаем каждый день с 10:00 до 18:00`,
+					})
+				.col-md-6
+					+contactItem({
+						bgc: `#E21A20`,
+						img: `youtube`,
+						descr: `Публикуем видео-обзоры и&nbsp;инструкции по&nbsp;работе с&nbsp;платформой ChatFood.ru`,
+						btn: `Подписаться`
+					})
+				.col-md-6
+					+contactItem({
+						bgc: `var(--bs-secondary)`,
+						img: `telegram`,
+						descr: `Публикуем бонусы, акции, новости об&nbsp;обновлениях и&nbsp;другие важные уведомления в&nbsp;первую очередь`,
+						btn: `Подписаться`
+					})
+
 	// end sContact
