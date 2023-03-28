@@ -78,17 +78,17 @@ mixin sChooseTariff(data)
 								li(style="--mark: url('../img/svg/corret.svg')") API
 								li(style="--mark: url('../img/svg/corret.svg')") Премиум поддержка
 				.swiper-pagination
-			+e.text Оплата по тарифу списывается ежедневно с баланса личного кабинета. Минимальная сумма пополнения - 500 ₽
+			+e.text Оплата по&nbsp;тарифу списывается ежедневно с&nbsp;баланса личного кабинета. Минимальная сумма пополнения&nbsp;&mdash; 500&nbsp;₽
 			+e.btn.btn.btn-outline-primary(href='#') Все тарифы списком
 	// end sChooseTariff
 
 
+
 mixin sChooseTariffPage(data)
 	// start sChooseTariff
-	+b.SECTION.sChooseTariff--page.section#sChooseTariff&attributes(attributes)
+	+b.sChooseTariff--page.section#sChooseTariff&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				//- h2 Выберите свой тариф
 				+e.switch.form-check.form-switch
 					label.form-check-label(for='flexSwitchCheckDefault') За месяц
 					input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
@@ -163,6 +163,6 @@ mixin sChooseTariffPage(data)
 								li(style="--mark: url('../img/svg/corret.svg')") API
 								li(style="--mark: url('../img/svg/corret.svg')") Премиум поддержка
 				.swiper-pagination
-			+e.text Оплата по тарифу списывается ежедневно с баланса личного кабинета. Минимальная сумма пополнения - 500 ₽
+			+e.text Оплата по&nbsp;тарифу списывается ежедневно с&nbsp;баланса личного кабинета. Минимальная сумма пополнения&nbsp;&mdash; 500&nbsp;₽
 			+e.btn.btn.btn-outline-primary(href='#') Все тарифы списком
 	// end sChooseTariff

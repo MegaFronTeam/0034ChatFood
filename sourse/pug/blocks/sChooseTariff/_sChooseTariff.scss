@@ -3,10 +3,11 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem(44.800)};
-	--sliderGutter: #{rem(0)};
+	// --sliderGutter: #{rem(0)};
+	--sliderGutter: #{rem(12)};
 	--slideCount: 1;
 	@include media-breakpoint-up(sm) {
-		--sliderGutter: #{rem(12)};
+		// --sliderGutter: #{rem(12)};
 		--slideCount: 2;
 	}
 	@include media-breakpoint-up(md) {
@@ -61,8 +62,10 @@
 		}
 	}
 	&__slider {
-		padding: rem(20) 0 rem(48) 0;
-		margin: rem(-20) calc(var(--sliderGutter) * -1) 0 0;
+		padding: rem(20) 0 rem(48) var(--sliderGutter);
+		margin: rem(-20) calc(var(--sliderGutter) * -1) 0 calc(var(--sliderGutter) * -1);
+		// padding: rem(20) 0 rem(48) 0;
+		// margin: rem(-20) calc(var(--sliderGutter) * -1) 0 0;
 	}
 	&__item {
 		position: relative;
@@ -212,10 +215,10 @@
 			right: -57px;
 			top: 17px;
 		}
-		@include media-breakpoint-up(lg) {
-			right: -52px;
-			top: 24px;
-		}
+		// @include media-breakpoint-up(lg) {
+		// 	right: -52px;
+		// 	top: 24px;
+		// }
 	}
 	&__text {
 		font-size: rem(12);
@@ -241,6 +244,37 @@
 		--sPT: #{rem(12)};
 		@include media-breakpoint-up(lg) {
 			--sPT: #{rem(24)};
+		}
+		.sChooseTariff__slider {
+			@include media-breakpoint-down(sm) {
+				overflow: visible;
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: 0;
+				margin-right: 0;
+				padding-bottom: rem(24);
+			}
+			.swiper-wrapper {
+				@include media-breakpoint-down(sm) {
+					flex-direction: column;
+					transform: none !important;
+				}
+			}
+			.swiper-pagination {
+				@include media-breakpoint-down(sm) {
+					display: none;
+				}
+			}
+		}
+		.sChooseTariff__slide {
+			@include media-breakpoint-down(sm) {
+				margin-right: 0;
+				width: 100%;
+				margin-bottom: var(--sliderGutter);
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {
