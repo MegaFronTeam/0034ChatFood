@@ -4,24 +4,20 @@ include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sContent/_sContent.pug
  
-include ../blocks/s404Block/_s404Block.pug
+include ../blocks/sEngVersionHeader/_sEngVersionHeader.pug
+include ../blocks/sEngVersionHeaderBlock/_sEngVersionHeaderBlock.pug
 
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= 'eng-version-page' 
 	- let  bg= '9-404.jpg'
 
 block title
-	- let  title= '404'
+	- let  title= 'Eng Version'
 	title= title
 block pagecontent
 	//- +mob-mnu()
 	
-	
-	+parts('headerAuth')
+	+sEngVersionHeader()
 	main
-		+page-head(``, `Ошибка 404`)
-		+s404Block()
-		+parts('sTryItPart')
+		+sEngVersionHeaderBlock()
 	+parts('footer')
-
-

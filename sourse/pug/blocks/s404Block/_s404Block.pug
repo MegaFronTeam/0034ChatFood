@@ -3,9 +3,10 @@ mixin s404Block(data)
 	+b.SECTION.s404Block.section#s404Block&attributes(attributes)
 		.container
 			+e.wrap
+				span 404
 				+e.img-wrap
 					.img-wrap-center(data-json='json/engineer.json')
 				h1 Страница, которую вы запрашиваете, не существует
 				p Скорее всего, это случилось по&nbsp;одной из&nbsp;следующих причин: страница переехала, страницы больше нет, возможно, вы&nbsp;допустили небольшую опечатку при вводе адреса или вам просто нравится изучать 404&nbsp;страницы.
-				a(href="#") Перейти на главную
+				a.btn.btn-primary(href="#") Перейти на главную
 	// end s404Block
