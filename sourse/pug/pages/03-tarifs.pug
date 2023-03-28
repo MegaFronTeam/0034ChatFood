@@ -1,7 +1,6 @@
 extends ../layout/main.pug
 
 include ../blocks/sChooseTariff/_sChooseTariff.pug
-include ../blocks/sTryIt/_sTryIt.pug
 
 block variables
 	- let  mainPage= null 
@@ -18,7 +17,7 @@ block pagecontent
 	main
 		+page-head(`Выберите тариф для вашего чат-бота в&nbsp;ChatFood`, `Тарифы`)
 		+sChooseTariffPage()
-		+sTryIt()
+		+parts('sTryItPart')
 	+parts('footer')
 	//- +cookies()
 
