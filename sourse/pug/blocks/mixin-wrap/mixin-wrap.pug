@@ -74,3 +74,13 @@ mixin authorization(data)
 				+icon('chevron-left')
 				| На главную
 			block
+
+mixin changePage()
+	+b.btn-change-page
+		mixin changePageBtn(span, text)
+			+e.item(href='#')&attributes(attributes)
+				+e.content
+					span!= span
+					+e.text!= text
+				+icon('chevron-right')
+		block

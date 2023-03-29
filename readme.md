@@ -13,3 +13,4 @@
 11. <https://megafronteam.github.io/0034ChatFood/public/13-lostPass-3.html>
 12. <https://megafronteam.github.io/0034ChatFood/public/13-lostPass-4.html>
 13. <https://megafronteam.github.io/0034ChatFood/public/14-eng-version.html>
+14. <https://megafronteam.github.io/0034ChatFood/public/15-policy.html>
