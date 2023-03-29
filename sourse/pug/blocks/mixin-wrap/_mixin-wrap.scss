@@ -215,6 +215,10 @@
 		position: relative;
 		line-height: 1.25;
 		margin-bottom: rem(12);
+		font-size: rem(12);
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
 		&:last-child {
 			margin-bottom: 0;
 		}
