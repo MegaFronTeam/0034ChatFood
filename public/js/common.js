@@ -307,6 +307,7 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
 	JSCCommon.getCurrentYear('.footer__bottom-row p span');
+	JSCCommon.getCurrentYear('.sEngVersionFooter p span');
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	

@@ -6,6 +6,9 @@ include ../blocks/sContent/_sContent.pug
  
 include ../blocks/sEngVersionHeader/_sEngVersionHeader.pug
 include ../blocks/sEngVersionHeaderBlock/_sEngVersionHeaderBlock.pug
+include ../blocks/sWhileUsing/_sWhileUsing.pug
+include ../blocks/sTryIt/_sTryIt.pug
+include ../blocks/sEngVersionFooter/_sEngVersionFooter.pug
 
 block variables
 	- let  mainPage= 'eng-version-page' 
@@ -20,4 +23,6 @@ block pagecontent
 	+sEngVersionHeader()
 	main
 		+sEngVersionHeaderBlock()
-	
+		+sWhileUsing()
+		+sTryIt2()
+	+sEngVersionFooter()

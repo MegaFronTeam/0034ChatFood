@@ -8,3 +8,19 @@ mixin sTryIt(data)
 				a.btn.btn-primary(href='#') Попробовать бесплатно
 				+img('img/sTryIt-bg.png')
 	// end sTryIt
+
+
+mixin sTryIt2(data)
+	// start sTryIt
+	+b.SECTION.sTryIt--2.section#sTryIt&attributes(attributes)
+		.container
+			+e.wrap
+				.row
+					.col-lg-7.order-2.order-md-1
+						h4 Register and try ChatFood
+						p Telegram and chatbots in&nbsp;Russia and the CIS countries are achieving record levels of&nbsp;growth.
+						a.btn.btn-primary(href='#') Register
+					.col.order-1.order-md-2
+						+e.img-wrap
+							.img-wrap-center(data-json='json/hero_Left.json')
+	// end sTryIt
