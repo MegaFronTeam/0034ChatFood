@@ -924,11 +924,12 @@
 		p {
 			margin-bottom: 0;
 			color: $gray-500;
+			margin-top: auto;
 		}
 		&__btn {
 			width: 100%;
 			max-width: rem(124);
-			margin-top: auto;
+			
 			--bs-btn-font-size: #{rem(12)};
 			--bs-btn-padding-y: #{rem(6)};
 			--bs-btn-padding-x: #{rem(6)};
