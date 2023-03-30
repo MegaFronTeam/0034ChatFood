@@ -825,6 +825,9 @@
 					padding-right: 0;
 				}
 			}
+			img {
+				max-width: calc(1em * 1.4);
+			}
 		}
 		@include media-breakpoint-down(md) {
 			tr {
@@ -908,6 +911,13 @@
 			font-size: rem(14);
 		}
 		&__title {
+			display: flex;
+			align-items: center;
+
+			img {
+				margin-right: rem(6);
+				max-width: calc(1em * 1.4);
+			}
 		}
 		&__price {
 			font-weight: 700;
@@ -929,7 +939,7 @@
 		&__btn {
 			width: 100%;
 			max-width: rem(124);
-			
+
 			--bs-btn-font-size: #{rem(12)};
 			--bs-btn-padding-y: #{rem(6)};
 			--bs-btn-padding-x: #{rem(6)};
