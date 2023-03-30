@@ -31,6 +31,10 @@ mixin modal()
 						tr
 							th
 								h3 Сравнение тарифов
+								+e.switch.form-check.form-switch
+									label.form-check-label(for='flexSwitchCheckDefault') За месяц
+									input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
+									label.form-check-label(for='flexSwitchCheckDefault') За год
 							mixin item(t, p, d, i)
 								th
 									+b.tariffs-item
@@ -51,24 +55,24 @@ mixin modal()
 					tbody
 						tr
 							td Количество товаров
-							td до 15
-							td до 30
-							td до 80
+							td до&nbsp;15
+							td до&nbsp;30
+							td до&nbsp;80
 							td
 								+img('img/svg/infinity.svg')
 						tr
-							td Количество рассылок в месяц
+							td Количество рассылок в&nbsp;месяц
 							td 1
-							td до 5
-							td до 10
+							td до&nbsp;5
+							td до&nbsp;10
 							td
 								+img('img/svg/infinity.svg')
 						tr
 							td Управляющие пользователи
 							td 1
-							td до 3
-							td до 7
-							td до 10
+							td до&nbsp;3
+							td до&nbsp;7
+							td до&nbsp;10
 						tr
 							td Опции товаров
 							td 

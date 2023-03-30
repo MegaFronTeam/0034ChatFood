@@ -31,6 +31,22 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+	& ~ .carousel__button.is-close {
+		--carousel-button-width: #{rem(16)};
+		--carousel-button-height: #{rem(16)};
+		color: $gray-400;
+		top: rem(18);
+		right: rem(18);
+		@include media-breakpoint-up(md) {
+			top: rem(24);
+			right: rem(24);
+		}
+		svg {
+			--carousel-button-svg-width: #{rem(16)};
+			--carousel-button-svg-height: #{rem(16)};
+			filter: none;
+		}
+	}
 }
 
 a {
@@ -113,7 +129,7 @@ a {
 
 @include media-breakpoint-up(lg) {
 }
-// 
+//
 .modal-stories-page {
 	.fancybox__slide {
 		padding: rem(18);
@@ -130,7 +146,7 @@ a {
 	max-width: 100%;
 	position: relative;
 	width: rem(360);
-	// min-height: 100%; 
+	// min-height: 100%;
 	padding: 40px;
 	z-index: 1;
 	border-radius: 18px;
@@ -141,7 +157,7 @@ a {
 		padding: rem(84) var(--sidePadding);
 	}
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		display: block;
 		width: 100%;
@@ -152,13 +168,13 @@ a {
 		z-index: -1;
 	}
 	&:after {
-		content: '';
+		content: "";
 		position: absolute;
 		display: block;
 		width: 100%;
 		height: rem(96);
-		background: linear-gradient(180deg, #191C1F 0%, rgba(255, 255, 255, 0) 100%);
-		opacity: .24;
+		background: linear-gradient(180deg, #191c1f 0%, rgba(255, 255, 255, 0) 100%);
+		opacity: 0.24;
 		left: 0;
 		top: 0;
 		z-index: -1;
@@ -221,9 +237,9 @@ a {
 		width: calc(100% - rem(24));
 		left: rem(12);
 		height: rem(2);
-		background-color: rgba($color: #fff, $alpha: .46);
+		background-color: rgba($color: #fff, $alpha: 0.46);
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			display: block;
 			height: 100%;
@@ -256,7 +272,8 @@ a {
 		}
 	}
 }
-@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(xl) {
+}
 
 @include media-breakpoint-up(md) {
 }
