@@ -14,6 +14,15 @@ mixin modal()
 				+policy()
 	// #modal-call
 
+	div(id="modal-stories"  style="display: none" )
+		+b.modal-stories(style='--storiesBg: linear-gradient(0deg, rgba(245, 176, 77, 0.12), rgba(245, 176, 77, 0.12))')
+			+e.status-line
+			+e.icon-wrap: +img('img/stories-icon-1.png')
+			.h5.data-title Дарим 1000 ₽ в&nbsp;качестве бонуса за регистрацию
+			p.after-headline Просто создайте аккаунт и получите 1000 ₽ на баланс личного кабинета
+			+e.btn.btn.btn-warning(href='#') Зарегистрироваться
+	// #modal-stories
+	
 	div(id="modal-tariffs"  style="display: none" )
 		+b.modal-win
 			+b.tariffs.collapse-js
