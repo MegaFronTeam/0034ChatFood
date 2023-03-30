@@ -51,13 +51,18 @@ const JSCCommon = {
 					el.tagName == "INPUT"
 						? el.value = val
 						: el.innerHTML = val;
+					el.tagName == "IMG"
+						? el.src = val
+						: el.innerHTML = val;
 					// console.log(modal.querySelector(elem).tagName)
 				}
 			}
-			setValue(data.title, '.ttu');
+			// setValue(data.order, '.order');
+			
+			setValue(data.title, '.data-title');
 			setValue(data.text, '.after-headline');
 			setValue(data.btn, '.btn');
-			setValue(data.order, '.order');
+			setValue(data.img, '.modal-stories__icon-wrap img');
 		})
 	},
 	// /modalCall

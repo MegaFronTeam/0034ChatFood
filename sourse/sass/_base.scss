@@ -561,7 +561,7 @@ iframe {
 		--bs-btn-padding-y: #{rem(16)};
 		--bs-btn-border-radius: #{rem(12)};
 	}
-	&-primary, &-secondary, &-success {
+	&-primary, &-secondary, &-success, &-warning {
 		--bs-btn-color: #fff;
 		--bs-btn-hover-color: #fff;
 		--bs-btn-active-color: #fff;
