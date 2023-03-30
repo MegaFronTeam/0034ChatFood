@@ -482,6 +482,22 @@ function eventHandler() {
 			});
 		})
 	}
+	let stickyElems = document.querySelectorAll('.sticky-js');
+	if (stickyElems) {
+		stickyElems.forEach(stickyElem => {
+			var Sticky = new hcSticky(stickyElem, {
+				stickTo: '.sticky-content-js',
+				mobileFirst: true,
+				disable: true,
+				responsive: {
+					992: {
+						disable: false,
+						top: 100,
+					}
+				},
+			});
+		})
+	}
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
