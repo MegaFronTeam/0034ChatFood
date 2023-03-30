@@ -430,13 +430,13 @@ function eventHandler() {
 		}
 	}
 
-	let tableWrap = document.querySelector('.collapse-js');
-	if (tableWrap) {
-		tableWrap.querySelector('tfoot td').addEventListener('click', function() {
-			$('tbody').toggle();
-			$(this).toggleClass('active');
-		})
-	}
+	document.addEventListener('click', (event) => {
+		let tfootWrapTarget = event.target.closest('.collapse-js tfoot td');
+		if (tfootWrapTarget) {
+			$('tbody tr').toggle();
+			$('.collapse-js tfoot td').toggleClass('active');
+		}
+	})
 
 	const defaultSlider = new Swiper('.breadcrumb-slider--js', {
 		slidesPerView: 'auto',
@@ -521,7 +521,24 @@ function eventHandler() {
 		storiesItems.forEach(storiesItem => {
 			storiesItem.addEventListener('click', () => {storiesItem.classList.remove('active')})
 		})
-	}
+	};
+
+	// document.addEventListener('click', function(event) {
+	// 	let tariffsModalBtnTarget = event.target.closest('.btn[data-src="modal-tariffs"]');
+	// 	if (tariffsModalBtnTarget) {
+	// 		var tableSticky = new hcSticky('.tariffs thead', {
+	// 			stickTo: '.tariffs table',
+	// 			mobileFirst: true,
+	// 			top: 100,
+	// 			responsive: {
+	// 				768: {
+	// 					disable: true,
+	// 				}
+	// 			},
+	// 		});
+	// 	}
+	// })
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
