@@ -126,18 +126,62 @@
 </div>
 <!-- #modal-call-->
 <div id="modal-stories" style="display: none">
-	<div class="modal-stories" style="--storiesBg: linear-gradient(0deg, rgba(245, 176, 77, 0.12), rgba(245, 176, 77, 0.12))">
-		<div class="modal-stories__status-line">
+	<div class="modal-slider" style="--storiesCount: 3">
+		<div class="modal-slider__arrow-wrap">
+			<div class="modal-slider__slider modal-slider__slider--js swiper">
+				<div class="swiper-wrapper">
+					<div class="modal-slider__slide swiper-slide">
+						<div class="modal-stories" style="--storiesBg: linear-gradient(0deg, rgba(245, 176, 77, 0.12), rgba(245, 176, 77, 0.12))">
+							<div class="modal-stories__status-line">
+							</div>
+							<div class="modal-stories__icon-wrap"><img src="img/stories-icon-1.png" alt="" loading="lazy"/>
+							</div>
+							<div class="h5">Дарим 1000 ₽ в&nbsp;качестве бонуса за регистрацию</div>
+							<p>Просто создайте аккаунт и получите 1000 ₽ на баланс личного кабинета</p>
+							<a class="modal-stories__btn btn btn-warning" href="#">Зарегистрироваться
+							</a>
+						</div>
+					</div>
+					<div class="modal-slider__slide swiper-slide">
+						<div class="modal-stories" style="--storiesBg: linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))">
+							<div class="modal-stories__status-line">
+							</div>
+							<div class="modal-stories__icon-wrap"><img src="img/stories-icon-2.png" alt="" loading="lazy"/>
+							</div>
+							<div class="h5">Удвоим баланс при пополнении от 5000 ₽</div>
+							<p>Пополнить баланс можно картой онлайн или по выставленному счету. Акция действует до 23 марта 2023 г.</p>
+							<a class="modal-stories__btn btn btn-info" href="#">Пополнить баланс
+							</a>
+						</div>
+					</div>
+					<div class="modal-slider__slide swiper-slide">
+						<div class="modal-stories" style="--storiesBg: linear-gradient(0deg, rgba(75, 177, 75, 0.12), rgba(75, 177, 75, 0.12))">
+							<div class="modal-stories__status-line">
+							</div>
+							<div class="modal-stories__icon-wrap"><img src="img/stories-icon-3.png" alt="" loading="lazy"/>
+							</div>
+							<div class="h5">Зарабатывайте вместе с нами!</div>
+							<p>Станьте партнером сервиса ChatFood и&nbsp;получайте от 40 до 50% с каждого платежа привлеченного вами клиента.</p>
+							<a class="modal-stories__btn btn btn-success" href="#">Узнать подробнее
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+				<svg class="icon icon-chevron-left ">
+					<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+				</svg>
+			</div>
+			<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+				<svg class="icon icon-chevron-right ">
+					<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+				</svg>
+			</div>
 		</div>
-		<div class="modal-stories__icon-wrap"><img src="img/stories-icon-1.png" alt="" loading="lazy"/>
-		</div>
-		<div class="h5 data-title">Дарим 1000 ₽ в&nbsp;качестве бонуса за регистрацию</div>
-		<p class="after-headline">Просто создайте аккаунт и получите 1000 ₽ на баланс личного кабинета</p>
-		<a class="modal-stories__btn btn btn-warning" href="#">Зарегистрироваться
-		</a>
+		<!-- #modal-stories-->
 	</div>
 </div>
-<!-- #modal-stories-->
 <div id="modal-tariffs" style="display: none">
 	<div class="modal-win">
 		<div class="tariffs">

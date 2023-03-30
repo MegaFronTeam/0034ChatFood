@@ -58,11 +58,10 @@ const JSCCommon = {
 				}
 			}
 			// setValue(data.order, '.order');
+			// setValue(data.title, '.data-title');
+			// setValue(data.text, '.after-headline');
+			// setValue(data.btn, '.btn');
 			
-			setValue(data.title, '.data-title');
-			setValue(data.text, '.after-headline');
-			setValue(data.btn, '.btn');
-			setValue(data.img, '.modal-stories__icon-wrap img');
 		})
 	},
 	// /modalCall
@@ -500,7 +499,23 @@ function eventHandler() {
 				}
 			},
 		});
-	}
+	};
+
+	const modalSwiper = new Swiper('.modal-slider__slider--js', {
+		slidesPerView: 1,
+		observer: true,
+		navigation: {
+			nextEl: '.modal-slider__arrow-wrap .swiper-button-next',
+			prevEl: '.modal-slider__arrow-wrap .swiper-button-prev',
+		},
+		autoplay: {
+			delay: 5000,
+			stopOnLastSlide: true,
+		},
+	});
+	document.addEventListener('click', function() {
+		modalSwiper.init();
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

@@ -108,6 +108,36 @@ a {
 		padding: rem(18);
 	}
 }
+.modal-slider {
+	width: 100%;
+	width: rem(360);
+	&__arrow-wrap {
+		.swiper-button-hand {
+			--swiperArrowSize: #{rem(24)};
+			--swiperColorDef: #fff;
+			--swiperArrowPosition: #{rem(-60)};
+			border: none;
+			background-color: transparent;
+		}
+	}
+}
+#modal-stories {
+	.carousel__button.is-close {
+		--carousel-button-width: #{rem(16)};
+		--carousel-button-height: #{rem(16)};
+		top: rem(24);
+		right: rem(12);
+		@include media-breakpoint-up(md) {
+			top: rem(36);
+			right: rem(24);
+		}
+		svg {
+			--carousel-button-svg-width: #{rem(16)};
+			--carousel-button-svg-height: #{rem(16)};
+			filter: none;
+		}
+	}
+}
 .modal-stories {
 	--sidePadding: #{rem(18)};
 	display: flex;
@@ -216,9 +246,10 @@ a {
 			position: absolute;
 			display: block;
 			height: 100%;
-			width: 0;
+			width: 100%;
 			background-color: #fff;
-			animation: statusLineTimer 5s linear infinite;
+			// animation: name duration timing-function delay iteration-count direction fill-mode;
+			animation: statusLineTimer 5s linear var(--storiesCount);
 			@keyframes statusLineTimer {
 				0% {
 					width: 0%;
@@ -227,21 +258,6 @@ a {
 					width: 100%;
 				}
 			}
-		}
-	}
-	& ~ .carousel__button.is-close {
-		--carousel-button-width: #{rem(16)};
-		--carousel-button-height: #{rem(16)};
-		top: rem(24);
-		right: rem(12);
-		@include media-breakpoint-up(md) {
-			top: rem(36);
-			right: rem(24);
-		}
-		svg {
-			--carousel-button-svg-width: #{rem(16)};
-			--carousel-button-svg-height: #{rem(16)};
-			filter: none;
 		}
 	}
 }
