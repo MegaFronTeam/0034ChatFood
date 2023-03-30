@@ -1031,3 +1031,26 @@
 		}
 	}
 }
+
+.scrolToTop {
+	@include mt;
+	position: fixed;
+	left: 32px;
+	top: 142px;
+	align-items: center;
+	font-size: rem(14);
+	cursor: pointer;
+	display: none;
+	@include media-breakpoint-up(xxl) {
+		display: flex;
+	}
+	&:hover {
+		color: $primary;
+	}
+	.icon {
+		font-size: rem(20);
+		color: $primary;
+		flex: 0 0 auto;
+		margin-right: rem(9);
+	}
+}

@@ -299,6 +299,12 @@ const JSCCommon = {
 	
 		convertImages('.img-svg-js');
   },
+	scrollToTopOfPage(elem) {
+		document.addEventListener('click', function(event) {
+			let scrollTopBtn = event.target.closest(elem);
+			if(scrollTopBtn) window.scrollTo(0, 0);
+		});
+	}
 };
 const $ = jQuery;
 
@@ -312,6 +318,8 @@ function eventHandler() {
 	JSCCommon.makeDDGroup();
 	JSCCommon.getCurrentYear('.footer__bottom-row p span');
 	JSCCommon.getCurrentYear('.sEngVersionFooter p span');
+	JSCCommon.scrollToTopOfPage('.footer__scrollTop--js');
+	JSCCommon.scrollToTopOfPage('.scrolToTop');
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
@@ -396,11 +404,6 @@ function eventHandler() {
 			dropdownWraps.forEach(dropdownWrap => {dropdownWrap.classList.remove('active')});
 		}
 	})
-
-	document.addEventListener('click', function(event) {
-		let scrollTopBtn = event.target.closest('.footer__scrollTop--js');
-		if(scrollTopBtn) window.scrollTo(0, 0);
-	});
 
 	let animateBlocks = document.querySelectorAll("[data-json]");
 	if(animateBlocks) {
