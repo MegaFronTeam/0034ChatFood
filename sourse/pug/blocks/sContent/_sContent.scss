@@ -19,9 +19,9 @@
 		@include media-breakpoint-up(lg) {
 			margin-bottom: 0;
 			position: absolute;
-			left: 100%;
+			left: calc(100% + var(--bs-gutter-x) / 2);
 			top: 0;
-			width: calc(100% / 3);
+			width: calc(100% / 3 - var(--bs-gutter-x));
 		}
 		&__head {
 			padding: rem(12);
@@ -29,6 +29,7 @@
 			border: 1px solid $gray-200;
 			border-radius: 10px;
 			position: relative;
+			cursor: pointer;
 			@include media-breakpoint-up(lg) {
 				display: none;
 			}
@@ -72,7 +73,7 @@
 					content: "";
 					display: block;
 					height: 100%;
-					left: 0;
+					left: -1px;
 					position: absolute;
 					transform: scaleX(.3) scaleY(0);
 					transform-origin: left;
@@ -163,6 +164,12 @@
 					color: $primary;
 				}
 			}
+			p {
+				margin-top: rem(18);
+				@include media-breakpoint-up(md) {
+					margin-top: rem(24);
+				}
+			}
 		}
 		& > li {
 			&::before {
@@ -233,6 +240,11 @@
 					}
 				}
 			}
+		}
+	}
+	.sticky {
+		.dd-group {
+			left: calc(100% + var(--bs-gutter-x) / 2);
 		}
 	}
 	@include media-breakpoint-up(xl) {}
