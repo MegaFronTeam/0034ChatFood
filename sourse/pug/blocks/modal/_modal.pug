@@ -16,24 +16,55 @@ mixin modal()
 
 	div(id="modal-tariffs"  style="display: none" )
 		+b.modal-win
-			+b.tariffs
+			+b.tariffs.collapse-js
 				table
 					thead
 						tr
 							th
 								h3 Сравнение тарифов
-							th
-								+b.item
-									+e.title
-										+img('img/fire.png')
-										| Бесплатный
-									+e.price 19 200 ₽
-									+e.price-day 89 ₽ в день
-									p За одного чат-бота
-									+e.btn.btn.btn-success(href="#") Выбрать
-							th
-							th
-							th
+							mixin item(t, p, d, i)
+								th
+									+b.tariffs-item
+										+e.title
+											if i
+												+img('img/fire.png')
+											!= t
+										+e.price!= p
+										if d
+											+e.price-day!= d
+										p За одного чат-бота
+										+e.btn.btn.btn-success(href="#") Выбрать
+
+							+item(`Бесплатный`, `0 ₽`)
+							+item(`Старт`, `19 200 ₽`, `89 ₽ в день`)
+							+item(`Стандарт`, `28 800 ₽`, `119 ₽ в день`, `i`)
+							+item(`Профи`, `57 600 ₽`, `149 ₽ в день`)
+					tbody
+						mixin tr(tr1, tr2, tr3, tr4, tr5)
+							tr
+								td!= tr1 
+								td!= tr2
+								td!= tr3
+								td!= tr4
+								td!= tr5
+						+tr('Количество товаров', 'до 15', 'до 30', 'до 80', 'infinity')
+						+tr('Количество рассылок в месяц', '1', 'до 5', 'до 10', 'infinity')
+						+tr('Управляющие пользователи', '1', 'до 3', 'до 7', 'до 10')
+						+tr('Опции товаров', 'cross', 'check', 'check', 'check')
+						+tr('Расчет стоимости доставки', 'cross', 'check', 'check', 'check')
+						+tr('Скрытие логотипа ChatFood', 'cross', 'check', 'check', 'check')
+						+tr('Вариативные товары', 'cross', 'cross', 'check', 'check')
+						+tr('Онлайн-оплата', 'cross', 'cross', 'check', 'check')
+						+tr('API', 'cross', 'cross', 'check', 'check')
+						+tr('Премиум поддержка', 'cross', 'cross', 'cross', 'check')
+					tfoot
+						tr
+							td.active(colspan="4")
+								span.hide Свернуть
+								span.show Развернуть
+								+icon('chevron-up')
+
+							
 	// #modal-tariffs
 	
 	// end modals

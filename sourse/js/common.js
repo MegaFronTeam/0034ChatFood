@@ -426,7 +426,7 @@ function eventHandler() {
 		}
 	}
 
-	let tableWrap = document.querySelector('.sCompare__table-wrap');
+	let tableWrap = document.querySelector('.collapse-js');
 	if (tableWrap) {
 		tableWrap.querySelector('tfoot td').addEventListener('click', function() {
 			$('tbody').toggle();
