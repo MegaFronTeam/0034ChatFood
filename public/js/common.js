@@ -516,6 +516,12 @@ function eventHandler() {
 	document.addEventListener('click', function() {
 		modalSwiper.init();
 	})
+	let storiesItems = document.querySelectorAll('.headerBlock__stories-item--js');
+	if(storiesItems) {
+		storiesItems.forEach(storiesItem => {
+			storiesItem.addEventListener('click', () => {storiesItem.classList.remove('active')})
+		})
+	}
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
