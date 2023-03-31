@@ -299,6 +299,12 @@ const JSCCommon = {
 	
 		convertImages('.img-svg-js');
   },
+	scrollToTopOfPage(elem) {
+		document.addEventListener('click', function(event) {
+			let scrollTopBtn = event.target.closest(elem);
+			if(scrollTopBtn) window.scrollTo(0, 0);
+		});
+	}
 };
 const $ = jQuery;
 
@@ -312,6 +318,8 @@ function eventHandler() {
 	JSCCommon.makeDDGroup();
 	JSCCommon.getCurrentYear('.footer__bottom-row p span');
 	JSCCommon.getCurrentYear('.sEngVersionFooter p span');
+	JSCCommon.scrollToTopOfPage('.footer__scrollTop--js');
+	JSCCommon.scrollToTopOfPage('.scrolToTop');
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
@@ -397,11 +405,6 @@ function eventHandler() {
 		}
 	})
 
-	document.addEventListener('click', function(event) {
-		let scrollTopBtn = event.target.closest('.footer__scrollTop--js');
-		if(scrollTopBtn) window.scrollTo(0, 0);
-	});
-
 	let animateBlocks = document.querySelectorAll("[data-json]");
 	if(animateBlocks) {
 		for (const animateBlock of animateBlocks) { 
@@ -430,13 +433,13 @@ function eventHandler() {
 		}
 	}
 
-	let tableWrap = document.querySelector('.collapse-js');
-	if (tableWrap) {
-		tableWrap.querySelector('tfoot td').addEventListener('click', function() {
-			$('tbody').toggle();
-			$(this).toggleClass('active');
-		})
-	}
+	document.addEventListener('click', (event) => {
+		let tfootWrapTarget = event.target.closest('.collapse-js tfoot td');
+		if (tfootWrapTarget) {
+			$('tbody tr').toggle();
+			$('.collapse-js tfoot td').toggleClass('active');
+		}
+	})
 
 	const defaultSlider = new Swiper('.breadcrumb-slider--js', {
 		slidesPerView: 'auto',
@@ -521,7 +524,24 @@ function eventHandler() {
 		storiesItems.forEach(storiesItem => {
 			storiesItem.addEventListener('click', () => {storiesItem.classList.remove('active')})
 		})
-	}
+	};
+
+	// document.addEventListener('click', function(event) {
+	// 	let tariffsModalBtnTarget = event.target.closest('.btn[data-src="modal-tariffs"]');
+	// 	if (tariffsModalBtnTarget) {
+	// 		var tableSticky = new hcSticky('.tariffs thead', {
+	// 			stickTo: '.tariffs table',
+	// 			mobileFirst: true,
+	// 			top: 100,
+	// 			responsive: {
+	// 				768: {
+	// 					disable: true,
+	// 				}
+	// 			},
+	// 		});
+	// 	}
+	// })
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

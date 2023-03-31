@@ -175,8 +175,6 @@
 			&::before {
 				content: counter(num)'. ';
 				counter-increment: num;
-				left: 0;
-				top: 0;
 			}
 			& > ol {
 				counter-reset: num2;
@@ -184,8 +182,6 @@
 					&::before {
 						content: counter(num)'.' counter(num2)'. ';
 						counter-increment: num2;
-						left: 0;
-						top: 0;
 					}
 					& > ol {
 						counter-reset: num3;
@@ -193,8 +189,6 @@
 							&::before {
 								content: counter(num)'.' counter(num2)'.'counter(num3)'. ';
 								counter-increment: num3;
-								left: 0;
-								top: 0;
 							}
 						}
 					}
