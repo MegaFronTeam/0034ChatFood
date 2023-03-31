@@ -436,8 +436,9 @@ function eventHandler() {
 	document.addEventListener('click', (event) => {
 		let tfootWrapTarget = event.target.closest('.collapse-js tfoot td');
 		if (tfootWrapTarget) {
-			$('tbody tr').toggle();
+			// $('tbody tr').toggle();
 			$('.collapse-js tfoot td').toggleClass('active');
+			$('.collapse-js tbody tr').toggleClass('active');
 		}
 	})
 
@@ -530,9 +531,9 @@ function eventHandler() {
 	// 	let tariffsModalBtnTarget = event.target.closest('.btn[data-src="modal-tariffs"]');
 	// 	if (tariffsModalBtnTarget) {
 	// 		var tableSticky = new hcSticky('.tariffs thead', {
-	// 			stickTo: '.tariffs table',
+	// 			stickTo: '.tariffs',
 	// 			mobileFirst: true,
-	// 			top: 100,
+	// 			top: 80,
 	// 			responsive: {
 	// 				768: {
 	// 					disable: true,

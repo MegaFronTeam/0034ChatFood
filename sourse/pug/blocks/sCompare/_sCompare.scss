@@ -69,8 +69,11 @@
 			}
 			@include media-breakpoint-down(md) {
 				tr {
-					display: flex;
+					display: none;
 					flex-wrap: wrap;
+					&.active {
+						display: flex;
+					}
 					td {
 						width: calc(100% / 3);
 						display: flex;

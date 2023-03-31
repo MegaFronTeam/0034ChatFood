@@ -18,6 +18,9 @@
 	max-width: 100%;
 	position: relative;
 	width: rem(936);
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
 	// min-height: 100%;
 	// padding: 40px;
 
@@ -37,6 +40,7 @@
 		color: $gray-400;
 		top: rem(18);
 		right: rem(18);
+		z-index: 101;
 		@include media-breakpoint-up(md) {
 			top: rem(24);
 			right: rem(24);
