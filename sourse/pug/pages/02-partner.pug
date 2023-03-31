@@ -3,19 +3,15 @@ extends ../layout/main.pug
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sContent/_sContent.pug
- 
-include ../blocks/sCapabilities/_sCapabilities.pug
+
 include ../blocks/sReasons/_sReasons.pug
-include ../blocks/sControl/_sControl.pug
-include ../blocks/sCompare/_sCompare.pug
-include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
-include ../blocks/sConnected/_sConnected.pug
-include ../blocks/sChooseTariff/_sChooseTariff.pug
 include ../blocks/sFAQBlock/_sFAQBlock.pug
-include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
+include ../blocks/sTryIt/_sTryIt.pug
+include ../blocks/sRankSystem/_sRankSystem.pug
 
 block variables
-	- let  mainPage= 'main-page modal-stories-page' 
+	- let  mainPage= 'main-page' 
 	- let  bg= '02-partner.jpg'
 
 block title
@@ -27,17 +23,36 @@ block pagecontent
 	
 	+parts('header')
 	main
-		+headerBlock() 
-		+sReasons()
-		+sCapabilities()
-		+sControl()
-		+sCompare()
-		+sWhyTelegramBot()
-		+sConnected()
-		+sChooseTariff()
+		+page-head('' ,'Партнерская программа')
+		+headerBlock2() 
+		+sRankSystem()
+		+sWhyTelegramBot2('Для кого партнерская программа')
+			+item('sCapabilities-icon-3.svg', 'Компания оказывающая услуги в&nbsp;сфере общепита и&nbsp;имеете базу клиентов')
+			+item('sCapabilities-icon-7.svg', 'Digital-агентство IT-сервис и&nbsp;у&nbsp;вас есть клиенты в&nbsp;сфере общепита')
+			+item('sCapabilities-icon-8.svg', 'Опытный менеджер по&nbsp;продажам желающий дополнительного пассивного дохода')
+			+item('sCapabilities-icon-9.svg', 'Дизайнер или проектировщик в&nbsp;сфере общепита')
+			+item('sCapabilities-icon-10.svg', 'Карьерист в&nbsp;сфере общепита со&nbsp;связями и&nbsp;знакомствами')
+			+item('sCapabilities-icon-4.svg', 'Фудблогер с&nbsp;аудиторией и&nbsp;связями в&nbsp;сфере общепита')
+			+item('sCapabilities-icon-11.svg', 'Арбитражник трафика или владелец онлайн-ресурсов в&nbsp;сфере общепита')
+			+item('sCapabilities-icon-12.svg', 'Просто хотите попробовать себя в&nbsp;чем-то новом')
+		+sReasons('Как это работает', 'Вы&nbsp;будете полчать процент не&nbsp;только с&nbsp;первой оплаты приглашенным пользователем, но&nbsp;и&nbsp;с&nbsp;каждой последующей', true, true, true)
+			+item('Партнерская ссылка', 'Вы&nbsp;можете использовать партнерскую ссылку для приглашения ресторанов, перейдя по&nbsp;ссылке ваши приглашенные пользователи будут получать бонус.', 'json/table.json', 'col-md-6')
+			+item('Промокод', 'Вы&nbsp;можете создавать промокоды, делиться ими и&nbsp;размещать на&nbsp;ресурсах, пользователи будут активировать промокод, становиться вашим рефералом и&nbsp;также получат от&nbsp;нас бонус.', 'json/mailing.json', 'col-md-6')
+		+sWhyTelegramBot2('Кого вы можете приглашать в ChatFood')
+			+item('sControl-icon-2.svg', 'Кафе, рестораны, столовые')
+			+item('sCapabilities-icon-13.svg', 'Кофейни')
+			+item('sCapabilities-icon-14.svg', 'Бары')
+			+item('sCapabilities-icon-15.svg', 'отели, гостиницы с&nbsp;доставкой еды, турбазы и&nbsp;зоны отдыха')
+			+item('sCapabilities-icon-16.svg', 'Кальянные с&nbsp;доставкой еды')
+			+item('sCapabilities-icon-17.svg', 'Доставка готовой еды и&nbsp;продуктов здорового питания')
+			+item('sCapabilities-icon-18.svg', 'Пекарни и&nbsp;кондитерские')
+			+item('sCapabilities-icon-19.svg', 'Небольшие супермаркеты и&nbsp;магазины')
+		+sReasons('Преимущества партнерской программы', '', true)
+			+item('Забота о клиентах', 'Регулярные акции и&nbsp;рассылки для текущих клиентов и&nbsp;тех, кто перестал пользоваться сервисом для увеличения длительности жизненного цикла клиента на&nbsp;сервисе, вам нужно только пригласить, контроль оплат мы&nbsp;возьмем на&nbsp;себя', 'json/bonus.json')
+			+item('Забота о партнерах', 'Выплаты без задержек и&nbsp;без лишних заморочек, быстрый старт&nbsp;&mdash; вы&nbsp;можете начинать приглашать клиентов сразу после регистрации и&nbsp;в&nbsp;процессе подписать агентский договор', 'json/orders.json')
+			+item('Постоянное развитие', 'Добавление новых продуктов = постоянное увеличение среднего чека приглашенных вами клиентов, как следствие дополнительный рост дохода для вас, все нововведения вы&nbsp;сможете отслеживать в&nbsp;блоге', 'json/menu.json')
 		+sFAQBlock()
-		+sReviews()
-		+parts('sTryItPart')
+		+sTryIt3()
 	+parts('footer')
 	//- +cookies()
 

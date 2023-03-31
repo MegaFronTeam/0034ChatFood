@@ -1,0 +1,24 @@
+mixin sRankSystem(data)
+	// start sRankSystem
+	+b.SECTION.sRankSystem.section#sRankSystem&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Ранговая система вознаграждений для&nbsp;наших партнеров
+				p Выплачиваем вознаграждения партнерам с&nbsp;первого по&nbsp;пятое число каждого месяца (за&nbsp;исключением праздничных дней) и&nbsp;при условии, что партнер запросил вывод средств
+			+e.row.row
+				mixin item(img, title, precent, text)
+					.col-md-6.col-lg-4
+						+e.item
+							+img(`img/svg/${img}`)
+							+e.title!= title
+							+e.precent!= precent
+							p!= text
+				+item('bronze.svg', 'Бронзовый партнер', '40%', 'При оплате от&nbsp;1₽&nbsp;до&nbsp;49999₽ в&nbsp;месяц со&nbsp;всех приведенных клиентов')
+				+item('silver.svg', 'Серебряный партнер', '45%', 'При оплате от&nbsp;49999₽ до&nbsp;149999₽ в&nbsp;месяц со&nbsp;всех приведенных клиентов')
+				+item('gold.svg', 'Золотой партнер', '50%', 'При оплате от&nbsp;149999₽ в&nbsp;месяц со&nbsp;всех приведенных клиентов')
+			+e.footer
+				p Списание оплаты по&nbsp;тарифу с&nbsp;приведенного вами клиента происходит ежедневно, также как и&nbsp;начисление процентов партнеру.
+				+e.btn-wrap
+					+e.btn.btn.btn-primary(href='#') Зарегистрироваться
+					+e.btn.btn.btn-outline-secondary(href='#') Войти в кабинет
+	// end sRankSystem

@@ -28,3 +28,29 @@ mixin headerBlock()
 							+item('stories-icon-2.png', 'Удвоим <br class=mobile-br> баланс при пополнении от 5000 ₽', 'linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))').active
 							+item('stories-icon-3.png', 'Зарабатывайте <br> с нами', 'linear-gradient(0deg, rgba(75, 177, 75, 0.12), rgba(75, 177, 75, 0.12))')
 	// end headerBlock
+
+mixin headerBlock2()
+	+b.headerBlock--2.section#headerBlock&attributes(attributes)
+		.container
+			.row.justify-content-center
+				.col-md-6.order-md-2
+					+e.img-wrap
+						.img-wrap-center(data-json="json/partner_Left.json")
+				.col-md-6.align-self-center.order-md-1
+					h1 Подключайте ChatFood клиентам и&nbsp;зарабатывайте до&nbsp;50% с&nbsp;оплат
+					p Обеспечьте себе дополнительный доход подключая ChatFood&nbsp;своим клиентам в&nbsp;сфере общепита
+					+e.btn-wrap
+						+e.btn.btn.btn-primary(href='#') Зарегистрироваться
+						+e.btn.btn.btn-outline-secondary(href='#') Войти в кабинет
+				.col-12.order-md-3
+					+e.stories-wrap
+						+e.inner-row.row
+							mixin item(icon, text)
+								.col-sm-6.col-lg-4
+									+e.item
+										+e.icon-wrap: +img(`img/svg/${icon}`)
+										p!= text
+							+item('sControl-icon-1.svg', 'Сервис ChatFood работает<br>с 2021 года')
+							+item('sWhyTelegramBot-icon-3.svg', '1000₽ минимальная сумма для выплаты вознаграждения партнерам')
+							+item('sControl-icon-7.svg', 'Более 400 ресторанов уже подключены к&nbsp;сервису')
+								

@@ -1,62 +1,63 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			+e.row.row
-				.col-md-3.order-1
-					+e.logo(href='#'): +img('img/svg/logo.svg')
-					+e.text-wrap
-						p ИП Каспор Н.А.
-						p ИНН 636205134795
-						p ОГРНИП 313633019800069
-						p Соответствует 54-ФЗ и 152-ФЗ
-				.col-md-auto.d-none.d-md-block.order-first.order-md-2
-					+e.wrap 
-						+e.title Основные разделы
-						ul
-							li: a(href="#") О сервисе
-							li: a(href="#") Тарифы
-							li: a(href="#") Партнерка
-							li: a(href="#") Блог
-							li: a(href="#") База знаний
-							li: a(href="#") Контакты
-				.col-auto.d-none.d-md-block.order-md-3
-					+e.wrap--2
-						+e.title Еще
-						ul
-							li: a.disabled(href="#") Заказать еду
-								span.badge.bg-success скоро
-							li: a.disabled(href="#") Сайт для ресторана
-								span.badge.bg-success скоро
-							li: a.disabled(href="#") API
-								span.badge.bg-success скоро
-				.col.order-md-4
-					+e.link-wrap
-						+e.btn.btn.btn-outline-primary(href='#') Личный кабинет
-						+e.tel(href='tel:+79954871611') +7 (995) 487-16-11
-						+e.text г. Самара, ул. Партизанская 86, оф. 341
-						+e.mail(href='mailto:info@chatfood.ru') info@chatfood.ru
-						+e.tech-help(href='#' target="_blank")
-							+e.icon-wrap: +icon('telegram')
-							| Техподдержка в Telegram
-						+soc
-				.col-12.order-3.order-md-5
-					+e.inner-row.row
-						.col-md-auto
-							a(href="#" target="_blank") Политика конфиденциальности
-						.col-md-auto
-							a(href="#" target="_blank") Пользовательское соглашение
-						.col-md-auto
-							a(href="#" target="_blank") Условия партнерской программы
-						.col-md-auto.ms-auto
-							+e.lang(href='#')
-								| En
-								+img('img/english.png')
-			+e.bottom-row.row
-				.col-md.order-2.order-md-1
-					p © 2021-#[span ] ChatFood. Все права защищены
-				.col-md.text-md-center.order-1.order-md-2
-					+img('img/yandexRaiting.png')
-				.col-md.text-md-end.order-3.order-md-3
-					+e.scrollTop--js
-						| Наверх
-						+e.scrollTop-icon: +icon('chevron-up')
+			+e.wrapper
+				+e.row.row
+					.col-md-3.order-1
+						+e.logo(href='#'): +img('img/svg/logo.svg')
+						+e.text-wrap
+							p ИП Каспор Н.А.
+							p ИНН 636205134795
+							p ОГРНИП 313633019800069
+							p Соответствует 54-ФЗ и 152-ФЗ
+					.col-md-auto.d-none.d-md-block.order-first.order-md-2
+						+e.wrap 
+							+e.title Основные разделы
+							ul
+								li: a(href="#") О сервисе
+								li: a(href="#") Тарифы
+								li: a(href="#") Партнерка
+								li: a(href="#") Блог
+								li: a(href="#") База знаний
+								li: a(href="#") Контакты
+					.col-auto.d-none.d-md-block.order-md-3
+						+e.wrap--2
+							+e.title Еще
+							ul
+								li: a.disabled(href="#") Заказать еду
+									span.badge.bg-success скоро
+								li: a.disabled(href="#") Сайт для ресторана
+									span.badge.bg-success скоро
+								li: a.disabled(href="#") API
+									span.badge.bg-success скоро
+					.col.order-md-4
+						+e.link-wrap
+							+e.btn.btn.btn-outline-primary(href='#') Личный кабинет
+							+e.tel(href='tel:+79954871611') +7 (995) 487-16-11
+							+e.text г. Самара, ул. Партизанская 86, оф. 341
+							+e.mail(href='mailto:info@chatfood.ru') info@chatfood.ru
+							+e.tech-help(href='#' target="_blank")
+								+e.icon-wrap: +icon('telegram')
+								| Техподдержка в Telegram
+							+soc
+					.col-12.order-3.order-md-5
+						+e.inner-row.row
+							.col-md-auto
+								a(href="#" target="_blank") Политика конфиденциальности
+							.col-md-auto
+								a(href="#" target="_blank") Пользовательское соглашение
+							.col-md-auto
+								a(href="#" target="_blank") Условия партнерской программы
+							.col-md-auto.ms-auto
+								+e.lang(href='#')
+									| En
+									+img('img/english.png')
+				+e.bottom-row.row
+					.col-md.order-2.order-md-1
+						p © 2021-#[span ] ChatFood. Все права защищены
+					.col-md.text-md-center.order-1.order-md-2
+						+img('img/yandexRaiting.png')
+					.col-md.text-md-end.order-3.order-md-3
+						+e.scrollTop--js
+							| Наверх
+							+e.scrollTop-icon: +icon('chevron-up')

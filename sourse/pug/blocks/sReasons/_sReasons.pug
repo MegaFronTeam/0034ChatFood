@@ -1,22 +1,29 @@
-mixin sReasons(data)
+mixin sReasons(title, sectiontext, footer, text, isTwoBtns)
 	// start sReasons
 	+b.SECTION.sReasons.section#sReasons&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 6 причин начать пользоваться ChatFood
+				h2!= title
+				if sectiontext
+					p!= sectiontext
 			+e.row.row
-				mixin item(title, text, json)
-					.col-6.col-lg-4
+				mixin item(title, text, json, customClass="col-6 col-lg-4")
+					div(class=customClass)
 						+e.item
 							+e.img-wrap
 								.img-wrap-center(data-json= json)
 							//- +img('img/svg/sReasons-img-1.svg')
 							h6!= title
 							p!= text
-				+item('Меню заведения', 'Ваш клиент может ознакомиться с&nbsp;меню вашего ресторана в&nbsp;чат-боте', 'json/menu.json')
-				+item('Заказы', 'Получайте заказы на&nbsp;доставку и&nbsp;самовывоз с&nbsp;онлайн-оплатой или оплатой наличными, с&nbsp;расчетом стоимости доставки', 'json/orders.json')
-				+item('Клиентская база', 'Каждый клиент вступивший в&nbsp;чат-бот остается в&nbsp;системе. Вы&nbsp;видите информацию о&nbsp;каждом клиенте и&nbsp;их&nbsp;заказах', 'json/clients.json')
-				+item('Рассылки', 'Стимулируйте клиентов к&nbsp;заказам или&nbsp;приглашайте в&nbsp;ресторан с&nbsp;помощью автоматизированных или ручных рассылок', 'json/mailing.json')
-				+item('Бронирование столов', 'Ваши клиенты могут выбрать понравившийся стол и&nbsp;забронировать его в&nbsp;пару кликов на&nbsp;нужное время и&nbsp;дату не&nbsp;выходя из&nbsp;Telegram', 'json/table.json')
-				+item('Бонусная система', 'Начисляйте бонусные рубли клиентам при авторизации в&nbsp;чат-боте, а&nbsp;также кэшбэк с&nbsp;заказов', 'json/bonus.json')
+				block
+			if footer
+				+e.footer
+					if text
+						+e.text Все приглашения и начисления фиксируются в личном кабинета партнера.
+					if isTwoBtns 
+						+e.btn-row
+							+e.btn.btn.btn-primary(href='#') Зарегистрироваться
+							+e.btn.btn.btn-outline-secondary(href='#') Войти в кабинет
+					else
+						+e.btn-inner.btn.btn-outline-secondary(href='#') Условия партнерской программы
 	// end sReasons
