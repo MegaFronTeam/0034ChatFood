@@ -12,7 +12,8 @@
 10. <https://megafronteam.github.io/0034ChatFood/public/13-lostPass-2.html>
 11. <https://megafronteam.github.io/0034ChatFood/public/13-lostPass-3.html>
 12. <https://megafronteam.github.io/0034ChatFood/public/13-lostPass-4.html>
-13. <https://megafronteam.github.io/0034ChatFood/public/14-eng-version.html>
-14. <https://megafronteam.github.io/0034ChatFood/public/15-policy.html>
-15. <https://megafronteam.github.io/0034ChatFood/public/16-terms.html>
-16. <https://megafronteam.github.io/0034ChatFood/public/17-partner-conds.html>
+14. <https://megafronteam.github.io/0034ChatFood/public/14-eng-version.html>
+15. <https://megafronteam.github.io/0034ChatFood/public/15-policy.html>
+16. <https://megafronteam.github.io/0034ChatFood/public/16-terms.html>
+17. <https://megafronteam.github.io/0034ChatFood/public/17-partner-conds.html>
+18. <https://megafronteam.github.io/0034ChatFood/public/00-modal.html>

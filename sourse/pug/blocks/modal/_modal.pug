@@ -50,11 +50,12 @@ mixin modal()
 					thead
 						tr
 							th
-								h3 Сравнение тарифов
-								+e.switch.form-check.form-switch
-									label.form-check-label(for='flexSwitchCheckDefault') За месяц
-									input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
-									label.form-check-label(for='flexSwitchCheckDefault') За год
+								+e.title
+									h3 Сравнение тарифов
+									+e.switch.form-check.form-switch
+										label.form-check-label(for='flexSwitchCheckDefault') За месяц
+										input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
+										label.form-check-label(for='flexSwitchCheckDefault') За год
 							mixin item(t, p, d, i)
 								th
 									+b.tariffs-item
