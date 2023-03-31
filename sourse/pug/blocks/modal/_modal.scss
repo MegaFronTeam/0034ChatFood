@@ -18,12 +18,13 @@
 	max-width: 100%;
 	position: relative;
 	width: rem(936);
-	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: auto;
 	// min-height: 100%;
 	// padding: 40px;
-
+	@include media-breakpoint-down(md) {
+		height: 100vh;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
 	.modal-content {
 		// max-width: 485px;
 		// padding-right: 40px 15px;

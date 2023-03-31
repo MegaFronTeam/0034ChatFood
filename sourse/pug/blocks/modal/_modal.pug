@@ -49,9 +49,10 @@ mixin modal()
 				+e.title.d-md-none
 					.h3 Выберите тариф для вашего чат-бота в&nbsp;ChatFood
 					+e.switch.form-check.form-switch
-						label.form-check-label(for='flexSwitchCheckDefault') За месяц
-						input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
-						label.form-check-label(for='flexSwitchCheckDefault') За год
+						label.form-check-label
+							span За месяц
+							input.form-check-input(type='checkbox' role='switch')
+							span За год
 				table
 					thead
 						tr
@@ -59,9 +60,10 @@ mixin modal()
 								+e.title
 									.h3 Сравнение тарифов
 									+e.switch.form-check.form-switch
-										label.form-check-label(for='flexSwitchCheckDefault') За месяц
-										input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
-										label.form-check-label(for='flexSwitchCheckDefault') За год
+										label.form-check-label
+											span За месяц
+											input.form-check-input(type='checkbox' role='switch')
+											span За год
 							mixin item(t, p, d, i)
 								th
 									+b.tariffs-item
