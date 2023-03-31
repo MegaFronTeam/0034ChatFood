@@ -1,0 +1,44 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sCapabilities/_sCapabilities.pug
+include ../blocks/sReasons/_sReasons.pug
+include ../blocks/sControl/_sControl.pug
+include ../blocks/sCompare/_sCompare.pug
+include ../blocks/sWhyTelegramBot/_sWhyTelegramBot.pug
+include ../blocks/sConnected/_sConnected.pug
+include ../blocks/sChooseTariff/_sChooseTariff.pug
+include ../blocks/sFAQBlock/_sFAQBlock.pug
+include ../blocks/sReviews/_sReviews.pug
+
+block variables
+	- let  mainPage= 'main-page modal-stories-page' 
+	- let  bg= '02-partner.jpg'
+
+block title
+	- let  title= 'Партнеры'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		+headerBlock() 
+		+sReasons()
+		+sCapabilities()
+		+sControl()
+		+sCompare()
+		+sWhyTelegramBot()
+		+sConnected()
+		+sChooseTariff()
+		+sFAQBlock()
+		+sReviews()
+		+parts('sTryItPart')
+	+parts('footer')
+	//- +cookies()
+
+
