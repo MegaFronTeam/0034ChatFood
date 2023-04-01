@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Блог</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="libs/intl-tel-input/build/css/intlTelInput.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body data-bg="05-blog.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`headerAuth`)</script>
+			<div id="headerAuthWrap"></div>
+			<main>
+				<div class="page-head">
+					<div class="container">
+						<nav class="swiper breadcrumb-slider breadcrumb-slider--js" aria-label="breadcrumb">
+							<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+								<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+									<svg class="icon icon-chevron-breadcrumbs ">
+										<use xlink:href="img/svg/sprite.svg#chevron-breadcrumbs"></use>
+									</svg><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+										<meta itemprop="position" content="1"/></a>
+								</li>
+								<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+									<svg class="icon icon-chevron-breadcrumbs ">
+										<use xlink:href="img/svg/sprite.svg#chevron-breadcrumbs"></use>
+									</svg><a href="#" itemprop="item"><span itemprop="name">Блог</span>
+										<meta itemprop="position" content="2"/></a>
+								</li>
+							</ol>
+						</nav>
+						<h1>Блог ChatFood</h1>
+					</div>
+				</div>
+				<!-- start sBlog-->
+				<section class="sBlog section" id="sBlog">
+					<div class="container">
+						<div class="sBlog__row row">
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Значительное расширение раздела настроек чат-бота
+									</div>
+									<p>Вы&nbsp;просили, мы&nbsp;сделали. Большое обновление связанное с&nbsp;расширением раздела настроек</p>
+									<div class="sBlog__date">15 май. 2023
+									</div>
+								</a>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Функционал бронирования столов
+									</div>
+									<p>Новый функционал платформы ChatFood уже доступен для каждого тарифа в&nbsp;платформе</p>
+									<div class="sBlog__date">30 май. 2023
+									</div>
+								</a>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Обновление сайта и&nbsp;официальный запуск партнерской программы
+									</div>
+									<p>Мы&nbsp;сделали наш сайт более удобным&nbsp;&mdash; внутри подробно рассказываем об&nbsp;изменениях</p>
+									<div class="sBlog__date">20 апр. 2023
+									</div>
+								</a>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Версия&nbsp;3.0&nbsp;&mdash; Обновляемся
+									</div>
+									<p>С&nbsp;23:00 13.11.2022 до&nbsp;6:00 14.11.2022&nbsp;в связи с&nbsp;обновлением сервис будет недоступен</p>
+									<div class="sBlog__date">11 ноя. 2022
+									</div>
+								</a>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Версия&nbsp;3.0&nbsp;&mdash; Подготовка к&nbsp;обновлению
+									</div>
+									<p>Мы&nbsp;анонсируем выход новой версии нашей платформы, в&nbsp;которой учтены многие пожелания</p>
+									<div class="sBlog__date">26 авг. 2022
+									</div>
+								</a>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<div class="contactItem" style="--bgColor:var(--bs-secondary);">
+									<div class="contactItem__img-wrap"><img src="img/svg/contact-telegram.svg" alt="" loading="lazy"/>
+									</div>
+									<div class="contactItem__descr">Публикуем бонусы, акции, новости об&nbsp;обновлениях и&nbsp;другие важные уведомления в&nbsp;первую очередь
+									</div>
+									<a class="contactItem__link" href="#">t.me/chatfoodru
+									</a>
+									<a class="contactItem__btn btn btn-outline-secondary" href="#">Подписаться на канал
+									</a>
+								</div>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Beta-тестирование ChatFood успешно завершено
+									</div>
+									<p>В&nbsp;данный момент регистрация открыта для всех желающих на&nbsp;бесплатной основе</p>
+									<div class="sBlog__date">21 дек. 2021
+									</div>
+								</a>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Версия&nbsp;3.0&nbsp;&mdash; Подготовка к&nbsp;обновлению
+									</div>
+									<p>Мы&nbsp;анонсируем выход новой версии нашей платформы, в&nbsp;которой учтены многие пожелания</p>
+									<div class="sBlog__date">26 авг. 2022
+									</div>
+								</a>
+							</div>
+							<div class="sBlog__col col-md-6 col-lg-4">
+								<a class="sBlog__item" href="#">
+									<div class="sBlog__img-wrap">
+										<div class="img-wrap-center"></div>
+									</div>
+									<div class="sBlog__title">Версия&nbsp;3.0&nbsp;&mdash; Обновляемся
+									</div>
+									<p>С&nbsp;23:00 13.11.2022 до&nbsp;6:00 14.11.2022&nbsp;в связи с&nbsp;обновлением сервис будет недоступен</p>
+									<div class="sBlog__date">11 ноя. 2022
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="pagination-wrapper">
+							<ul class="page-numbers">
+										<li><span class="prev page-numbers">
+												<svg class="icon icon-prev ">
+													<use xlink:href="img/svg/sprite.svg#prev"></use>
+												</svg></span>
+										</li>
+										<li><span class="page-numbers current"> 1</span>
+										</li>
+										<li><a class="page-numbers" href="#">2</a>
+										</li>
+										<li><a class="page-numbers" href="#">3</a>
+										</li>
+										<li><a class="page-numbers" href="#">4</a>
+										</li>
+										<li><span class="page-numbers">...</span>
+										</li>
+										<li><a class="page-numbers" href="#">9</a>
+										</li>
+										<li><a class="next page-numbers" href="#">
+												<svg class="icon icon-next ">
+													<use xlink:href="img/svg/sprite.svg#next"></use>
+												</svg></a>
+										</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<!-- end sBlog-->
+				<script>addBlock(`sTryItPart`)</script>
+				<div id="sTryItPartWrap"></div>
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+			<div class="scrolToTop">
+				<svg class="icon icon-chevron-up ">
+					<use xlink:href="img/svg/sprite.svg#chevron-up"></use>
+				</svg>Наверх
+			</div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="libs/intl-tel-input/build/js/intlTelInput.min.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="js/common.js"></script>
+	</body>
+</html>
