@@ -1,7 +1,7 @@
 extends ../layout/main.pug
 
 include ../blocks/sChooseTariff/_sChooseTariff.pug
-include ../blocks/sContent/_sContent.pug
+include ../blocks/sTextContent/_sTextContent.pug
 
 block variables
 	- let  mainPage= null 
@@ -17,17 +17,16 @@ block pagecontent
 	+parts('headerAuth')
 	main
 		+page-head(``, `Условия партнерской программы`)
-		+sContent()
+		+sTextContent()
 			.row
 				+e.col.col-lg-9.sticky-content-js
 					h1 Условия партнерской программы
 					+e.date Редакция от 16 Января 2023 года
-					+ddGroup().sticky-js
-						+ddGroupItem('Содержание')
-							a(href="#RemunerationAccrual") Начисление вознаграждений
-							a(href="#PaymentOfRewards") Выплата вознаграждений
-							a.active(href="#Participants") Участникам партнерской программы запрещается
-							a(href="#OtherConditions") Прочие условия
+					+navBlock()
+						a(href="#RemunerationAccrual") Начисление вознаграждений
+						a(href="#PaymentOfRewards") Выплата вознаграждений
+						a.active(href="#Participants") Участникам партнерской программы запрещается
+						a(href="#OtherConditions") Прочие условия
 					ol
 						li#RemunerationAccrual
 							| Термины и определения

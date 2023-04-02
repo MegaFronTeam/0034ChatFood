@@ -24,6 +24,11 @@
     }
   }
   &__item {
+    &:focus {
+      .sBlog__img-wrap {
+        transform: translateY(-6px);
+      }
+    }
     p {
       line-height: 1.5;
       font-size: rem(12);
@@ -35,13 +40,13 @@
     }
   }
   &__img-wrap {
-    @include block(324, 198);
+    @include mt;
+    @include block(360, 220);
     background-color: $gray-100;
     border-radius: 12px;
     margin-bottom: rem(12);
     overflow: hidden;
     @include media-breakpoint-up(md) {
-      --ratio: 220/360;
       margin-bottom: rem(18);
     }
   }

@@ -87,8 +87,9 @@ mixin changePage()
 
 mixin sideScrollTop()
 	+b.scrolToTop
-		+icon('chevron-up')
-		| Наверх
+		+e.wrap
+			+icon('chevron-up')
+			| Наверх
 
 mixin contactItem(data)
 	+b.contactItem(style=`--bgColor:${data.bgc};`)
@@ -102,3 +103,28 @@ mixin contactItem(data)
 			+e.schedule!= data.time
 		if data.btn
 			+e.btn.btn.btn-outline-secondary(href="#")!= data.btn
+
+mixin navBlock(notDdGroup)
+	+b.nav-block
+		if notDdGroup
+			.sticky-js
+				p Другие новости
+				a(href="#") 
+					span 11 ноя. 2022
+					| Значительное расширение раздела настроек чат-бота
+				a(href="#") 
+					span 25 фев. 2023
+					| Функционал бронирования столов
+				a(href="#") 
+					span 11 июн. 2022
+					| Обновление сайта и официальный запуск партнерской программы
+				a(href="#") 
+					span 11 ноя. 2022
+					| Версия 3.0 – Подготовка к обновлению
+				a(href="#") 
+					span 8 янв. 2022
+					| Beta-тестирование ChatFood успешно завершено
+		else
+			+ddGroup().sticky-js
+				+ddGroupItem('Содержание')
+					block

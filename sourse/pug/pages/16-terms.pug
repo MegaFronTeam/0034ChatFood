@@ -1,7 +1,7 @@
 extends ../layout/main.pug
 
 include ../blocks/sChooseTariff/_sChooseTariff.pug
-include ../blocks/sContent/_sContent.pug
+include ../blocks/sTextContent/_sTextContent.pug
 
 block variables
 	- let  mainPage= null 
@@ -17,21 +17,20 @@ block pagecontent
 	+parts('headerAuth')
 	main
 		+page-head(``, `Пользовательское соглашение`)
-		+sContent()
+		+sTextContent()
 			.row
 				+e.col.col-lg-9.sticky-content-js
 					h1 Пользовательское соглашение
 					+e.date Редакция от 15 Октября 2022 года
-					+ddGroup().sticky-js
-						+ddGroupItem('Содержание')
-							a.active(href="#TermsAndDefinitions") Термины и определения
-							a(href="#SubjectOfAgreement") Предмет соглашения
-							a(href="#AdministrationRights") Права и обязанности Администрации сайта
-							a(href="#UserRights") Права и обязанности пользователя
-							a(href="#UserRegistration") Регистрация пользователя
-							a(href="#ResponsibilityOfParties") Ответственность сторон
-							a(href="#ResolutionProcedure") Порядок разрешения споров и урегулирования претензий
-							a(href="#OtherConditions") Прочие условия
+					+navBlock()
+						a.active(href="#TermsAndDefinitions") Термины и определения
+						a(href="#SubjectOfAgreement") Предмет соглашения
+						a(href="#AdministrationRights") Права и обязанности Администрации сайта
+						a(href="#UserRights") Права и обязанности пользователя
+						a(href="#UserRegistration") Регистрация пользователя
+						a(href="#ResponsibilityOfParties") Ответственность сторон
+						a(href="#ResolutionProcedure") Порядок разрешения споров и урегулирования претензий
+						a(href="#OtherConditions") Прочие условия
 					p Настоящее Соглашение заключается между индивидуальный предприниматель ИП&nbsp;Каспор Николай Андреевич (ИНН 636205134795, ОГРНИП 313633019800069) (далее&nbsp;&mdash; Владелец) и&nbsp;любым лицом, становящимся после принятия условий данного соглашения пользователем сайта, расположенного в&nbsp;сети Интернет по&nbsp;адресу: #[a(href='https://chatfood.ru' target="_blank") https://chatfood.ru] (далее&nbsp;&mdash; Сайт), в&nbsp;дальнейшем именуемым &laquo;Пользователь&raquo;, вместе по&nbsp;тексту Соглашения именуемые &laquo;Стороны&raquo;, а&nbsp;по&nbsp;отдельности&nbsp;&mdash; &laquo;Сторона&raquo;.
 					p В&nbsp;соответствии со&nbsp;статьей 435 Гражданского кодекса&nbsp;РФ настоящее Пользовательское соглашение признается офертой.
 					p В&nbsp;соответствии со&nbsp;статьей 438 Гражданского кодекса&nbsp;РФ безусловным принятием (акцептом) условий настоящего Соглашения считается факт регистрации на&nbsp;Сайте.

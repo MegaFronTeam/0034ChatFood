@@ -1,0 +1,205 @@
+// start .sTextContent
+.sTextContent {
+  --sPT: #{rem(18)};
+  // --sPB: #{rem()};
+  // --sTPB: #{rem()};
+  @include media-breakpoint-up(md) {
+    --sPT: #{rem(46.4)};
+  }
+  &__row {
+    // --bs-gutter-x: #{rem()};
+    // --bs-gutter-y: #{rem()};
+  }
+  &__col {
+    position: relative;
+  }
+  h1 {
+    margin-bottom: rem(12);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(24);
+    }
+    @include media-breakpoint-down(md) {
+      font-size: rem(30);
+    }
+  }
+  p {
+    font-size: rem(12);
+    line-height: 1.5;
+    max-width: rem(816);
+    margin-bottom: rem(18);
+    @include media-breakpoint-up(md) {
+      font-size: rem(16);
+      margin-bottom: rem(27.2);
+    }
+    a {
+      color: $secondary;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  &__date {
+    color: $gray-500;
+    margin-bottom: rem(24);
+    font-size: rem(10);
+    @include media-breakpoint-up(md) {
+      font-size: rem(14);
+    }
+  }
+  ol {
+    counter-reset: num;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: rem(24);
+    line-height: 1.45;
+    max-width: rem(816);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(31.2);
+    }
+    ol {
+      margin-top: rem(18);
+      @include media-breakpoint-up(md) {
+        margin-top: rem(24);
+      }
+    }
+    li {
+      font-weight: 700;
+      font-size: rem(18);
+      @include media-breakpoint-up(md) {
+        font-size: rem(26);
+      }
+      & li {
+        font-weight: 400;
+        font-size: rem(12);
+        @include media-breakpoint-up(md) {
+          font-size: rem(16);
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: rem(18);
+        @include media-breakpoint-up(md) {
+          margin-bottom: rem(26.24);
+        }
+      }
+      a {
+        color: $secondary;
+        &:hover {
+          color: $primary;
+        }
+      }
+      p {
+        margin-top: rem(18);
+        @include media-breakpoint-up(md) {
+          margin-top: rem(24);
+        }
+      }
+    }
+    & > li {
+      &::before {
+        content: counter(num) '. ';
+        counter-increment: num;
+      }
+      & > ol {
+        counter-reset: num2;
+        & > li {
+          &::before {
+            content: counter(num) '.' counter(num2) '. ';
+            counter-increment: num2;
+          }
+          & > ol {
+            counter-reset: num3;
+            & > li {
+              &::before {
+                content: counter(num) '.' counter(num2) '.' counter(num3) '. ';
+                counter-increment: num3;
+              }
+            }
+          }
+        }
+      }
+    }
+    ul {
+      margin-bottom: 0;
+      margin-top: rem(18);
+      @include media-breakpoint-up(md) {
+        margin-top: rem(24);
+      }
+      li {
+        position: relative;
+        font-size: rem(12);
+        list-style-type: none;
+        padding-left: rem(18);
+        @include media-breakpoint-up(md) {
+          font-size: rem(16);
+          padding-left: rem(24);
+        }
+        &:not(:last-child) {
+          margin-bottom: rem(6);
+          @include media-breakpoint-up(md) {
+            margin-bottom: rem(12);
+          }
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          display: block;
+          width: rem(3);
+          height: rem(3);
+          border-radius: 50%;
+          background-color: $primary;
+          top: rem(7);
+          left: rem(7);
+          @include media-breakpoint-up(md) {
+            width: rem(4);
+            height: rem(4);
+            top: rem(10);
+            left: rem(10);
+          }
+        }
+      }
+    }
+  }
+  .sticky {
+    .dd-group {
+      left: calc(100% + var(--bs-gutter-x) / 2);
+    }
+  }
+  @include media-breakpoint-up(xl) {
+  }
+  @include media-breakpoint-up(lg) {
+  }
+  @include media-breakpoint-up(md) {
+  }
+  @include media-breakpoint-up(sm) {
+  }
+  @include media-breakpoint-up(xs) {
+  }
+
+  //
+  @include media-breakpoint-between(md, xl) {
+  }
+
+  //
+  @include media-breakpoint-only(xs) {
+  }
+  @include media-breakpoint-only(sm) {
+  }
+  @include media-breakpoint-only(md) {
+  }
+  @include media-breakpoint-only(lg) {
+  }
+  @include media-breakpoint-only(xl) {
+  }
+
+  //
+  @include media-breakpoint-down(xl) {
+  }
+  @include media-breakpoint-down(lg) {
+  }
+  @include media-breakpoint-down(md) {
+  }
+  @include media-breakpoint-down(sm) {
+  }
+  @include media-breakpoint-down(xs) {
+  }
+} // end.sTextContent

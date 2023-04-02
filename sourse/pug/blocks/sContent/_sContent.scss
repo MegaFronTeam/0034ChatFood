@@ -1,268 +1,237 @@
-
 // start .sContent
 .sContent {
-	--sPT: #{rem(18)};
-	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
-	@include media-breakpoint-up(md) {
-		--sPT: #{rem(46.400)};
-	}
-	&__row{
-		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
-	}
-	&__col {
-		position: relative;
-	}
-	.dd-group {
-		margin-bottom: rem(24);
-		@include media-breakpoint-up(lg) {
-			margin-bottom: 0;
-			position: absolute;
-			left: calc(100% + var(--bs-gutter-x) / 2);
-			top: 0;
-			width: calc(100% / 3 - var(--bs-gutter-x));
-		}
-		&__head {
-			padding: rem(12);
-			font-size: rem(12);
-			border: 1px solid $gray-200;
-			border-radius: 10px;
-			position: relative;
-			cursor: pointer;
-			@include media-breakpoint-up(lg) {
-				display: none;
-			}
-			&:after {
-				content: '';
-				position: absolute;
-				display: block;
-				width: rem(14);
-				height: rem(14);
-				top: 50%;
-				transform: translateY(-50%);
-				right: rem(12);
-				background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.27928 9.28094C7.13591 9.28094 6.99255 9.22619 6.88324 9.11694L3.44341 5.67707C3.22459 5.45826 3.22459 5.10348 3.44341 4.88475C3.66214 4.66602 4.01684 4.66602 4.23568 4.88475L7.27928 7.92853L10.3229 4.88486C10.5417 4.66613 10.8964 4.66613 11.1151 4.88486C11.334 5.10359 11.334 5.45836 11.1151 5.67718L7.67533 9.11704C7.56597 9.22632 7.42261 9.28094 7.27928 9.28094Z' fill='%23FF7A00'/%3E%3C/svg%3E%0A");
-				background-repeat: no-repeat;
-				background-size: contain;
-				background-position: center;
-			}
-		}
-		&__content {
-			border-left: 1px solid $gray-200;
-			padding: rem(7) 0;
-			margin-top: rem(16);
-			@include media-breakpoint-up(lg) {
-				display: block !important;
-				margin-top: 0;
-			}
-			a {
-				position: relative;
-				display: block;
-				padding: rem(7) 0 rem(7) rem(12);
-				font-size: rem(12);
-				@include media-breakpoint-up(lg) {
-					padding: rem(7) 0 rem(7) rem(24);
-					font-size: rem(16);
-				}
-				&:before {
-					@include mt;
-					background-color: transparent;
-					border-radius: 0 5px 5px 0;
-					bottom: 0;
-					content: "";
-					display: block;
-					height: 100%;
-					left: -1px;
-					position: absolute;
-					transform: scaleX(.3) scaleY(0);
-					transform-origin: left;
-					width: rem(3);
-				}
-				&:hover, &.active {
-					color: $secondary;
-					&:before {
-						background-color: $secondary;
-						opacity: 1;
-						transform: scaleX(1) scaleY(1);
-					}
-				}
-			}
-		}
-	}
-	h1 {
-		margin-bottom: rem(12);
-		@include media-breakpoint-up(md) {
-			margin-bottom: rem(24);
-		}
-		@include media-breakpoint-down(md) {
-			font-size: rem(30);
-		}
-	}
-	p {
-		font-size: rem(12);
-		line-height: 1.5;
-		max-width: rem(816);
-		margin-bottom: rem(18);
-		@include media-breakpoint-up(md) {
-			font-size: rem(16);
-			margin-bottom: rem(27.200);
-		}
-		a {
-			color: $secondary;
-			&:hover {
-				color: $primary;
-			}
-		}
-	}
-	&__date {
-		color: $gray-500;
-		margin-bottom: rem(24);
-		font-size: rem(10);
-		@include media-breakpoint-up(md) {
-			font-size: rem(14);
-		}
-	}
-	ol {
-		counter-reset: num;
-		list-style-type: none;
-		padding-left: 0;
-		margin-bottom: rem(24);
-		line-height: 1.45;
-		max-width: rem(816);
-		@include media-breakpoint-up(md) {
-			margin-bottom: rem(31.200);
-		}
-		ol {
-			margin-top: rem(18);
-			@include media-breakpoint-up(md) {
-				margin-top: rem(24);
-			}
-		}
-		li {
-			font-weight: 700;
-			font-size: rem(18);
-			@include media-breakpoint-up(md) {
-				font-size: rem(26);
-			}
-			& li {
-				font-weight: 400;
-				font-size: rem(12);
-				@include media-breakpoint-up(md) {
-					font-size: rem(16);
-				}
-			}
-			&:not(:last-child) {
-				margin-bottom: rem(18);
-				@include media-breakpoint-up(md) {
-					margin-bottom: rem(26.240);
-				}
-			}
-			a {
-				color: $secondary;
-				&:hover {
-					color: $primary;
-				}
-			}
-			p {
-				margin-top: rem(18);
-				@include media-breakpoint-up(md) {
-					margin-top: rem(24);
-				}
-			}
-		}
-		& > li {
-			&::before {
-				content: counter(num)'. ';
-				counter-increment: num;
-			}
-			& > ol {
-				counter-reset: num2;
-				& > li {
-					&::before {
-						content: counter(num)'.' counter(num2)'. ';
-						counter-increment: num2;
-					}
-					& > ol {
-						counter-reset: num3;
-						& > li {
-							&::before {
-								content: counter(num)'.' counter(num2)'.'counter(num3)'. ';
-								counter-increment: num3;
-							}
-						}
-					}
-				}
-			}
-		}
-		ul {
-			margin-bottom: 0;
-			margin-top: rem(18);
-			@include media-breakpoint-up(md) {
-				margin-top: rem(24);
-			}
-			li {
-				position: relative;
-				font-size: rem(12);
-				list-style-type: none;
-				padding-left: rem(18);
-				@include media-breakpoint-up(md) {
-					font-size: rem(16);
-					padding-left: rem(24);
-				}
-				&:not(:last-child) {
-					margin-bottom: rem(6);
-					@include media-breakpoint-up(md) {
-						margin-bottom: rem(12);
-					}
-				}
-				&::before {
-					content: '';
-					position: absolute;
-					display: block;
-					width: rem(3);
-					height: rem(3);
-					border-radius: 50%;
-					background-color: $primary;
-					top: rem(7);
-					left: rem(7);
-					@include media-breakpoint-up(md) {
-						width: rem(4);
-						height: rem(4);
-						top: rem(10);
-						left: rem(10);
-					}
-				}
-			}
-		}
-	}
-	.sticky {
-		.dd-group {
-			left: calc(100% + var(--bs-gutter-x) / 2);
-		}
-	}
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+  --sPT: #{rem(18)};
+  --sPB: #{rem(24)};
+  // --sTPB: #{rem()};
+  @include media-breakpoint-up(md) {
+    --sPT: #{rem(46.4)};
+    --sPB: #{rem(45)};
+  }
+  &__row {
+    // --bs-gutter-x: #{rem()};
+    --bs-gutter-y: #{rem(48)};
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-y: 0;
+    }
+  }
+  &__wrap {
+    max-width: rem(816);
+  }
+  h1 {
+    margin-bottom: rem(12);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(24);
+    }
+  }
+  h6 {
+    margin-bottom: rem(18);
+    font-size: rem(14);
+    line-height: 1.22;
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(24);
+      font-size: rem(20);
+    }
+  }
+  p {
+    font-size: rem(12);
+    margin-bottom: rem(18);
+    line-height: 1.5;
+    @include media-breakpoint-up(md) {
+      font-size: rem(16);
+      margin-bottom: rem(36);
+    }
+    a {
+      color: $secondary;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  ul {
+    margin-bottom: rem(18);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(36);
+    }
+  }
+  &__date {
+    font-size: rem(10);
+    color: $gray-500;
+    margin-bottom: rem(18);
+    line-height: 1.4;
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(24);
+      font-size: rem(14);
+    }
+  }
+  &__img-wrap {
+    @include block(816, 498);
+    border-radius: rem(12);
+    background-color: #fff;
+    margin-bottom: rem(18);
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bgColor, $gray-100);
+      z-index: -1;
+    }
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(24);
+    }
+  }
+  &__alert {
+    position: relative;
+    border-radius: rem(8);
+    background-color: #fff;
+    z-index: 1;
+    padding: rem(10) rem(12);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: rem(18);
+    font-size: rem(10);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(36);
+      padding: rem(10) rem(20);
+      font-size: rem(14);
+    }
+    img {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: rem(24);
+      margin-right: rem(12);
+      @include media-breakpoint-up(md) {
+        max-width: rem(30);
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(0deg, rgba(255, 122, 0, 0.12), rgba(255, 122, 0, 0.12));
+      z-index: -1;
+    }
+  }
+  &__article {
+    margin-bottom: rem(18);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(36);
+    }
+    p {
+      @include media-breakpoint-up(md) {
+        margin-bottom: rem(21);
+      }
+    }
+  }
+  .sticky-content-js {
+    height: 100%;
+  }
+  .nav-block {
+    .sticky-js {
+      @include media-breakpoint-up(lg) {
+        border-left: 1px solid $gray-200;
+        padding: rem(24) 0 rem(24) rem(24);
+      }
+    }
+    p {
+      font-weight: 700;
+      margin-bottom: rem(12);
+      font-size: rem(12);
+      @include media-breakpoint-up(md) {
+        font-size: rem(16);
+        margin-bottom: rem(24);
+      }
+    }
+    a {
+      display: block;
+      font-size: rem(12);
+      &:not(:last-of-type) {
+        margin-bottom: rem(12);
+        @include media-breakpoint-up(md) {
+          margin-bottom: rem(18);
+        }
+      }
+      @include media-breakpoint-up(md) {
+        font-size: rem(16);
+      }
+      span {
+        font-size: rem(10);
+        line-height: 1.4;
+        margin-bottom: rem(6);
+        color: $gray-500;
+        display: block;
+        @include media-breakpoint-up(md) {
+          font-size: rem(14);
+        }
+      }
+    }
+  }
+  .ya-share2 {
+    text-align: center;
+    padding-top: rem(36);
+    margin-top: rem(36);
+    border-top: 1px solid $gray-200;
+    @include media-breakpoint-up(lg) {
+      padding-top: rem(48);
+      margin-top: rem(48);
+    }
+    &__list {
+      margin-bottom: 0;
+    }
+    .ya-share2__container_size_l .ya-share2__badge .ya-share2__icon {
+      @include media-breakpoint-down(lg) {
+        width: rem(36);
+        height: rem(36);
+        background-size: rem(28) rem(28) !important;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+  }
+  @include media-breakpoint-up(lg) {
+  }
+  @include media-breakpoint-up(md) {
+  }
+  @include media-breakpoint-up(sm) {
+  }
+  @include media-breakpoint-up(xs) {
+  }
 
+  //
+  @include media-breakpoint-between(md, xl) {
+  }
+
+  //
+  @include media-breakpoint-only(xs) {
+  }
+  @include media-breakpoint-only(sm) {
+  }
+  @include media-breakpoint-only(md) {
+  }
+  @include media-breakpoint-only(lg) {
+  }
+  @include media-breakpoint-only(xl) {
+  }
+
+  //
+  @include media-breakpoint-down(xl) {
+  }
+  @include media-breakpoint-down(lg) {
+  }
+  @include media-breakpoint-down(md) {
+  }
+  @include media-breakpoint-down(sm) {
+  }
+  @include media-breakpoint-down(xs) {
+  }
 } // end.sContent
