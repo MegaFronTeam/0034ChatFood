@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>База знаний</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="libs/intl-tel-input/build/css/intlTelInput.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body data-bg="07-wiki.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`headerAuth`)</script>
+			<div id="headerAuthWrap"></div>
+			<main>
+				<div class="page-head">
+					<div class="container">
+						<nav class="swiper breadcrumb-slider breadcrumb-slider--js" aria-label="breadcrumb">
+							<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+								<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+									<svg class="icon icon-chevron-breadcrumbs ">
+										<use xlink:href="img/svg/sprite.svg#chevron-breadcrumbs"></use>
+									</svg><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+										<meta itemprop="position" content="1"/></a>
+								</li>
+								<li class="breadcrumb-item active swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+									<svg class="icon icon-chevron-breadcrumbs ">
+										<use xlink:href="img/svg/sprite.svg#chevron-breadcrumbs"></use>
+									</svg><a href="#" itemprop="item"><span itemprop="name">База знаний</span>
+										<meta itemprop="position" content="2"/></a>
+								</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!-- start sWiki-->
+				<section class="sWiki section" id="sWiki">
+					<div class="container">
+						<div class="search-block">
+							<form>
+								<input type="text" placeholder="Поиск по ключевым словам"/>
+								<button> 
+									<svg class="icon icon-search ">
+										<use xlink:href="img/svg/sprite.svg#search"></use>
+									</svg>
+								</button>
+							</form>
+						</div>
+						<div class="sWiki__row row">
+							<div class="col-lg-9">
+								<div class="sWiki__wrap">
+									<div class="dd-group dd-group-js">
+										<div class="dd-group__item active">
+											<div class="dd-group__head dd-head-js">
+												<h5>🔥 Создание чат-бота</h5>
+											</div>
+											<div class="dd-group__content dd-content-js active">
+												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!</p>
+												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!</p>
+											</div>
+										</div>
+										<div class="dd-group__item">
+											<div class="dd-group__head dd-head-js">
+												<h5>⚙️ Настройки чат-бота</h5>
+												<div class="badge bg-success">new</div>
+											</div>
+											<div class="dd-group__content dd-content-js">
+												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!</p>
+											</div>
+										</div>
+										<div class="dd-group__item">
+											<div class="dd-group__head dd-head-js">
+												<h5>✌️ Управляющие пользователи</h5>
+												<div class="badge bg-success">new</div>
+											</div>
+											<div class="dd-group__content dd-content-js">
+												<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 sticky-content-js">
+								<div class="nav-block">
+									<div class="nav-block__content sticky-js"> 
+										<a class="nav-block__item" href="#">🔥 Создание чат-бота
+										</a>
+										<a class="nav-block__item" href="#">⚙️ Настройки чат-бота
+										</a>
+										<a class="nav-block__item" href="#">🍔 Категории и товары
+										</a>
+										<a class="nav-block__item" href="#">💸 Заказы
+										</a>
+										<a class="nav-block__item active" href="#">😊 Клиенты
+										</a>
+										<a class="nav-block__item" href="#">💌 Рассылки
+										</a>
+										<a class="nav-block__item" href="#">🚀 Продвижение
+										</a>
+										<a class="nav-block__item" href="#">✌️ Управляющие пользователи
+										</a>
+										<a class="nav-block__item" href="#">💎 Тарифы
+										</a>
+										<a class="nav-block__item" href="#">
+											 💬 Чат
+											<div class="badge bg-success">new</div>
+										</a>
+										<a class="nav-block__item" href="#">🛎️ Бронирование столов
+										</a>
+										<a class="nav-block__item" href="#">💡 Другое
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sWiki-->
+				<script>addBlock(`sTryItPart`)</script>
+				<div id="sTryItPartWrap"></div>
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+			<div class="scrolToTop">
+				<div class="scrolToTop__wrap">
+					<svg class="icon icon-chevron-up ">
+						<use xlink:href="img/svg/sprite.svg#chevron-up"></use>
+					</svg>Наверх
+				</div>
+			</div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="libs/intl-tel-input/build/js/intlTelInput.min.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

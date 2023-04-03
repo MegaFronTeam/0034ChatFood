@@ -175,7 +175,7 @@
   &__item {
     &.active {
       .dd-group__content {
-        // display: block;
+        display: block;
       }
       .dd-group__head {
         &:after {

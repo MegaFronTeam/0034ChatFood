@@ -1,0 +1,60 @@
+extends ../layout/main.pug
+
+include ../blocks/sWiki/_sWiki.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= '07-wiki.jpg'
+
+block title
+	- let  title= 'База знаний'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('headerAuth')
+	main
+		+page-head(``, `База знаний`)
+		+sWiki()
+			+search()
+			+e.row.row
+				.col-lg-9
+					+e.wrap
+						+b.dd-group.dd-group-js
+							mixin item(title, bage)
+								+e.item&attributes(attributes)
+									+e.head.dd-head-js
+										h5!= title
+										if bage
+											.badge.bg-success!= bage
+									+e.content.dd-content-js&attributes(attributes)
+										block
+							+item(`🔥 Создание чат-бота`).active
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!
+							+item(`⚙️ Настройки чат-бота`, `new`)
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!
+							+item(`✌️ Управляющие пользователи`, `new`)
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!
+						
+				.col-lg-3.sticky-content-js
+					+navBlock()
+						+e.item(href="#") 🔥 Создание чат-бота
+						+e.item(href="#") ⚙️ Настройки чат-бота
+						+e.item(href="#") 🍔 Категории и товары
+						+e.item(href="#") 💸 Заказы
+						+e.item.active(href="#") 😊 Клиенты
+						+e.item(href="#") 💌 Рассылки
+						+e.item(href="#") 🚀 Продвижение
+						+e.item(href="#") ✌️ Управляющие пользователи
+						+e.item(href="#") 💎 Тарифы
+						+e.item(href="#") 
+							| 💬 Чат
+							.badge.bg-success new
+						+e.item(href="#") 🛎️ Бронирование столов
+						+e.item(href="#") 💡 Другое
+		+parts('sTryItPart')
+	+parts('footer')
+	//- +cookies()
+	+sideScrollTop()
