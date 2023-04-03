@@ -39,20 +39,36 @@ mixin search()
 				button 
 					span.focus /
 					span.cancel Esc
-		+e.result.active
-			ul
-				li
-					a(href="#") Подсказка 
-						span поиска
-				li
-					a(href="#") Длинное слово подсказки 
-						span поиска
-				li
-					a(href="#") Слово подсказки  
-						span поиска
-				li
-					a(href="#") Подсказки  
-						span поиска
+		+e.result
+			-for (let i = 0; i < 4; i++)
+				+wikiItem({
+					bgc: `linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))`,
+					img: `1`,
+					step: `1 шаг`,
+					title: 'Регистрация на сервисе ChatFood',
+					sub: '🔥 Создание чат-бота',
+				})
+				+wikiItem({
+					bgc: `linear-gradient(0deg, rgba(75, 177, 75, 0.12), rgba(75, 177, 75, 0.12))`,
+					img: `2`,
+					step: `3 шаг`,
+					title: 'Создание чат-бота',
+					sub: '⚙️ Настройки чат-бота',
+				})
+				+wikiItem({
+					bgc: `linear-gradient(0deg, rgba(255, 122, 0, 0.12), rgba(255, 122, 0, 0.12))`,
+					img: `3`,
+					step: `1 шаг`,
+					title: 'Работа с BotFather в Telegram',
+					sub: '🔥 Создание чат-бота',
+				})
+				+wikiItem({
+					bgc: `linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))`,
+					img: `5`,
+					step: `3 шаг`,
+					title: 'Создание чат-бота',
+					sub: '⚙️ Настройки чат-бота',
+				})
 
 mixin page-head(t,...items)
 	+b.page-head

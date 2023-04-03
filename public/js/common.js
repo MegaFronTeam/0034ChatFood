@@ -578,21 +578,69 @@ function eventHandler() {
     });
   }
 
-  // document.addEventListener('click', function(event) {
-  // 	let tariffsModalBtnTarget = event.target.closest('.btn[data-src="modal-tariffs"]');
-  // 	if (tariffsModalBtnTarget) {
-  // 		var tableSticky = new hcSticky('.tariffs thead', {
-  // 			stickTo: '.tariffs',
-  // 			mobileFirst: true,
-  // 			top: 80,
-  // 			responsive: {
-  // 				768: {
-  // 					disable: true,
-  // 				}
-  // 			},
-  // 		});
-  // 	}
-  // })
+  let searchBlock = document.querySelector('.search-block');
+  if (searchBlock) {
+    let searchBlockInput = searchBlock.querySelector('.search-block input');
+    let searchBlockBtn = searchBlock.querySelector('.search-block button');
+    let searchBlockResult = searchBlock.querySelector('.search-block__result');
+    let isFocused = false;
+    let isInput = false;
+    let isEscaped = false;
+    function focusSearchBlock(isFocusedParam, isInputParam) {
+      if (isFocusedParam && isInputParam) { 
+        searchBlockResult.classList.add('active');
+      } else {
+        searchBlockResult.classList.remove('active');
+      }
+      if (isFocusedParam) { 
+        searchBlockInput.focus();
+        if (isInputParam) {
+          searchBlockBtn.classList.add('active');
+        } else {
+          searchBlockBtn.classList.remove('active');
+        }
+      } else {
+        searchBlockInput.blur();
+        if (isEscaped) {
+          searchBlockBtn.classList.remove('active');
+          isEscaped = false;
+          searchBlockInput.value = '';
+        }
+      };
+    };
+    searchBlockInput.addEventListener('input', () => {
+      searchBlockInput.value.length > 0 ? (isInput = true) : (isInput = false);
+    })
+    document.addEventListener('keyup', function(event) {
+      if(event.code === 'Slash') {
+        isFocused = true;
+      }
+      if(event.code === 'Escape') {
+        isFocused = false;
+        isInput = false;
+        isEscaped = true;
+      }
+      focusSearchBlock(isFocused, isInput);
+    })
+    document.addEventListener('click', function(event) {
+      let searchWrapTarget = event.target.closest('.search-block');
+      let searchBtntarget = event.target.closest('.search-block__btn');
+
+      (searchWrapTarget && !searchBtntarget) ? (isFocused = true) : (isFocused = false); 
+      searchBlockInput.value.length > 0 ? (isInput = true) : (isInput = false);
+
+      focusSearchBlock(isFocused, isInput);
+    });
+    searchBlockBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      isFocused = false;
+      isEscaped = true;
+
+      focusSearchBlock(isFocused, isInput);
+    });
+  };
 }
 if (document.readyState !== 'loading') {
   eventHandler();
