@@ -6,7 +6,7 @@
 4. <https://megafronteam.github.io/0034ChatFood/public/04-contacts.html>
 5. <https://megafronteam.github.io/0034ChatFood/public/05-blog.html>
 6. <https://megafronteam.github.io/0034ChatFood/public/06-blog-article.html>
-7. <https://megafronteam.github.io/0034ChatFood/public/08-wiki.html>
+7. <https://megafronteam.github.io/0034ChatFood/public/08-wiki-article.html>
 8. <https://megafronteam.github.io/0034ChatFood/public/09-404.html>
 9. <https://megafronteam.github.io/0034ChatFood/public/10-login.html>
 10. <https://megafronteam.github.io/0034ChatFood/public/11-registration.html>

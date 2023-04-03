@@ -53,6 +53,28 @@
       margin-bottom: rem(36);
     }
   }
+  ol {
+    counter-reset: num;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: rem(18);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(36);
+    }
+    li {
+      font-size: rem(12);
+      margin-bottom: rem(6);
+      line-height: 1.5;
+      @include media-breakpoint-up(md) {
+        font-size: rem(16);
+        margin-bottom: rem(12);
+      }
+      &::before {
+        content: counter(num) '. ';
+        counter-increment: num;
+      }
+    }
+  }
   &__date {
     font-size: rem(10);
     color: $gray-500;
@@ -83,6 +105,12 @@
     }
     @include media-breakpoint-up(md) {
       margin-bottom: rem(24);
+    }
+    &--edit-size {
+      max-width: rem(360);
+      &-2 {
+        max-width: rem(456);
+      }
     }
   }
   &__alert {
@@ -134,14 +162,19 @@
     }
   }
   .nav-block {
+    &__content {
+      display: block;
+    }
     p {
-      font-weight: 700;
+      font-weight: 400;
       margin-bottom: rem(12);
       font-size: rem(12);
-      padding-left: rem(24);
+      padding-left: rem(12);
       @include media-breakpoint-up(md) {
         font-size: rem(16);
         margin-bottom: rem(24);
+        padding-left: rem(24);
+        font-weight: 700;
       }
     }
     &__link {
@@ -188,6 +221,13 @@
         height: rem(36);
         background-size: rem(28) rem(28) !important;
       }
+    }
+  }
+  .btn-change-page {
+    display: none;
+    @include media-breakpoint-up(md) {
+      margin-top: rem(54);
+      display: block;
     }
   }
   @include media-breakpoint-up(xl) {
