@@ -23,14 +23,14 @@ block pagecontent
 					+e.wrap
 						+b.dd-group.dd-group-js
 							mixin item(title, bage)
-								+e.item&attributes(attributes)
+								+e.item
 									+e.head.dd-head-js
 										h5!= title
-										if bage
-											.badge.bg-success!= bage
-									+e.content.dd-content-js&attributes(attributes)
+											if bage
+												.badge.bg-success!= bage
+									+e.content.dd-content-js
 										block
-							+item(`🔥 Создание чат-бота`).active
+							+item(`🔥 Создание чат-бота`)
 								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!
 								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum quidem expedita optio quibusdam maiores officia quod assumenda vitae placeat repudiandae, odit, in delectus accusamus nulla perferendis aliquam sapiente temporibus!
 							+item(`⚙️ Настройки чат-бота`, `new`)
