@@ -3,16 +3,16 @@
 	--sPT: #{rem(18)};
 	--sPB: #{rem(24)};
 	// --sTPB: #{rem()};
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(46.4)};
 		--sPB: #{rem(45)};
 	}
 	&__row {
 		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: #{rem(48)};
-		@include media-breakpoint-up(lg) {
-			--bs-gutter-y: 0;
-		}
+		// --bs-gutter-y: #{rem(48)};
+		// @include media-breakpoint-up(lg) {
+		// 	--bs-gutter-y: 0;
+		// }
 	}
 	&__wrap {
 		max-width: rem(816);
@@ -21,6 +21,15 @@
 		margin-bottom: rem(12);
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(24);
+		}
+	}
+	.search-block {
+		margin-bottom: rem(24);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(32);
+		}
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(48);
 		}
 	}
 	.dd-group {
@@ -37,6 +46,15 @@
 				.dd-group__head:after {
 					background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 13.0005C10.2151 13.0005 10.4301 12.9184 10.5941 12.7545L15.7538 7.59471C16.0821 7.26648 16.0821 6.73432 15.7538 6.40623C15.4257 6.07813 14.8937 6.07813 14.5654 6.40623L10 10.9719L5.43459 6.40639C5.10636 6.07829 4.57436 6.07829 4.24629 6.40639C3.9179 6.73448 3.9179 7.26664 4.24629 7.59487L9.40595 12.7547C9.57 12.9186 9.78504 13.0005 10 13.0005Z' fill='%23C2C2C2'/%3e%3c/svg%3e ");
 				}
+			}
+			.wikiItem {
+				margin-bottom: rem(12);
+				@include media-breakpoint-up(md) {
+					margin-bottom: rem(24);
+				}
+				&:last-child {
+          margin-bottom: 0;
+        }
 			}
 		}
 		&__head {

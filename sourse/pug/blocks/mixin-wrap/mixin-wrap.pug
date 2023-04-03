@@ -20,7 +20,7 @@ mixin arrow()
 
 mixin ie11()
 	//- modernizer and for ie11
-	 
+
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 
 mixin addblock()
@@ -125,6 +125,22 @@ mixin navBlock()
 		+e.content.sticky-js 
 			block
 
-mixin wikiItem()
-	+b.wikiItem
-		
+mixin wikiItem(data)
+	+b.wikiItem(href="#")
+		+e.img-wrap(style=`--bgColor: ${data.bgc}`)
+			.img-wrap-center
+				+img(`img/wikiItem-${data.img}.jpg`, 'bg')
+		+e.content
+			+e.head
+				+e.step!= data.step
+				if data.sub
+					+e.subtitle!= data.sub
+				if data.badge
+					.badge.bg-success!= data.badge
+			+e.title!= data.title
+			if data.text
+				p!= data.text
+
+
+
+
