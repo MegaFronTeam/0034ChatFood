@@ -31,7 +31,7 @@ mixin addblock()
 
 
 
-mixin search()
+mixin search(notFound=false)
 	+b.search-block
 		+e.form-wrap
 			form
@@ -39,36 +39,39 @@ mixin search()
 				button 
 					span.focus /
 					span.cancel Esc
-		+e.result
-			-for (let i = 0; i < 4; i++)
-				+wikiItem({
-					bgc: `linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))`,
-					img: `1`,
-					step: `1 шаг`,
-					title: 'Регистрация на сервисе ChatFood',
-					sub: '🔥 Создание чат-бота',
-				})
-				+wikiItem({
-					bgc: `linear-gradient(0deg, rgba(75, 177, 75, 0.12), rgba(75, 177, 75, 0.12))`,
-					img: `2`,
-					step: `3 шаг`,
-					title: 'Создание чат-бота',
-					sub: '⚙️ Настройки чат-бота',
-				})
-				+wikiItem({
-					bgc: `linear-gradient(0deg, rgba(255, 122, 0, 0.12), rgba(255, 122, 0, 0.12))`,
-					img: `3`,
-					step: `1 шаг`,
-					title: 'Работа с BotFather в Telegram',
-					sub: '🔥 Создание чат-бота',
-				})
-				+wikiItem({
-					bgc: `linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))`,
-					img: `5`,
-					step: `3 шаг`,
-					title: 'Создание чат-бота',
-					sub: '⚙️ Настройки чат-бота',
-				})
+		+e.result(class=(notFound == true ? "--not-found" : ''))
+			if notFound == true 
+				+e.not-found Ничего не найдено, попробуйте скорректировать свой запрос.
+			else
+				-for (let i = 0; i < 4; i++)
+					+wikiItem({
+						bgc: `linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))`,
+						img: `1`,
+						step: `1 шаг`,
+						title: 'Регистрация на сервисе ChatFood',
+						sub: '🔥 Создание чат-бота',
+					})
+					+wikiItem({
+						bgc: `linear-gradient(0deg, rgba(75, 177, 75, 0.12), rgba(75, 177, 75, 0.12))`,
+						img: `2`,
+						step: `3 шаг`,
+						title: 'Создание чат-бота',
+						sub: '⚙️ Настройки чат-бота',
+					})
+					+wikiItem({
+						bgc: `linear-gradient(0deg, rgba(255, 122, 0, 0.12), rgba(255, 122, 0, 0.12))`,
+						img: `3`,
+						step: `1 шаг`,
+						title: 'Работа с BotFather в Telegram',
+						sub: '🔥 Создание чат-бота',
+					})
+					+wikiItem({
+						bgc: `linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))`,
+						img: `5`,
+						step: `3 шаг`,
+						title: 'Создание чат-бота',
+						sub: '⚙️ Настройки чат-бота',
+					})
 
 mixin page-head(t,...items)
 	+b.page-head
