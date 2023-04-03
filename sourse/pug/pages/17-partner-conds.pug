@@ -19,14 +19,9 @@ block pagecontent
 		+page-head(``, `Условия партнерской программы`)
 		+sTextContent()
 			.row
-				+e.col.col-lg-9.sticky-content-js
+				+e.col.col-lg-9
 					h1 Условия партнерской программы
 					+e.date Редакция от 16 Января 2023 года
-					+navBlock()
-						a(href="#RemunerationAccrual") Начисление вознаграждений
-						a(href="#PaymentOfRewards") Выплата вознаграждений
-						a.active(href="#Participants") Участникам партнерской программы запрещается
-						a(href="#OtherConditions") Прочие условия
 					ol
 						li#RemunerationAccrual
 							| Термины и определения
@@ -70,6 +65,12 @@ block pagecontent
 								li Администрация сервиса chatfood.ru имеет право менять текущие условия партнерской программы, без предварительного уведомления участников программы.
 									p За дополнительными вопросами, вы можете обратиться на почту 
 										a(href="info@chatfood.ru." target='_blank') info@chatfood.ru.
+				.col-lg-3.d-none.d-lg-block.sticky-content-js
+					+navBlock()
+						+e.item(href="#RemunerationAccrual") Начисление вознаграждений
+						+e.item(href="#PaymentOfRewards") Выплата вознаграждений
+						+e.item.active(href="#Participants") Участникам партнерской программы запрещается
+						+e.item(href="#OtherConditions") Прочие условия
 			+changePage()
 				.row
 					.col-md.order-2.order-md-1

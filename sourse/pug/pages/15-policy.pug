@@ -20,19 +20,9 @@ block pagecontent
 		+page-head(``, `Политика конфиденциальности`)
 		+sTextContent()
 			.row
-				+e.col.col-lg-9.sticky-content-js
+				+e.col.col-lg-9
 					h1 Политика конфиденциальности
 					+e.date Редакция от 1 февраля 2022 года
-					+navBlock()
-						a.active(href="#DefinitionOfTerms") Определение терминов
-						a(href="#GeneralProvisions") Общие положения
-						a(href="#SubjectOfPrivacyPolicy") Предмет политики конфиденциальности
-						a(href="#CollectionPurposes") Цели сбора персональной информации пользователей
-						a(href="#MethodsAndTerms") Способы и сроки обработки персональной информации
-						a(href="#ObligationsOfParties") Обязательства сторон
-						a(href="#ResponsibilityOfParties") Ответственность сторон
-						a(href="#DisputeResolution") Разрешение споров
-						a(href="#AdditionalTerms") Дополнительные условия
 					p Настоящая Политика конфиденциальности персональных данных (далее&nbsp;&mdash; Политика конфиденциальности) действует в&nbsp;отношении всей информации, которую Интернет-сайт ChatFood, расположенный на&nbsp;доменном имени #[a(href='https://chatfood.ru' target="_blank") https://chatfood.ru ], может получить о&nbsp;Пользователе во&nbsp;время использования сайта.
 					ol
 						li#DefinitionOfTerms
@@ -145,6 +135,17 @@ block pagecontent
 								li Новая Политика конфиденциальности вступает в&nbsp;силу с&nbsp;момента ее&nbsp;размещения на&nbsp;Сайте, если иное не&nbsp;предусмотрено новой редакцией Политики конфиденциальности.
 								li Все предложения или вопросы по&nbsp;настоящей Политике конфиденциальности следует сообщать по&nbsp;адресу электронной почты 
 									a(href="#") info@chatfood.ru.
+				.col-lg-3.d-none.d-lg-block.sticky-content-js
+					+navBlock()
+						+e.item.active(href="#DefinitionOfTerms") Определение терминов
+						+e.item(href="#GeneralProvisions") Общие положения
+						+e.item(href="#SubjectOfPrivacyPolicy") Предмет политики конфиденциальности
+						+e.item(href="#CollectionPurposes") Цели сбора персональной информации пользователей
+						+e.item(href="#MethodsAndTerms") Способы и сроки обработки персональной информации
+						+e.item(href="#ObligationsOfParties") Обязательства сторон
+						+e.item(href="#ResponsibilityOfParties") Ответственность сторон
+						+e.item(href="#DisputeResolution") Разрешение споров
+						+e.item(href="#AdditionalTerms") Дополнительные условия
 			+changePage()
 				.row
 					.col-md.order-2.order-md-1

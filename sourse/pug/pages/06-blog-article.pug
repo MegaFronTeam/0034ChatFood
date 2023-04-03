@@ -53,9 +53,24 @@ block pagecontent
 									+img('img/sContent-img-2.jpg', 'bg')
 						script(src="https://yastatic.net/share2/share.js")
 						.ya-share2(data-curtain data-size="l" data-shape="round" data-services="vkontakte,telegram,twitter")
-				.col-lg-3
-					.sticky-content-js
-						+navBlock(true)
+				.col-lg-3.d-none.d-lg-block.sticky-content-js
+					+navBlock()
+						p Другие новости
+						+e.link(href="#") 
+							span 11 ноя. 2022
+							| Значительное расширение раздела настроек чат-бота
+						+e.link(href="#") 
+							span 25 фев. 2023
+							| Функционал бронирования столов
+						+e.link(href="#") 
+							span 11 июн. 2022
+							| Обновление сайта и официальный запуск партнерской программы
+						+e.link(href="#") 
+							span 11 ноя. 2022
+							| Версия 3.0 – Подготовка к обновлению
+						+e.link(href="#") 
+							span 8 янв. 2022
+							| Beta-тестирование ChatFood успешно завершено
 		+parts('sTryItPart')
 	+parts('footer')
 	//- +cookies()

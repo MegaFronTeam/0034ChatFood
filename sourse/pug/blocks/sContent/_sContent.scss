@@ -133,28 +133,22 @@
       }
     }
   }
-  .sticky-content-js {
-    height: 100%;
-  }
   .nav-block {
-    .sticky-js {
-      @include media-breakpoint-up(lg) {
-        border-left: 1px solid $gray-200;
-        padding: rem(24) 0 rem(24) rem(24);
-      }
-    }
     p {
       font-weight: 700;
       margin-bottom: rem(12);
       font-size: rem(12);
+      padding-left: rem(24);
       @include media-breakpoint-up(md) {
         font-size: rem(16);
         margin-bottom: rem(24);
       }
     }
-    a {
+    &__link {
       display: block;
       font-size: rem(12);
+      padding: 0 0 0 rem(24);
+      line-height: 1.25;
       &:not(:last-of-type) {
         margin-bottom: rem(12);
         @include media-breakpoint-up(md) {
