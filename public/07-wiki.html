@@ -53,14 +53,20 @@
 				<section class="sWiki section" id="sWiki">
 					<div class="container">
 						<div class="search-block">
-							<form>
-								<input type="text" placeholder="Поиск по ключевым словам"/>
-								<button> 
-									<svg class="icon icon-search ">
-										<use xlink:href="img/svg/sprite.svg#search"></use>
-									</svg>
-								</button>
-							</form>
+							<div class="search-block__form-wrap">
+								<form>
+									<input type="text" placeholder="Поиск по ключевым словам"/>
+									<button> <span class="focus">/</span><span class="cancel">Esc</span></button>
+								</form>
+							</div>
+							<div class="search-block__result active">
+								<ul>
+									<li><a href="#">Подсказка <span>поиска</span></a></li>
+									<li><a href="#">Длинное слово подсказки <span>поиска</span></a></li>
+									<li><a href="#">Слово подсказки  <span>поиска</span></a></li>
+									<li><a href="#">Подсказки  <span>поиска</span></a></li>
+								</ul>
+							</div>
 						</div>
 						<div class="sWiki__row row">
 							<div class="col-lg-9">

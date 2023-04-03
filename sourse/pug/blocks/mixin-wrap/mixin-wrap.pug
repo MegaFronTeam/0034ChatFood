@@ -33,10 +33,26 @@ mixin addblock()
 
 mixin search()
 	+b.search-block
-		form
-			input(type="text" placeholder="Поиск по ключевым словам")
-			button 
-				+icon("search")
+		+e.form-wrap
+			form
+				input(type="text" placeholder="Поиск по ключевым словам")
+				button 
+					span.focus /
+					span.cancel Esc
+		+e.result.active
+			ul
+				li
+					a(href="#") Подсказка 
+						span поиска
+				li
+					a(href="#") Длинное слово подсказки 
+						span поиска
+				li
+					a(href="#") Слово подсказки  
+						span поиска
+				li
+					a(href="#") Подсказки  
+						span поиска
 
 mixin page-head(t,...items)
 	+b.page-head
