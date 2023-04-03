@@ -87,10 +87,10 @@ body {
     /* Other browsers */
     overscroll-behavior: none;
 
-    &::before {
-      z-index: 999;
-      opacity: 0.76;
-    }
+    // &::before {
+    //   z-index: 999;
+    //   opacity: 0.76;
+    // }
   }
 }
 
