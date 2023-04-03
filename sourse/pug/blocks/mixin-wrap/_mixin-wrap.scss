@@ -186,6 +186,7 @@
     max-height: rem(298);
     overflow-y: auto;
     overflow-x: hidden;
+    transform: translateY(8px);
 
     // Cutsom Scroll Bar
     scrollbar-width: auto;
@@ -216,6 +217,7 @@
     &.active {
       opacity: 1;
       pointer-events: all;
+      transform: translateY(0);
     }
     @include media-breakpoint-up(md) {
       top: calc(100% + rem(12));
