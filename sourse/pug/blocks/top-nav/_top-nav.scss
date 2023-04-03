@@ -155,7 +155,7 @@
 			}
 		}
 		.dropdown-container, .sub-menu {
-			@include mt;
+			// @include mt;
 			position: absolute;
 			min-width: rem(233);
 			right: 0;
@@ -165,13 +165,18 @@
 			box-shadow: 0px 5px 20px rgba(25, 28, 31, 0.15);
 			border-radius: 12px;
 			padding: rem(12) 0;
-			opacity: 0;
-			pointer-events: none;
+			// opacity: 0;
+			// pointer-events: none;
 			list-style-type: none;
+			display: none;
 			@include media-breakpoint-up(lg) {
 				left: 50%;
 				transform: translateX(-50%);
 				right: unset;
+				@include mt;
+				opacity: 0;
+				pointer-events: none;
+				display: block;
 			}
 			a {
 				padding: rem(10) rem(23);
@@ -194,6 +199,95 @@
 					margin-left: rem(6);
 				}
 			}
+		}
+	}
+	@include media-breakpoint-down(lg) {
+		&__login {
+			padding: rem(18);
+			font-size: rem(14);
+			display: inline-block;
+			&:hover {
+				color: $primary;
+			}
+			.icon {
+				font-size: rem(20);
+				color: $primary;
+				margin-right: rem(6);
+			}
+		}
+		&__mob-content {
+			padding: 0 rem(18);
+		}
+		&__tel {
+			display: inline-block;
+			font-weight: 700;
+			font-size: rem(12);
+			margin-bottom: rem(6);
+			@include media-breakpoint-up(lg) {
+				margin-bottom: rem(12);
+				font-size: rem(16);
+			}
+		}
+		&__mail {
+			display: inline-block;
+			color: $secondary;
+			font-size: rem(12);
+			margin-bottom: rem(18);
+			&:hover {
+				color: $primary;
+			}
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(8.104);
+				font-size: rem(16);
+			}
+		}
+		&__tech-help {
+			display: flex;
+			align-items: center;
+			margin-bottom: rem(18);
+			font-size: rem(12);
+		}
+		&__text {
+			font-size: rem(12);
+			margin-bottom: rem(6);
+		}
+		&__icon-wrap {
+			flex: 0 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(20);
+			height: rem(20);
+			background-color: $secondary;
+			color: #fff;
+			border-radius: 50%;
+			margin-right: rem(6);
+			.icon {
+				font-size: rem(12.5);
+			}
+		}
+		.soc {
+			margin-bottom: rem(18);
+		}
+		&__lang {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: rem(12);
+			&:not(:hover) {
+				color: $body-color;
+			}
+			img {
+				width: 100%;
+				max-width: rem(20);
+				margin-left: rem(6);
+				flex: 0 0 auto;
+			}
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		&__login, &__mob-content {
+			display: none;
 		}
 	}
 	@include media-breakpoint-up(md) {}
