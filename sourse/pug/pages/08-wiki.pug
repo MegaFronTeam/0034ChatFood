@@ -1,0 +1,77 @@
+extends ../layout/main.pug
+
+include ../blocks/sContent/_sContent.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= '06-blog-article.jpg'
+
+block title
+	- let  title= 'Блог'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('headerAuth')
+	main
+		+page-head(``, `Блог`, 'Версия 3.0 – Обновляемся')
+		+sContent
+			+e.row.row
+				.col-lg-9
+					+e.wrap
+						h1 Версия 3.0 – Обновляемся
+						+e.date 11 ноя. 2022
+						+e.img-wrap
+							.img-wrap-center 
+						p С&nbsp;23:00 13.11.2022 до&nbsp;6:00 14.11.2022&nbsp;в связи с&nbsp;обновлением сервис будет недоступен.
+						p Друзья, мы&nbsp;анонсируем выход новой версии платформы ChatFood, в&nbsp;которой учтены многие ваши пожелания. Так&nbsp;же изменения затронут интерфейс, который стал более удобным для пользователей.
+						h6 Несколько основных изменений функционала
+						ul.default-list
+							li Обновленный личный кабинет
+							li Режим работы бота: WebApp
+							li Вариативные товары + опции
+							li Создание нескольких ботов, из под одного аккаунта
+							li API
+							li Партнерская программа
+							li Высокая скорость работы бота
+						h6 Воспользуйтесь промокодом и получите скидку
+						+e.alert 
+							+img('img/svg/alert.svg')
+							| Выделение особого месседжа.
+						+e.article
+							h6 Обновленный личный кабинет
+							p Друзья, мы анонсируем выход новой версии платформы ChatFood, <strong>в которой учтены многие ваши пожелания</strong>. Так же изменения затронут интерфейс, который стал более удобным для пользователей.
+							+e.img-wrap(style='--bgColor: linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))')
+								.img-wrap-center
+									+img('img/sContent-img-1.jpg', 'bg')
+						+e.article
+							h6 Обновленный чат-бот
+							p Друзья, мы анонсируем выход новой версии #[a(href='#') платформы ChatFood], в которой учтены многие ваши пожелания. Так же изменения затронут #[a(href='#') интерфейс ], который стал более удобным для пользователей.
+							+e.img-wrap(style='--bgColor: linear-gradient(110.43deg, #009FE3 0%, #6F64EC 100%)')
+								.img-wrap-center
+									+img('img/sContent-img-2.jpg', 'bg')
+						script(src="https://yastatic.net/share2/share.js")
+						.ya-share2(data-curtain data-size="l" data-shape="round" data-services="vkontakte,telegram,twitter")
+				.col-lg-3.d-none.d-lg-block.sticky-content-js
+					+navBlock()
+						p Другие новости
+						+e.link(href="#") 
+							span 11 ноя. 2022
+							| Значительное расширение раздела настроек чат-бота
+						+e.link(href="#") 
+							span 25 фев. 2023
+							| Функционал бронирования столов
+						+e.link(href="#") 
+							span 11 июн. 2022
+							| Обновление сайта и официальный запуск партнерской программы
+						+e.link(href="#") 
+							span 11 ноя. 2022
+							| Версия 3.0 – Подготовка к обновлению
+						+e.link(href="#") 
+							span 8 янв. 2022
+							| Beta-тестирование ChatFood успешно завершено
+		+parts('sTryItPart')
+	+parts('footer')
+	//- +cookies()
+	+sideScrollTop()
