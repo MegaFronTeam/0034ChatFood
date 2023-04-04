@@ -68,10 +68,11 @@
 				display: table-row-group !important;
 			}
 			@include media-breakpoint-down(md) {
+				display: block;
 				tr {
 					display: none;
 					flex-wrap: wrap;
-					&.active {
+					&.active, &:nth-child(-n + 3) {
 						display: flex;
 					}
 					td {

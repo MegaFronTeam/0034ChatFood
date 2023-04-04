@@ -223,7 +223,7 @@ const JSCCommon = {
     );
   },
   animateScroll() {
-    $(document).on('click', ' .menu li a, .scroll-link', function () {
+    $(document).on('click', ' .nav-block__item, .scroll-link', function () {
       const elementClick = $(this).attr('href');
       if (!document.querySelector(elementClick)) {
         $(this).attr('href', '/' + elementClick);
@@ -319,7 +319,7 @@ const JSCCommon = {
         } else {
           document.querySelector(elem).classList.remove('active');
         }
-      });
+      }, { passive: true });
       document.addEventListener('click', function (event) {
         let scrollTopBtn = event.target.closest(elem);
         if (scrollTopBtn) window.scrollTo(0, 0);
@@ -345,7 +345,7 @@ const JSCCommon = {
             li.classList.add("active");
           };
         });
-      });
+      }, { passive: true });
     }
   }
 };
@@ -367,7 +367,7 @@ function eventHandler() {
   JSCCommon.setActiveAnchor('.hrefs-js > li', '.nav-block__item');
   JSCCommon.setActiveAnchor('.hrefs-js > .dd-group__item', '.nav-block__item');
   // JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
-  // JSCCommon.animateScroll();
+  JSCCommon.animateScroll();
 
   // JSCCommon.CustomInputFile();
   var x = window.location.host;
@@ -473,34 +473,29 @@ function eventHandler() {
     }
   });
 
-  let animateBlocks = document.querySelectorAll('[data-json]');
-  if (animateBlocks) {
-    for (const animateBlock of animateBlocks) {
-      lottie.loadAnimation({
-        container: animateBlock, // the dom element that will contain the animation
-        renderer: 'canvas',
-        loop: true,
-        autoplay: true,
-        path: animateBlock.dataset.json, // the path to the animation json
-      });
-      // lottie.loadAnimation({
-      // 	container: animateBlock, // the dom element
-      // 	renderer: 'svg',
-      // 	loop: true,
-      // 	autoplay: true,
-      // 	animationData: animateBlock.dataset.json, // the animation data
-      // 	// path: animateBlock.dataset.json, // the path to the animation json
-      // 	rendererSettings: {
-      // 		// context: canvasContext, // the canvas context
-      // 		scaleMode: 'noScale',
-      // 		clearCanvas: false,
-      // 		progressiveLoad: false, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
-      // 		hideOnTransparent: true //Boolean, only svg renderer, hides elements when opacity reaches 0 (defaults to true)
-      // 	}
-      // });
+  var sc=0;
+  window.addEventListener('scroll', function() {
+    if(sc == 0){
+      sc=1;
+      let animateBlocks = document.querySelectorAll('[data-json]');
+      if (animateBlocks) {
+        for (const animateBlock of animateBlocks) {
+          lottie.loadAnimation({
+            container: animateBlock, // the dom element that will contain the animation
+            renderer: 'canvas',
+            loop: true,
+            autoplay: true,
+            path: animateBlock.dataset.json, // the path to the animation json
+          });
+        }
+      }
     }
-  }
-
+  });
+  window.onload = function() {
+      window.scrollTo(window.scrollX, window.scrollY - 1);
+      window.scrollTo(window.scrollX, window.scrollY + 1);
+  };
+  
   document.addEventListener('click', (event) => {
     let tfootWrapTarget = event.target.closest('.collapse-js tfoot td');
     if (tfootWrapTarget) {
