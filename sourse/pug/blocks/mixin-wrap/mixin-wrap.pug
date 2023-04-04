@@ -133,11 +133,11 @@ mixin contactItem(data)
 		if data.descr
 			+e.descr!= data.descr
 		if data.link
-			+e.link(href="#")!= data.link
+			+e.link(href=`${data.adress}` target="_blank")!= data.link
 		if data.time
 			+e.schedule!= data.time
 		if data.btn
-			+e.btn.btn.btn-outline-secondary(href="#")!= data.btn
+			+e.btn.btn.btn-outline-secondary(href=`${data.adress}` target="_blank")!= data.btn
 
 mixin navBlock()
 	+b.nav-block
