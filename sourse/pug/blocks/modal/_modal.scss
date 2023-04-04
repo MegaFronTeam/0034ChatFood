@@ -158,6 +158,24 @@ a {
 			}
 		}
 	}
+	&__status-line {
+		position: absolute;
+		top: rem(12);
+		// width: calc(100% - rem(24));
+		left: rem(12);
+		height: rem(2);
+		// background-color: rgba($color: #fff, $alpha: 0.46);
+		background-color: #fff;
+		z-index: 10;
+		// &::before {
+		// 	content: "";
+		// 	position: absolute;
+		// 	display: block;
+		// 	height: 100%;
+		// 	width: 100%;
+		// 	background-color: #fff;
+		// }
+	}
 }
 #modal-stories {
 	.carousel__button.is-close {
@@ -287,15 +305,15 @@ a {
 			width: 100%;
 			background-color: #fff;
 			// animation: name duration timing-function delay iteration-count direction fill-mode;
-			animation: statusLineTimer 5s linear var(--storiesCount);
-			@keyframes statusLineTimer {
-				0% {
-					width: 0%;
-				}
-				100% {
-					width: 100%;
-				}
-			}
+			// animation: statusLineTimer 5s linear var(--storiesCount);
+			// @keyframes statusLineTimer {
+			// 	0% {
+			// 		width: 0%;
+			// 	}
+			// 	100% {
+			// 		width: 100%;
+			// 	}
+			// }
 		}
 	}
 }
