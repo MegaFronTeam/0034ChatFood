@@ -28,7 +28,7 @@ block pagecontent
 	+parts('header')
 	main
 		+headerBlock() 
-		+sReasons('6 причин начать пользоваться<br>ChatFood')
+		+sReasons('6 причин начать пользоваться ChatFood')
 			+item('Меню заведения', 'Ваш клиент может ознакомиться с&nbsp;меню вашего ресторана в&nbsp;чат-боте', 'json/menu.json')
 			+item('Заказы', 'Получайте заказы на&nbsp;доставку и&nbsp;самовывоз с&nbsp;онлайн-оплатой или оплатой наличными, с&nbsp;расчетом стоимости доставки', 'json/orders.json')
 			+item('Клиентская база', 'Каждый клиент вступивший в&nbsp;чат-бот остается в&nbsp;системе. Вы&nbsp;видите информацию о&nbsp;каждом клиенте и&nbsp;их&nbsp;заказах', 'json/clients.json')
@@ -45,6 +45,6 @@ block pagecontent
 		+sReviews()
 		+parts('sTryItPart')
 	+parts('footer')
-	+cookies()
+	//- +cookies()
 
 

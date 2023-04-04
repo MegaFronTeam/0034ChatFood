@@ -190,10 +190,10 @@ a {
 	z-index: 1;
 	border-radius: 18px;
 	min-height: rem(620);
-	padding: rem(58) var(--sidePadding);
+	padding: rem(70) var(--sidePadding);
 	@include media-breakpoint-up(md) {
 		--sidePadding: #{rem(24)};
-		padding: rem(84) var(--sidePadding);
+		padding: rem(95) var(--sidePadding);
 	}
 	&::before {
 		content: "";

@@ -227,6 +227,7 @@
 		}
 
 		li {
+			position: relative;
 			display: block;
 			margin: 0;
 			border-bottom: 1px solid $gray-100;
@@ -274,6 +275,14 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.menu-mobile {
+		.container {
+			--bs-gutter-x: 0;
 		}
 	}
 }

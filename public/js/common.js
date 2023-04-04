@@ -312,17 +312,19 @@ const JSCCommon = {
     convertImages('.img-svg-js');
   },
   scrollToTopOfPage(elem) {
-    document.addEventListener('scroll', function () {
-      if (window.scrollY > 400) {
-        document.querySelector(elem).classList.add('active');
-      } else {
-        document.querySelector(elem).classList.remove('active');
-      }
-    });
-    document.addEventListener('click', function (event) {
-      let scrollTopBtn = event.target.closest(elem);
-      if (scrollTopBtn) window.scrollTo(0, 0);
-    });
+    if (document.querySelector(elem)) {
+      document.addEventListener('scroll', function () {
+        if (window.scrollY > 400) {
+          document.querySelector(elem).classList.add('active');
+        } else {
+          document.querySelector(elem).classList.remove('active');
+        }
+      });
+      document.addEventListener('click', function (event) {
+        let scrollTopBtn = event.target.closest(elem);
+        if (scrollTopBtn) window.scrollTo(0, 0);
+      });
+    }; 
   },
 };
 const $ = jQuery;
