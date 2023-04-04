@@ -131,7 +131,7 @@
 					transform: translateY(-50%);
 					width: rem(14);
 					height: rem(14);
-					background-image: var(--mark);
+					background-image: var(--mark, url('../img/svg/corret.svg'));
 					background-repeat: no-repeat;
 					background-size: contain;
 					background-position: center;
