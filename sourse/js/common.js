@@ -531,6 +531,7 @@ function eventHandler() {
       intlTelInput(telInput, {
         separateDialCode: true,
         initialCountry: 'ru',
+        preferredCountries: ["ru", "by", 'kz'], 
       });
     });
   }

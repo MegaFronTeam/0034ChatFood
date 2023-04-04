@@ -18,7 +18,7 @@
 		span {
 			position: absolute;
 			color: $gray-100;
-			top: -11px;
+			top: 39px;
 			left: 50%;
 			transform: translateX(-50%);
 			// font-size: rem(243);
@@ -27,6 +27,7 @@
 			z-index: -1;
 			@include media-breakpoint-up(md) {
 				font-size: rem(243);
+				top: -11px;
 			}
 		}
 		h1 {
@@ -40,8 +41,10 @@
 		p {
 			text-align: center;
 			margin-bottom: rem(18);
+			font-size: rem(12);
 			@include media-breakpoint-up(md) {
 				margin-bottom: rem(32.800);
+				font-size: rem(16);
 			}
 		}
 		a {

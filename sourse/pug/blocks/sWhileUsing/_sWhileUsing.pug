@@ -8,11 +8,10 @@ mixin sWhileUsing(data)
 				mixin item(json, title, text)
 					.col-6
 						+e.item 
-							+e.content
-								+e.img-wrap
-									.img-wrap-center(data-json=json)
-								h6!= title 
-								p!=text
+							+e.img-wrap
+								.img-wrap-center(data-json=json)
+							h6!= title 
+							p!=text
 				+item('json/menu.json', 'Menu', "Your customer can view your restaurant's menu in the chatbot.")
 				+item('json/orders.json', 'Orders', 'Receive delivery or takeaway orders with online or cash payment  (delivery charges included).')
 				+item('json/clients.json', 'Customer base', 'Every customer who joins the chatbot remains in the system. You see information about each customer and their orders.')

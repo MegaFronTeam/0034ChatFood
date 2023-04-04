@@ -25,11 +25,11 @@ mixin input(placeholder,  t='text', label, name= t)
 			label
 				+e.SPAN.input-title= label
 				+t(t,placeholder, name)&attributes(attributes)
-				+e.SPAN.input-inavlid Текст ошибки.
+				+e.SPAN.invalid-feedback Текст ошибки.
 				block
 		else
 			+t(t,placeholder, name)&attributes(attributes)
-			+e.SPAN.input-inavlid Текст ошибки.
+			+e.SPAN.invalid-feedback Текст ошибки.
 			block
 	// +e.input-wrap
 mixin select(label,pl,...items)
