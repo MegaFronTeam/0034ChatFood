@@ -75,12 +75,12 @@ body {
   &.fancybox-active {
     overflow: hidden;
   }
-  &[class*='fixed'] {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 999;
+  &.fixed {
+    // position: absolute;
+    // width: 100%;
+    // left: 0;
+    // top: 0;
+    // z-index: 999;
     touch-action: none;
     -webkit-overflow-scrolling: none;
     overflow: hidden;
@@ -88,9 +88,31 @@ body {
     overscroll-behavior: none;
 
     // &::before {
-    //   z-index: 999;
+    //   z-index: 1000;
     //   opacity: 0.76;
     // }
+  }
+  &.fixed2 {
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 999;
+      touch-action: none;
+      -webkit-overflow-scrolling: none;
+      overflow: hidden;
+      /* Other browsers */
+      overscroll-behavior: none;
+
+      &::before {
+        z-index: 1000;
+        opacity: 0.76;
+      }
+      .search-block {
+        z-index: 1002;
+      }
+    }
   }
 }
 

@@ -266,34 +266,27 @@ const JSCCommon = {
     );
   },
   makeDDGroup() {
-    let parents = document.querySelectorAll('.dd-group-js');
-    for (let parent of parents) {
-      if (parent) {
-        // childHeads, kind of funny))
-        let ChildHeads = parent.querySelectorAll('.dd-head-js:not(.disabled)');
-        $(ChildHeads).click(function () {
-          let clickedHead = this;
+    $('.dd-head-js').click(function () {
+      let clickedHead = this;
+      $(this).parent().toggleClass('active');
+      $(this).next().slideToggle(function () {
+        $(this).toggleClass('active');
+      });
 
-          $(ChildHeads).each(function () {
-            if (this === clickedHead) {
-              //parent element gain toggle class, style head change via parent
-              $(this.parentElement).toggleClass('active');
-              $(this.parentElement)
-                .find('.dd-content-js')
-                .slideToggle(function () {
-                  $(this).toggleClass('active');
-                });
-            }
-            // else {
-            // 	$(this.parentElement).removeClass('active');
-            // 	$(this.parentElement).find('.dd-content-js').slideUp(function () {
-            // 		$(this).removeClass('active');
-            // 	});
-            // }
-          });
-        });
-      }
-    }
+      // $(ChildHeads).each(function () {
+      //   if (this === clickedHead) {
+      //     //parent element gain toggle class, style head change via parent
+      //   }
+      //   else {
+      //     $(this.parentElement).removeClass('active');
+      //     $(this.parentElement).find('.dd-content-js').slideUp(function () {
+      //       $(this).removeClass('active');
+      //     });
+      //   }
+      // });
+
+
+    })
   },
   imgToSVG() {
     const convertImages = (query, callback) => {
@@ -319,17 +312,19 @@ const JSCCommon = {
     convertImages('.img-svg-js');
   },
   scrollToTopOfPage(elem) {
-    document.addEventListener('scroll', function () {
-      if (window.scrollY > 400) {
-        document.querySelector(elem).classList.add('active');
-      } else {
-        document.querySelector(elem).classList.remove('active');
-      }
-    });
-    document.addEventListener('click', function (event) {
-      let scrollTopBtn = event.target.closest(elem);
-      if (scrollTopBtn) window.scrollTo(0, 0);
-    });
+    if (document.querySelector(elem)) {
+      document.addEventListener('scroll', function () {
+        if (window.scrollY > 400) {
+          document.querySelector(elem).classList.add('active');
+        } else {
+          document.querySelector(elem).classList.remove('active');
+        }
+      });
+      document.addEventListener('click', function (event) {
+        let scrollTopBtn = event.target.closest(elem);
+        if (scrollTopBtn) window.scrollTo(0, 0);
+      });
+    }; 
   },
 };
 const $ = jQuery;
@@ -630,6 +625,12 @@ function eventHandler() {
       searchBlockInput.value.length > 0 ? (isInput = true) : (isInput = false);
 
       focusSearchBlock(isFocused, isInput);
+
+      if (searchWrapTarget) {
+        document.querySelector('body').classList.add('fixed2');
+      } else {
+        document.querySelector('body').classList.remove('fixed2');
+      }
     });
     searchBlockBtn.addEventListener('click', (event) => {
       event.preventDefault();
@@ -639,6 +640,7 @@ function eventHandler() {
       isEscaped = true;
 
       focusSearchBlock(isFocused, isInput);
+      document.querySelector('body').classList.remove('fixed2');
     });
   };
 }

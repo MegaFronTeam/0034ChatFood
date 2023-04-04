@@ -16,6 +16,12 @@
 		--slideCount: 3;
 	}
 	.section-title{
+		h2 {
+			font-size: rem(23);
+			@include media-breakpoint-up(md) {
+				font-size: rem(48);
+			}
+		}
 		&__yandex-rate {
 			display: flex;
 			align-items: center;
@@ -177,6 +183,41 @@
 			@include media-breakpoint-up(md) {
 				font-size: rem(16);
 			}
+		}
+		&[data-rating="1"] {
+			.icon {
+        &:nth-child(-n+1) {
+					opacity: 1;
+				}
+      }
+		}
+		&[data-rating="2"] {
+			.icon {
+        &:nth-child(-n+2) {
+					opacity: 1;
+				}
+      }
+		}
+		&[data-rating="3"] {
+			.icon {
+        &:nth-child(-n+3) {
+					opacity: 1;
+				}
+      }
+		}
+		&[data-rating="4"] {
+			.icon {
+        &:nth-child(-n+4) {
+					opacity: 1;
+				}
+      }
+		}
+		&[data-rating="5"] {
+			.icon {
+        &:nth-child(-n+5) {
+					opacity: 1;
+				}
+      }
 		}
 	}
 	&__arrow-wrap {

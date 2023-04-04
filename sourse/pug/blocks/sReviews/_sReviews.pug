@@ -21,12 +21,12 @@ mixin sReviews(data)
 										.h6!= name
 										span!= date
 								+e.content
-									+e.stars
-										+icon('rateStar').active
-										+icon('rateStar').active
-										+icon('rateStar').active
-										+icon('rateStar').active
-										+icon('rateStar').active
+									+e.stars(data-rating="2")
+										+icon('rateStar')
+										+icon('rateStar')
+										+icon('rateStar')
+										+icon('rateStar')
+										+icon('rateStar')
 									each text in texts
 										p!= text
 									a(href="#") Читать отзыв на Яндекс.Карты

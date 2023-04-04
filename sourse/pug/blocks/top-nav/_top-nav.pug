@@ -26,22 +26,23 @@ mixin top-nav(auth)
 					+e.logo(href='/'): +img('img/svg/logo.svg')
 				.col-0.col-lg.order-lg-0.order-last
 					.menu-mobile.menu-mobile--js
-						.menu-mobile__inner
-							+e.login(href="#")
-								+icon('logIn')
-								| Войти в кабинет
-							+mnu()
-							+e.mob-content
-								+e.tel(href='tel:+79954871611') +7 (995) 487-16-11
-								+e.text г. Самара, ул. Партизанская 86, оф. 341
-								+e.mail(href='mailto:info@chatfood.ru') info@chatfood.ru
-								+e.tech-help(href='#' target="_blank")
-									+e.icon-wrap: +icon('telegram')
-									| Техподдержка в Telegram
-								+soc
-								+e.lang(href='#')
-									| En
-									+img('img/english.png')
+						.container
+							.menu-mobile__inner
+								+e.login(href="#")
+									+icon('logIn')
+									| Войти в кабинет
+								+mnu()
+								+e.mob-content
+									+e.tel(href='tel:+79954871611') +7 (995) 487-16-11
+									+e.text г. Самара, ул. Партизанская 86, оф. 341
+									+e.mail(href='mailto:info@chatfood.ru') info@chatfood.ru
+									+e.tech-help(href='#' target="_blank")
+										+e.icon-wrap: +icon('telegram')
+										| Техподдержка в Telegram
+									+soc
+									+e.lang(href='#')
+										| En
+										+img('img/english.png')
 				.col-auto.ms-auto
 					if auth
 						+e.authorized.menu-dropdown--js
