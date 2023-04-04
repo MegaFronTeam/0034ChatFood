@@ -326,6 +326,28 @@ const JSCCommon = {
       });
     }; 
   },
+  setActiveAnchor(sectionsParam, navLiParam) {
+    const sections = document.querySelectorAll(sectionsParam);
+    const navLi = document.querySelectorAll(navLiParam);
+    if(sections.length > 0 && navLi.length > 0) {
+      document.addEventListener('scroll', function () {
+        var current = "";
+    
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 60) {
+            current = section.getAttribute("id"); 
+          }
+        });
+        navLi.forEach((li) => {
+          li.classList.remove("active");
+          if (li.getAttribute("href") == `#${current}` && li.getAttribute("href") != `#`) {
+            li.classList.add("active");
+          };
+        });
+      });
+    }
+  }
 };
 const $ = jQuery;
 
@@ -341,6 +363,9 @@ function eventHandler() {
   JSCCommon.getCurrentYear('.sEngVersionFooter p span');
   JSCCommon.scrollToTopOfPage('.footer__scrollTop--js');
   JSCCommon.scrollToTopOfPage('.scrolToTop');
+
+  JSCCommon.setActiveAnchor('.hrefs-js > li', '.nav-block__item');
+  JSCCommon.setActiveAnchor('.hrefs-js > .dd-group__item', '.nav-block__item');
   // JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
   // JSCCommon.animateScroll();
 

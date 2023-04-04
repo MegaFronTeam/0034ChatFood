@@ -19,10 +19,13 @@
 		min-height: rem(71);
 	}
 	&__row{
-		--bs-gutter-x: #{rem(18)};
+		--bs-gutter-x: #{rem(11.6)};
 		// --bs-gutter-y: var(--bs-gutter-x);
 
 		align-items: center;
+		@include media-breakpoint-up(sm) {
+			--bs-gutter-x: #{rem(18)};
+		}
 		@include media-breakpoint-up(lg) {
 			--bs-gutter-x: #{rem(24)};
 		}

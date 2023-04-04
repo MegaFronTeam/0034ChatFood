@@ -21,16 +21,16 @@ block pagecontent
 			+e.row.row
 				.col-lg-9
 					+e.wrap
-						+b.dd-group.dd-group-js
+						+b.dd-group.dd-group-js.hrefs-js
 							mixin item(title, badge)
-								+e.item
+								+e.item&attributes(attributes)
 									+e.head.dd-head-js
 										h5!= title
 											if badge
 												.badge.bg-success!= badge
 									+e.content.dd-content-js
 										block
-							+item(`🔥 Создание чат-бота`, '')
+							+item(`🔥 Создание чат-бота`, '')#CreatingChatBot
 								+wikiItem({
 									bgc: `linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))`,
 									img: `1`,
@@ -53,7 +53,7 @@ block pagecontent
 									title: 'Работа с BotFather в Telegram',
 									text: 'Получение API ключа, название чат-бота, а&nbsp;также визуальное оформление через BotFather в&nbsp;Telegram'
 								})
-							+item(`⚙️ Настройки чат-бота`, `new`)
+							+item(`⚙️ Настройки чат-бота`, `new`)#ChatbotSettings
 								+wikiItem({
 									bgc: `linear-gradient(0deg, rgba(245, 176, 77, 0.12), rgba(245, 176, 77, 0.12))`,
 									img: `4`,
@@ -68,7 +68,7 @@ block pagecontent
 									title: 'Создание чат-бота',
 									text: 'Все что вам нужно это нажать на&nbsp;кнопку &laquo;Создать чат-бота&raquo; и&nbsp;следовать инструкциям'
 								})
-							+item(`✌️ Управляющие пользователи`, `new`)
+							+item(`✌️ Управляющие пользователи`, `new`)#ManagerUsers
 								+wikiItem({
 									bgc: `linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))`,
 									img: `1`,
@@ -93,11 +93,11 @@ block pagecontent
 								})
 				.col-lg-3.d-none.d-lg-block.sticky-content-js
 					+navBlock()
-						+e.item(href="#") 🔥 Создание чат-бота
-						+e.item(href="#") ⚙️ Настройки чат-бота
-						+e.item(href="#") 🍔 Категории и товары
+						+e.item.active(href="#CreatingChatBot") 🔥 Создание чат-бота
+						+e.item(href="#ChatbotSettings") ⚙️ Настройки чат-бота
+						+e.item(href="#ManagerUsers") 🍔 Категории и товары
 						+e.item(href="#") 💸 Заказы
-						+e.item.active(href="#") 😊 Клиенты
+						+e.item(href="#") 😊 Клиенты
 						+e.item(href="#") 💌 Рассылки
 						+e.item(href="#") 🚀 Продвижение
 						+e.item(href="#") ✌️ Управляющие пользователи
