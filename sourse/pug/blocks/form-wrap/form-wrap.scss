@@ -70,12 +70,12 @@
 		}
 		&.is-invalid {
 			background-image: none;
-			& ~ .form-wrap__input-inavlid {
+			& ~ .form-wrap__invalid-feedback {
 				display: block;
 			}
 		}
  	}
-	&__input-inavlid {
+	&__invalid-feedback {
 		display: none;
 		font-size: rem(10);
 		color: $danger;

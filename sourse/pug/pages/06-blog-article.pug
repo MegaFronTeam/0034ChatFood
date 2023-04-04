@@ -36,21 +36,21 @@ block pagecontent
 							li Партнерская программа
 							li Высокая скорость работы бота
 						h6 Воспользуйтесь промокодом и получите скидку
-						+e.alert 
+						.alert.alert-primary
 							+img('img/svg/alert.svg')
 							| Выделение особого месседжа.
 						+e.article
 							h6 Обновленный личный кабинет
 							p Друзья, мы анонсируем выход новой версии платформы ChatFood, <strong>в которой учтены многие ваши пожелания</strong>. Так же изменения затронут интерфейс, который стал более удобным для пользователей.
-							+e.img-wrap(style='--bgColor: linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))')
-								.img-wrap-center
-									+img('img/sContent-img-1.jpg', 'bg')
+							//- +e.img-wrap(style='--bgColor: linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))')
+							//- 	.img-wrap-center
+							+img('img/sContent-img-1.jpg', 'bg').res-i
 						+e.article
 							h6 Обновленный чат-бот
 							p Друзья, мы анонсируем выход новой версии #[a(href='#') платформы ChatFood], в которой учтены многие ваши пожелания. Так же изменения затронут #[a(href='#') интерфейс ], который стал более удобным для пользователей.
-							+e.img-wrap(style='--bgColor: #edecfc')
-								.img-wrap-center
-									+img('img/sContent-img-2.jpg', 'bg')
+							//- +e.img-wrap(style='--bgColor: #edecfc')
+							//- 	.img-wrap-center
+							+img('img/sContent-img-2.jpg', 'bg').res-i
 						script(src="https://yastatic.net/share2/share.js")
 						.ya-share2(data-curtain data-size="l" data-shape="round" data-services="vkontakte,telegram,twitter")
 				.col-lg-3.d-none.d-lg-block.sticky-content-js

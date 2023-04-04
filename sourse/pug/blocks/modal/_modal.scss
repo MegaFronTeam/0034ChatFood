@@ -138,12 +138,14 @@ a {
 .modal-stories-page {
 	.fancybox__slide {
 		padding: rem(18);
-		overflow: hidden;
+		
 	}
 }
 .modal-slider {
 	width: 100%;
 	max-width: rem(360);
+	overflow: hidden;
+	border-radius: 18px;
 	&__arrow-wrap {
 		.swiper-button-hand {
 			--swiperArrowSize: #{rem(24)};
@@ -188,7 +190,7 @@ a {
 	// min-height: 100%;
 	padding: 40px;
 	z-index: 1;
-	border-radius: 18px;
+	// border-radius: 18px;
 	min-height: rem(620);
 	padding: rem(70) var(--sidePadding);
 	@include media-breakpoint-up(md) {

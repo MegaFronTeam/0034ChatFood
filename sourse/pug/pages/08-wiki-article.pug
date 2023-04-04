@@ -21,9 +21,7 @@ block pagecontent
 				.col-lg-9
 					+e.wrap
 						h1 Регистрация на сервисе ChatFood
-						+e.img-wrap
-							.img-wrap-center 
-								+img('img/sContent-img-2.jpg', 'bg')
+						+img('img/sContent-img-2.jpg', 'bg').res-i
 						p С&nbsp;23:00 13.11.2022 до&nbsp;6:00 14.11.2022&nbsp;в связи с&nbsp;обновлением сервис будет недоступен.
 						p Друзья, мы&nbsp;анонсируем выход новой версии платформы ChatFood, в&nbsp;которой учтены многие ваши пожелания. Так&nbsp;же изменения затронут интерфейс, который стал более удобным для пользователей.
 						h6 Несколько основных изменений функционала
@@ -45,21 +43,21 @@ block pagecontent
 							li Партнерская программа
 							li Высокая скорость работы бота
 						h6 Воспользуйтесь промокодом и получите скидку
-						+e.alert 
+						.alert.alert-primary
 							+img('img/svg/alert.svg')
 							| Выделение особого месседжа.
 						+e.article
 							h6 Обновленный личный кабинет
 							p Друзья, мы анонсируем выход новой версии платформы ChatFood, <strong>в которой учтены многие ваши пожелания</strong>. Так же изменения затронут интерфейс, который стал более удобным для пользователей.
-							+e.img-wrap--edit-size(style='--bgColor: linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))')
-								.img-wrap-center
-									+img('img/sContent-img-1.jpg', 'bg')
+							//- +e.img-wrap--edit-size(style='--bgColor: linear-gradient(0deg, rgba(0, 159, 227, 0.12), rgba(0, 159, 227, 0.12))')
+							//- 	.img-wrap-center
+							+img('img/sContent-img-1.jpg', 'bg').edit-size.res-i
 						+e.article
 							h6 Обновленный чат-бот
 							p Друзья, мы анонсируем выход новой версии #[a(href='#') платформы ChatFood], в которой учтены многие ваши пожелания. Так же изменения затронут #[a(href='#') интерфейс ], который стал более удобным для пользователей.
-							+e.img-wrap--edit-size-2(style='--bgColor: #edecfc')
-								.img-wrap-center
-									+img('img/sContent-img-2.jpg', 'bg')
+							//- +e.img-wrap--edit-size-2(style='--bgColor: #edecfc')
+							//- 	.img-wrap-center
+							+img('img/sContent-img-2.jpg', 'bg').edit-size-2.res-i
 						script(src="https://yastatic.net/share2/share.js")
 						.ya-share2(data-curtain data-size="l" data-shape="round" data-services="vkontakte,telegram,twitter")
 						+changePage()
