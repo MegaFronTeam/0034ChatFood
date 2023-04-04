@@ -618,7 +618,7 @@ function eventHandler() {
       },
     });
     function move() {
-      var elem = document.querySelector('.modal-slider__status-white-line');
+      var elem = document.querySelector('.modal-slider__status-line-wrap span');
       var width = 1;
       var autoplayTime = autoplay / 100;
       var id = setInterval(frame, autoplayTime);
