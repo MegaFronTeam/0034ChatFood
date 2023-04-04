@@ -10,6 +10,7 @@
     --bs-gutter-x: #{rem(24)};
     --bs-gutter-y: #{rem(18)};
     margin-bottom: rem(35);
+    justify-content: center;
     @include media-breakpoint-up(md) {
       --bs-gutter-y: #{rem(48)};
 
