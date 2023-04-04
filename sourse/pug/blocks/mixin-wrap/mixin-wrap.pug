@@ -133,11 +133,11 @@ mixin contactItem(data)
 		if data.descr
 			+e.descr!= data.descr
 		if data.link
-			+e.link(href="#")!= data.link
+			+e.link(href=`${data.adress}` target="_blank")!= data.link
 		if data.time
 			+e.schedule!= data.time
 		if data.btn
-			+e.btn.btn.btn-outline-secondary(href="#")!= data.btn
+			+e.btn.btn.btn-outline-secondary(href=`${data.adress}` target="_blank")!= data.btn
 
 mixin navBlock()
 	+b.nav-block
@@ -146,9 +146,10 @@ mixin navBlock()
 
 mixin wikiItem(data)
 	+b.wikiItem(href="#")
-		+e.img-wrap(style=`--bgColor: ${data.bgc}`)
-			.img-wrap-center
-				+img(`img/wikiItem-${data.img}.jpg`, 'bg')
+		+img(`img/wikiItem-${data.img}.jpg`)
+		//- +e.img-wrap(style=`--bgColor: ${data.bgc}`)
+		//- 	.img-wrap-center
+		//- 		+img(`img/wikiItem-${data.img}.jpg`, 'bg')
 		+e.content
 			+e.head
 				+e.step!= data.step
