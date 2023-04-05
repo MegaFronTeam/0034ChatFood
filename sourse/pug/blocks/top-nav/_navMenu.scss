@@ -49,7 +49,8 @@
 					background-position: center;
 				}
 				&::after {
-					width: calc(100% - rem(23));
+					width: rem(3);
+					transform-origin: left;
 				}
 			}
 		}
@@ -86,14 +87,15 @@
 			bottom: 0;
 			background-color: transparent;
 			border-radius: 0 5px 5px 0;
-			transform-origin: bottom;
     	transform: scaleX(0.3) scaleY(0);
+			transform-origin: left;
 			@include media-breakpoint-up(lg) {
 				width: 100%;
 				height: rem(3);
 				left: 0;
 				bottom: rem(-1);
 				border-radius: 5px 5px 0px 0px;
+				transform-origin: bottom;
 			}
 
 		}

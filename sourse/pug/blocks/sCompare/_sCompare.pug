@@ -15,7 +15,7 @@ mixin sCompare(data)
 							th Свой сайт или&nbsp;мобильное приложение
 					tbody
 						mixin tr(tr1, tr2, tr3, tr4)
-							tr.active
+							tr&attributes(attributes)
 								td!= tr1 
 								td!= tr2
 								td!= tr3
@@ -27,7 +27,7 @@ mixin sCompare(data)
 						+tr('Обновления и улучшения', 'Ежемесячно автоматически', 'Зависят от агрегатора', 'от 30 000 ₽ /год')
 					tfoot
 						tr
-							td.active(colspan="4")
+							td(colspan="4")
 								span.hide Свернуть
 								span.show Развернуть
 								+icon('chevron-up')
