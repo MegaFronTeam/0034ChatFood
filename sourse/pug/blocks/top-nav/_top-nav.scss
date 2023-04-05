@@ -67,8 +67,12 @@
 		@include media-breakpoint-up(lg) {
 			--bs-btn-font-size: #{rem(16)};
 			--bs-btn-padding-y: #{rem(10.4)};
+			--bs-btn-padding-x: #{rem(24)};
 			--bs-btn-border-radius: #{rem(12)};
-
+			
+			margin-right: rem(12);
+		}
+		@include media-breakpoint-up(xl) {
 			margin-right: rem(24);
 		}
 	}

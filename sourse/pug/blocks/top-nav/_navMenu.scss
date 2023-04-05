@@ -97,12 +97,13 @@
 			}
 
 		}
-		&:hover {
-			// &:after {
-			// 	background-color: $secondary;
-			// 	opacity: 1;
-    	// 	transform: scaleX(1.0) scaleY(1.0);
-			// }
+		&:hover,
+		&.active {
+			&:after {
+				background-color: $secondary;
+				opacity: 1;
+    		transform: scaleX(1.0) scaleY(1.0);
+			}
 		}
 	}
 }

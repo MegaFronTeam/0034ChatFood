@@ -58,6 +58,14 @@
 				font-size: rem(16);
 			}
 		}
+		&:hover {
+			.sWhyTelegramBot__icon-wrap {
+				transform: scale(0.95);
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
 	}
 	&__icon-wrap {
 		@include mt;
@@ -71,13 +79,7 @@
 		flex: 0 0 auto;
 		margin-bottom: rem(12);
 		margin-left: auto;
-			margin-right: auto;
-		&:hover {
-			transform: scale(0.95);
-			img {
-				transform: scale(1.1);
-			}
-		}
+		margin-right: auto;
 		img {
 			@include mt;
 			width: 100%;
