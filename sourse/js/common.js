@@ -582,7 +582,8 @@ function eventHandler() {
   if (modalStoriesBtns.length > 0) {
     modalStoriesBtns.forEach((modalStoriesBtn) => {
       modalStoriesBtn.addEventListener('click', function () {
-        var autoplay = 5000;
+        let i = 0;
+        let initialNum = 50;
         const modalSwiper = new Swiper('.modal-slider__slider--js', {
           slidesPerView: 1,
           observer: true,
@@ -591,7 +592,7 @@ function eventHandler() {
             prevEl: '.modal-slider__arrow-wrap .swiper-button-prev',
           },
           autoplay: {
-            delay: autoplay,
+            delay: 5000,
             stopOnLastSlide: true,
             disableOnInteraction: false,
           },
@@ -600,7 +601,8 @@ function eventHandler() {
               move();
             },
             slideChange: function () {
-              
+              i = 0;
+              initialNum = 50;
               move();
             },
             reachEnd: function() {
@@ -611,13 +613,12 @@ function eventHandler() {
           },
         });
         function move() {
-          var elem = document.querySelector('.modal-slider__status-line-wrap span');
           function doSetTimeout(i) {
             setTimeout(function() {
               elem.style.transform = `translateX(${i - 100}%)`;
-            }, 50 * i);
+            }, initialNum * i);
           }
-          for (var i = 1; i <= 100; ++i) {
+          for (i = 1; i <= 100; ++i) {
             doSetTimeout(i);
           }
         }
