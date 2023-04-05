@@ -28,9 +28,9 @@ block pagecontent
 										h5!= title
 											if badge
 												.badge.bg-success!= badge
-									+e.content.dd-content-js
+									+e.content.dd-content-js&attributes(attributes)
 										block
-							+item(`🔥 Создание чат-бота`, '')#CreatingChatBot
+							+item(`🔥 Создание чат-бота`, '')#CreatingChatBot.active
 								+wikiItem({
 									bgc: `linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))`,
 									img: `1`,
@@ -53,7 +53,7 @@ block pagecontent
 									title: 'Работа с BotFather в Telegram',
 									text: 'Получение API ключа, название чат-бота, а&nbsp;также визуальное оформление через BotFather в&nbsp;Telegram'
 								})
-							+item(`⚙️ Настройки чат-бота`, `new`)#ChatbotSettings
+							+item(`⚙️ Настройки чат-бота`, `new`)#ChatbotSettings.active
 								+wikiItem({
 									bgc: `linear-gradient(0deg, rgba(245, 176, 77, 0.12), rgba(245, 176, 77, 0.12))`,
 									img: `4`,
@@ -68,7 +68,7 @@ block pagecontent
 									title: 'Создание чат-бота',
 									text: 'Все что вам нужно это нажать на&nbsp;кнопку &laquo;Создать чат-бота&raquo; и&nbsp;следовать инструкциям'
 								})
-							+item(`✌️ Управляющие пользователи`, `new`)#ManagerUsers
+							+item(`✌️ Управляющие пользователи`, `new`)#ManagerUsers.active
 								+wikiItem({
 									bgc: `linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))`,
 									img: `1`,
