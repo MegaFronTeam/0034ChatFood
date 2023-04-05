@@ -484,28 +484,28 @@ function eventHandler() {
     }
   });
 
-  var sc = 0;
-  window.addEventListener('scroll', function () {
-    if (sc == 0) {
-      sc = 1;
-      let animateBlocks = document.querySelectorAll('[data-json]');
-      if (animateBlocks) {
-        for (const animateBlock of animateBlocks) {
-          lottie.loadAnimation({
-            container: animateBlock, // the dom element that will contain the animation
-            renderer: 'canvas',
-            loop: true,
-            autoplay: true,
-            path: animateBlock.dataset.json, // the path to the animation json
-          });
-        }
-      }
+  // var sc = 0;
+  // window.addEventListener('scroll', function () {
+  //   if (sc == 0) {
+  //     sc = 1;
+  //   }
+  // });
+  let animateBlocks = document.querySelectorAll('[data-json]');
+  if (animateBlocks) {
+    for (const animateBlock of animateBlocks) {
+      lottie.loadAnimation({
+        container: animateBlock, // the dom element that will contain the animation
+        renderer: 'canvas',
+        loop: true,
+        autoplay: true,
+        path: animateBlock.dataset.json, // the path to the animation json
+      });
     }
-  });
-  window.onload = function () {
-    window.scrollTo(window.scrollX, window.scrollY - 1);
-    window.scrollTo(window.scrollX, window.scrollY + 1);
-  };
+  }
+  // window.onload = function () {
+  //   window.scrollTo(window.scrollX, window.scrollY - 1);
+  //   window.scrollTo(window.scrollX, window.scrollY + 1);
+  // };
 
   document.addEventListener('click', (event) => {
     let tfootWrapTarget = event.target.closest('.collapse-js tfoot td');
