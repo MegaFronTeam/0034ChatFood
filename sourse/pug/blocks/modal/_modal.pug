@@ -15,27 +15,29 @@ mixin modal()
 	// #modal-call
 
 	div(id="modal-stories"  style="display: none")
-		+b.modal-slider(style="--storiesCount: 3")
+		+b.modal-slider
 			+e.arrow-wrap
+				+e.status-line-wrap
+					span
 				+e.slider--js.swiper
 					.swiper-wrapper
 						+e.slide.swiper-slide
 							+b.modal-stories(style='--storiesBg: linear-gradient(0deg, rgba(245, 176, 77, 0.12), rgba(245, 176, 77, 0.12))')
-								+e.status-line
+								//- +e.status-line
 								+e.icon-wrap: +img('img/stories-icon-1.png')
 								.h5 Дарим 1000 ₽ в&nbsp;качестве бонуса за регистрацию
 								p Просто создайте аккаунт и получите 1000 ₽ на баланс личного кабинета
 								+e.btn.btn.btn-warning(href='#') Зарегистрироваться
 						+e.slide.swiper-slide
 							+b.modal-stories(style='--storiesBg: linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))')
-								+e.status-line
+								//- +e.status-line
 								+e.icon-wrap: +img('img/stories-icon-2.png')
 								.h5 Удвоим баланс при пополнении от 5000 ₽
 								p Пополнить баланс можно картой онлайн или по выставленному счету. Акция действует до 23 марта 2023 г.
 								+e.btn.btn.btn-info(href='#') Пополнить баланс
 						+e.slide.swiper-slide
 							+b.modal-stories(style='--storiesBg: linear-gradient(0deg, rgba(75, 177, 75, 0.12), rgba(75, 177, 75, 0.12))')
-								+e.status-line
+								//- +e.status-line
 								+e.icon-wrap: +img('img/stories-icon-3.png')
 								.h5 Зарабатывайте вместе с нами!
 								p Станьте партнером сервиса ChatFood и&nbsp;получайте от 40 до 50% с каждого платежа привлеченного вами клиента.
