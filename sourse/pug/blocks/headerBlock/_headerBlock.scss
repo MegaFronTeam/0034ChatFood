@@ -65,9 +65,11 @@
 	&__btn-wrap {
 		display: flex;
 		align-items: center;
-		column-gap: rem(12);
+		@include roww(#{rem(12)}, m);
+		// column-gap: rem(12);
 		@include media-breakpoint-up(md) {
-			column-gap: rem(18);
+			// column-gap: rem(18);
+			--bs-gutter-x: #{rem(18)};
 		}
 		@media screen and (max-width: 350px) {
 			flex-wrap: wrap;
