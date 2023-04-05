@@ -1286,6 +1286,11 @@
     }
     &:hover {
       color: $secondary;
+      &:before {
+        background-color: $secondary;
+        opacity: 1;
+        transform: scaleX(1) scaleY(1);
+      }
     }
     &.active {
       color: $secondary;
@@ -1444,7 +1449,7 @@
     --bs-alert-color: #{$body-color};
     --bs-alert-bg: #fff;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       display: block;
       width: 100%;
