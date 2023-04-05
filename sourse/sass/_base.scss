@@ -520,6 +520,9 @@ img.img-bg,
         }
         &.next,
         &.prev {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           &::after {
             content: unset;
           }
@@ -532,7 +535,7 @@ img.img-bg,
       }
       .icon {
         @include mt;
-        font-size: rem(14);
+        font-size: rem(16);
         color: $gray-400;
         @include media-breakpoint-up(md) {
           font-size: rem(20);

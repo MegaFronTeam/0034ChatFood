@@ -225,8 +225,9 @@
 				}
 				&:hover {
 					.headerBlock__icon-wrap {
+						transform: scale(0.9);
 						img {
-							transform: scale(1.1);
+							transform: scale(1.15);
 						}
 					}
 				}
@@ -235,8 +236,12 @@
 				--bs-gutter-y: #{rem(18)};
 			}
 			&__icon-wrap {
+				@include mt;
 				border: none;
 				background-color: $gray-100;
+				&:before {
+					content: unset;
+				}
 				img {
 					width: 100%;
 					max-width: rem(30);

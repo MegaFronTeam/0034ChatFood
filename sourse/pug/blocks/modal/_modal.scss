@@ -188,17 +188,17 @@ a {
 }
 #modal-stories {
   .carousel__button.is-close {
-    --carousel-button-width: #{rem(16)};
-    --carousel-button-height: #{rem(16)};
+    --carousel-button-width: #{rem(20)};
+    --carousel-button-height: #{rem(20)};
     top: rem(24);
     right: rem(12);
     @include media-breakpoint-up(md) {
-      top: rem(36);
-      right: rem(24);
+      top: rem(28);
+      right: rem(16);
     }
     svg {
-      --carousel-button-svg-width: #{rem(16)};
-      --carousel-button-svg-height: #{rem(16)};
+      --carousel-button-svg-width: #{rem(20)};
+      --carousel-button-svg-height: #{rem(20)};
       filter: none;
     }
   }

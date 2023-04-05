@@ -292,6 +292,7 @@
   padding-left: 0;
   padding-right: 0;
   flex-wrap: nowrap;
+  align-items: center;
   @include media-breakpoint-up(md) {
     --bs-breadcrumb-font-size: #{rem(14)};
     --bs-breadcrumb-padding-y: #{rem(13)};
@@ -307,7 +308,7 @@
       }
     }
     .icon {
-      font-size: 140%;
+      font-size: 160%;
       margin-right: var(--bs-breadcrumb-item-padding-x);
       color: $primary;
     }
