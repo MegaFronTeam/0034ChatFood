@@ -17,7 +17,7 @@ mixin mob-mnu()
 		+e.inner
 			+mnu()
 	//  мобильное меню
-mixin top-nav(auth) 
+mixin top-nav(auth, empty) 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
@@ -42,14 +42,15 @@ mixin top-nav(auth)
 									+soc
 									+e.lang(href='#')
 										| En
-										+img('img/english.png')
+										+img('img/svg/english.svg')
 				.col-auto.ms-auto
 					if auth
 						+e.authorized.menu-dropdown--js
 							+e.authorized-wrap.dropdownBtn--js
 								+e.img-wrap
 									span М
-									+img('img/avatar.jpg')
+									if !empty 
+										+img('img/avatar.jpg')
 							.dropdown-container
 								a(href="#") Личный кабинет
 								a(href="#") Мои чат-боты

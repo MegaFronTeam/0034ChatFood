@@ -314,9 +314,7 @@ const JSCCommon = {
   scrollToTopOfPage(elems) {
     elems.forEach((elem) => {
       if (document.querySelector(elem)) {
-        document.addEventListener(
-          'scroll',
-          function () {
+        document.addEventListener('scroll', function () {
             if (window.scrollY > 400) {
               document.querySelector(elem).classList.add('active');
             } else {
@@ -325,11 +323,11 @@ const JSCCommon = {
           },
           { passive: true },
         );
-        document.addEventListener('click', function (event) {
-          let scrollTopBtn = event.target.closest(elem);
-          if (scrollTopBtn) window.scrollTo(0, 0);
-        });
       }
+      document.addEventListener('click', function (event) {
+        let scrollTopBtn = event.target.closest(elem);
+        if (scrollTopBtn) window.scrollTo(0, 0);
+      });
     });
   },
   setActiveAnchor(sectionsParam, navLiParam) {
@@ -343,7 +341,7 @@ const JSCCommon = {
 
           sections.forEach((section) => {
             const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
+            if (pageYOffset >= sectionTop - 80) {
               current = section.getAttribute('id');
             }
           });
