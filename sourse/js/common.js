@@ -578,58 +578,52 @@ function eventHandler() {
       },
     });
   }
-
-  // const modalSwiper = new Swiper('.modal-slider__slider--js', {
-  //   slidesPerView: 1,
-  //   observer: true,
-  //   navigation: {
-  //     nextEl: '.modal-slider__arrow-wrap .swiper-button-next',
-  //     prevEl: '.modal-slider__arrow-wrap .swiper-button-prev',
-  //   },
-  //   autoplay: {
-  //     delay: 5000,
-  //     stopOnLastSlide: true,
-  //   },
-  // });
-  document.addEventListener('click', function () {
-    var autoplay = 5000;
-    // modalSwiper.init();
-    const modalSwiper = new Swiper('.modal-slider__slider--js', {
-      slidesPerView: 1,
-      observer: true,
-      navigation: {
-        nextEl: '.modal-slider__arrow-wrap .swiper-button-next',
-        prevEl: '.modal-slider__arrow-wrap .swiper-button-prev',
-      },
-      autoplay: {
-        delay: autoplay,
-        stopOnLastSlide: true,
-        disableOnInteraction: false,
-      },
-      on: {
-        init: function () {
-          move();
-        },
-        slideChange: function () {
-          move();
-        },
-      },
-    });
-    function move() {
-      var elem = document.querySelector('.modal-slider__status-line-wrap span');
-      var width = 1;
-      var autoplayTime = autoplay / 100;
-      var id = setInterval(frame, autoplayTime);
-      function frame() {
-        if (width >= 100) {
-          clearInterval(id);
-        } else {
-          width++;
-          elem.style.width = width + '%';
+  let modalStoriesBtns = document.querySelectorAll('.headerBlock__stories-item');
+  if (modalStoriesBtns.length > 0) {
+    modalStoriesBtns.forEach((modalStoriesBtn) => {
+      modalStoriesBtn.addEventListener('click', function () {
+        var autoplay = 5000;
+        const modalSwiper = new Swiper('.modal-slider__slider--js', {
+          slidesPerView: 1,
+          observer: true,
+          navigation: {
+            nextEl: '.modal-slider__arrow-wrap .swiper-button-next',
+            prevEl: '.modal-slider__arrow-wrap .swiper-button-prev',
+          },
+          autoplay: {
+            delay: autoplay,
+            stopOnLastSlide: true,
+            disableOnInteraction: false,
+          },
+          on: {
+            init: function () {
+              move();
+            },
+            slideChange: function () {
+              
+              move();
+            },
+            reachEnd: function() {
+              setTimeout(() =>{
+                Fancybox.close();
+              }, 5000);
+            }
+          },
+        });
+        function move() {
+          var elem = document.querySelector('.modal-slider__status-line-wrap span');
+          function doSetTimeout(i) {
+            setTimeout(function() {
+              elem.style.transform = `translateX(${i - 100}%)`;
+            }, 50 * i);
+          }
+          for (var i = 1; i <= 100; ++i) {
+            doSetTimeout(i);
+          }
         }
-      }
-    }
-  });
+      });
+    })
+  }
 
   let storiesItems = document.querySelectorAll('.headerBlock__stories-item--js');
   if (storiesItems) {

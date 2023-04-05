@@ -532,6 +532,22 @@ img.img-bg,
             }
           }
         }
+        &.next {
+          .icon {
+            color: $primary;
+          }
+        }
+        &.disabled {
+          cursor: not-allowed;
+          background-color: #fff;
+          pointer-events: none;
+          pointer-events: all;
+          &:hover {
+            .icon {
+              color: $gray-400;
+            }
+          }
+        }
       }
       .icon {
         @include mt;

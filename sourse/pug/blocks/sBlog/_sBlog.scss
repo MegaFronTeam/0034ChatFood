@@ -18,14 +18,14 @@
     }
   }
   &__col {
-    @include media-breakpoint-down(md) {
-      &:nth-child(n + 5) {
-        display: none;
-      }
-    }
+    // @include media-breakpoint-down(md) {
+    //   &:nth-child(n + 5) {
+    //     display: none;
+    //   }
+    // }
   }
   &__item {
-    &:focus {
+    &:hover {
       .sBlog__img-wrap {
         transform: translateY(-6px);
       }
@@ -70,6 +70,9 @@
   }
   .contactItem {
     justify-content: center;
+    &:hover {
+      box-shadow: none;
+    }
     @include media-breakpoint-up(md) {
       padding: rem(24);
     }
@@ -82,13 +85,20 @@
     }
     &__link {
       order: 2;
+      color: $body-color;
       @include media-breakpoint-up(md) {
         font-size: rem(26);
+      }
+      &:before {
+        content: unset;
       }
     }
     &__btn {
       order: 4;
       width: rem(216);
+      &:before {
+        content: unset;
+      }
     }
   }
   @include media-breakpoint-up(xl) {
