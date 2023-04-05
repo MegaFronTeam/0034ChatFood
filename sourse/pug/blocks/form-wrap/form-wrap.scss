@@ -6,6 +6,9 @@
 			width: 100%;
 			display: block;
 		}
+		.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+			background-color: transparent;
+		}
 		.iti--separate-dial-code .iti__selected-flag {
 			background-color: #fff;
 			border-radius: 10px 0 0 10px;
@@ -98,8 +101,11 @@
 		display: block;
 	}
 	&__policy {
-		font-size: rem(14);
+		font-size: rem(10);
 		line-height: 1.4;
+		@include media-breakpoint-up(md) {
+			font-size: rem(14);
+		}
 		a {
 			color: $secondary;
 			&:hover {

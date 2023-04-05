@@ -159,9 +159,10 @@ const JSCCommon = {
     // mask for input
     let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
     InputTel.forEach((element) =>
-      element.setAttribute('pattern', '[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}'),
+      element.setAttribute('pattern', '^\d+$'),
     );
-    Inputmask({ mask: '+9(999)999-99-99', showMaskOnHover: false }).mask(InputTel);
+    Inputmask({ }).mask(InputTel);
+    Inputmask({ mask: '999-99-99', showMaskOnHover: false }).mask(InputTel);
   },
   // /inputMask
   sendForm() {
@@ -365,7 +366,7 @@ function eventHandler() {
   JSCCommon.modalCall();
   // JSCCommon.tabscostume('tabs');
   JSCCommon.mobileMenu();
-  // JSCCommon.inputMask();
+  JSCCommon.inputMask();
   // JSCCommon.sendForm();
   JSCCommon.heightwindow();
   JSCCommon.makeDDGroup();
@@ -484,28 +485,28 @@ function eventHandler() {
     }
   });
 
-  var sc = 0;
-  window.addEventListener('scroll', function () {
-    if (sc == 0) {
-      sc = 1;
-      let animateBlocks = document.querySelectorAll('[data-json]');
-      if (animateBlocks) {
-        for (const animateBlock of animateBlocks) {
-          lottie.loadAnimation({
-            container: animateBlock, // the dom element that will contain the animation
-            renderer: 'canvas',
-            loop: true,
-            autoplay: true,
-            path: animateBlock.dataset.json, // the path to the animation json
-          });
-        }
-      }
+  // var sc = 0;
+  // window.addEventListener('scroll', function () {
+  //   if (sc == 0) {
+  //     sc = 1;
+  //   }
+  // });
+  let animateBlocks = document.querySelectorAll('[data-json]');
+  if (animateBlocks) {
+    for (const animateBlock of animateBlocks) {
+      lottie.loadAnimation({
+        container: animateBlock, // the dom element that will contain the animation
+        renderer: 'canvas',
+        loop: true,
+        autoplay: true,
+        path: animateBlock.dataset.json, // the path to the animation json
+      });
     }
-  });
-  window.onload = function () {
-    window.scrollTo(window.scrollX, window.scrollY - 1);
-    window.scrollTo(window.scrollX, window.scrollY + 1);
-  };
+  }
+  // window.onload = function () {
+  //   window.scrollTo(window.scrollX, window.scrollY - 1);
+  //   window.scrollTo(window.scrollX, window.scrollY + 1);
+  // };
 
   document.addEventListener('click', (event) => {
     let tfootWrapTarget = event.target.closest('.collapse-js tfoot td');
