@@ -644,15 +644,15 @@ function eventHandler() {
   if (searchBlock) {
     let searchBlockInput = searchBlock.querySelector('.search-block input');
     let searchBlockBtn = searchBlock.querySelector('.search-block button');
-    let searchBlockResult = searchBlock.querySelector('.search-block__result');
+    let searchBlockWrap = searchBlock.querySelector('.search-block__wrap');
     let isFocused = false;
     let isInput = false;
     let isEscaped = false;
     function focusSearchBlock(isFocusedParam, isInputParam) {
       if (isFocusedParam && isInputParam) {
-        searchBlockResult.classList.add('active');
+        searchBlockWrap.classList.add('active');
       } else {
-        searchBlockResult.classList.remove('active');
+        searchBlockWrap.classList.remove('active');
       }
       if (isFocusedParam) {
         searchBlockInput.focus();
