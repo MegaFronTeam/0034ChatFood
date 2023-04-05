@@ -27,6 +27,9 @@
 		}
 	}
 	&__col {
+		&:nth-child(n + 10) {
+			display: none;
+		}
 		@include media-breakpoint-down(md) {
 			&:not(:last-child) {
 				.sConnected__item {
@@ -47,6 +50,9 @@
 			}
 			.icon {
 				color: $secondary;
+			}
+			p {
+				color: $primary;
 			}
 		}
 		@include media-breakpoint-up(md) {
@@ -70,6 +76,7 @@
 			}
 		}
 		p {
+			@include mt;
 			margin-bottom: 0;
 			line-height: 1.25;
 			color: $secondary;
@@ -96,6 +103,7 @@
 		font-size: rem(14);
 		line-height: 1.35;
 		margin-bottom: rem(6);
+		color: $body-color;
 		@include media-breakpoint-up(md) {
 			font-size: rem(18);
 		}
@@ -108,6 +116,21 @@
 		margin-right: auto;
 		@include media-breakpoint-up(md) {
 			max-width: rem(216);
+		}
+		.show-more {
+			display: block;
+		}
+		.hide{
+			display: none;
+		}
+		&.active {
+			.show-more {
+				display: none;
+			}
+			.hide{
+				display: block;
+			}
+
 		}
 	}
 	@include media-breakpoint-up(xl) {

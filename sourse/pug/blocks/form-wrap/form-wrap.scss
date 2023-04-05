@@ -77,6 +77,9 @@
 				display: block;
 			}
 		}
+		&[type="tel"] {
+			text-align: left !important;
+		}
 	}
 	&__invalid-feedback {
 		display: none;

@@ -362,6 +362,14 @@ ul {
   &-prev {
     left: var(--swiperArrowPosition);
   }
+  &.swiper-button-disabled {
+    background-color: var(--swiperBgDef);
+    border-color: var(--swiperBorderColorDef);
+    color: var(--swiperColorDef);
+
+    pointer-events: all;
+    cursor: not-allowed;
+  }
 }
 
 .swiper-pagination {
@@ -657,6 +665,11 @@ iframe {
     --bs-btn-active-color: #fff;
     &:hover {
       opacity: 0.86;
+    }
+  }
+  &-success {
+    &:hover {
+      opacity: 1;
     }
   }
   &-outline-primary,

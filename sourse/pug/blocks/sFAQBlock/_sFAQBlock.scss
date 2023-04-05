@@ -163,6 +163,7 @@
 			border-bottom: 1px solid $gray-200;
 		}
 		&__head {
+			@include mt;
 			position: relative;
 			padding: rem(22) rem(30) rem(22) rem(12);
 			font-weight: 700;
@@ -179,6 +180,12 @@
 					right: rem(28);
 					width: rem(20);
 					height: rem(20);
+				}
+			}
+			&:hover {
+				opacity: .86;
+				&:after {
+					opacity: 1;
 				}
 			}
 		}

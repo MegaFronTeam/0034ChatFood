@@ -31,11 +31,12 @@
 	}
 	&__table-wrap {
 		border: 1px solid $gray-200;
-		border-radius: 24px;
 		overflow: hidden;
 		margin-bottom: rem(24);
+		border-radius: 12px;
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(43.200);
+			border-radius: 24px;
 		}
 		table {
 			width: 100%;
