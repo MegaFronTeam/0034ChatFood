@@ -43,7 +43,7 @@
     color: $gray-400;
     top: rem(18);
     right: rem(18);
-    z-index: 101;
+    // z-index: 101;
     @include media-breakpoint-up(md) {
       top: rem(24);
       right: rem(24);
