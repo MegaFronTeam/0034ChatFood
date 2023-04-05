@@ -21,9 +21,11 @@
   // min-height: 100%;
   // padding: 40px;
   @include media-breakpoint-down(md) {
-    height: 100vh;
+    // height: 100vh;
+    height: calc(var(--vh) * 100);
     overflow-x: hidden;
     overflow-y: auto;
+    padding: calc(env(safe-area-inset-top, 0px)) 0 calc(env(safe-area-inset-bottom, 0));
   }
   .modal-content {
     // max-width: 485px;
