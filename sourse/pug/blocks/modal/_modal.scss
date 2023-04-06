@@ -183,8 +183,13 @@ a {
       height: 100%;
       width: 100%;
       background-color: #fff;
-      transform: translate(-100%);
+      transform: scaleX(0);
+      transform-origin: left;
     }
+  }
+  &__slider {
+    border-radius: 18px;
+    overflow: hidden;
   }
 }
 #modal-stories {

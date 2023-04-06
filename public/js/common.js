@@ -578,53 +578,49 @@ function eventHandler() {
       },
     });
   }
-  let modalStoriesBtns = document.querySelectorAll('.headerBlock__stories-item');
-  if (modalStoriesBtns.length > 0) {
-    modalStoriesBtns.forEach((modalStoriesBtn) => {
-      modalStoriesBtn.addEventListener('click', function () {
-        let i = 0;
-        let initialNum = 50;
-        const modalSwiper = new Swiper('.modal-slider__slider--js', {
-          slidesPerView: 1,
-          observer: true,
-          navigation: {
-            nextEl: '.modal-slider__arrow-wrap .swiper-button-next',
-            prevEl: '.modal-slider__arrow-wrap .swiper-button-prev',
-          },
-          autoplay: {
-            delay: 5000,
-            stopOnLastSlide: true,
-            disableOnInteraction: false,
-          },
-          on: {
-            init: function () {
-              move();
-            },
-            slideChange: function () {
-              i = 0;
-              initialNum = 50;
-              move();
-            },
-            reachEnd: function() {
-              setTimeout(() =>{
-                Fancybox.close();
-              }, 5000);
-            }
-          },
-        });
-        function move() {
-          function doSetTimeout(i) {
-            setTimeout(function() {
-              elem.style.transform = `translateX(${i - 100}%)`;
-            }, initialNum * i);
-          }
-          for (i = 1; i <= 100; ++i) {
-            doSetTimeout(i);
-          }
+  $(document).on('click', '[data-src="modal-stories"]', function () {
+    let id = document.querySelector('#' + this.dataset.src);
+    let autoplay = 5000;
+    function frame() {
+      var progressBar = id.querySelector('.modal-slider__status-line-wrap span');
+      progressBar.style.transform = `scaleX(0)`;
+      progressBar.animate(
+        [
+          { transform: "scaleX(0)" },
+          { transform: "scaleX(1)" },
+        ],
+        {
+          duration: autoplay,
         }
-      });
-    })
-  }
+      )
+    }
+    const modalSwiper = new Swiper(id.querySelector('.modal-slider__slider--js'), {
+      slidesPerView: 1,
+      observer: true,
+      navigation: {
+        nextEl: id.querySelector('.modal-slider__arrow-wrap .swiper-button-next'),
+        prevEl: id.querySelector('.modal-slider__arrow-wrap .swiper-button-prev'),
+      },
+      autoplay: {
+        delay: autoplay,
+        stopOnLastSlide: true,
+        disableOnInteraction: false,
+      },
+      on: {
+        init: function () {
+          frame();
+        },
+        slideChange: function () {
+          frame();
+        },
+        reachEnd: function() {
+          setTimeout(() =>{
+            Fancybox.close();
+          }, autoplay);
+        }
+      },
+    });
+  });
 
   let storiesItems = document.querySelectorAll('.headerBlock__stories-item--js');
   if (storiesItems) {
