@@ -148,7 +148,7 @@ mixin navBlock()
 mixin wikiItem(data)
 	+b.wikiItem(href="#")
 		//- +img(`img/wikiItem-${data.img}.jpg`)
-		+e.img-wrap
+		+e.img-wrap.skeleton
 			+img(`img/wikiItem-${data.img}.jpg`, 'bg')
 		+e.content
 			+e.head

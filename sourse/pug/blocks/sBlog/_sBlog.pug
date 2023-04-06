@@ -6,7 +6,7 @@ mixin sBlog(data)
 				mixin blogItem(title, text, date)
 					+e.col.col-md-6.col-lg-4
 						+e.item(href='#')
-							+e.img-wrap
+							+e.img-wrap.skeleton
 								.img-wrap-center
 							+e.title!= title
 							p!= text
