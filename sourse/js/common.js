@@ -510,7 +510,19 @@ function eventHandler() {
     if (tfootWrapTarget) {
       // $('tbody tr').toggle();
       $('.collapse-js tfoot td').toggleClass('active');
-      $('.collapse-js tbody tr').toggleClass('active');
+      // $('.collapse-js tbody tr').toggleClass('active');
+      $('.collapse-js tbody tr.active').slideUp(function() {
+        $(this).removeClass('active');
+      });
+      $('.collapse-js tbody tr:hidden')
+        .slideToggle({
+          start: function () {
+            $(this).css({
+              display: "flex"
+            })
+          }
+        })
+        .addClass('active');
     }
   });
 

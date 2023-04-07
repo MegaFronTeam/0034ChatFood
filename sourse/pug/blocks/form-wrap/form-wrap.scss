@@ -12,6 +12,7 @@
 		.iti--separate-dial-code .iti__selected-flag {
 			background-color: #fff;
 			border-radius: 10px 0 0 10px;
+			padding: 0 rem(6) 0 rem(12);
 			@include media-breakpoint-up(md) {
 				border-radius: 12px 0 0 12px;
 			}

@@ -67,6 +67,9 @@
 		tbody {
 			@include media-breakpoint-up(md) {
 				display: table-row-group !important;
+				tr {
+					display: table-row!important;
+				}
 			}
 			@include media-breakpoint-down(md) {
 				display: block;
@@ -109,9 +112,9 @@
 				&:first-child {
 					font-weight: 400;
 				}
-				&:hover {
-					color: $primary;
-				}
+				// &:hover {
+				// 	color: $primary;
+				// }
 				.icon {
 					@include mt;
 					color: $primary;
