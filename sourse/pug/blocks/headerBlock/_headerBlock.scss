@@ -44,6 +44,9 @@
 			transform: translate3d(-50%,-50%,0);
 			width: 100%;
 		}
+		&.skeleton {
+			border-radius: rem(75);
+		}
 	}
 	h1 {
 		line-height: 1.22em;
