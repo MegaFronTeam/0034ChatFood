@@ -24,6 +24,9 @@
     @include media-breakpoint-up(md) {
       max-width: rem(296);
     }
+    .img-wrap-center {
+      inset: -1px;
+    }
     video {
       width: 92.3%;
       height: 100%;
