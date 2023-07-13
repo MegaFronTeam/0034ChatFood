@@ -372,7 +372,7 @@ function eventHandler() {
   JSCCommon.scrollToTopOfPage(['.footer__scrollTop--js', '.scrolToTop']);
   // JSCCommon.scrollToTopOfPage('.scrolToTop');
 
-  JSCCommon.setActiveAnchor('.hrefs-js > li', '.nav-block__item');
+  JSCCommon.setActiveAnchor('.hrefs-js > li', '.nav-block__item', '.hrefs-js > h4');
   JSCCommon.setActiveAnchor('.hrefs-js > .dd-group__item', '.nav-block__item');
   // JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
   JSCCommon.animateScroll();

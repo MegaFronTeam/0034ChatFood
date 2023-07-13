@@ -207,6 +207,12 @@
 				&:last-of-type {
 					margin-bottom: 0;
 				}
+				a {
+					color: $secondary;
+					&:hover {
+						color: $primary;
+					}
+				}
 			}
 		}
 		&__btn {

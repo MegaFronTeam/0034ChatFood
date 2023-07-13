@@ -39,6 +39,7 @@
 		}
 	}
 	&__item {
+		height: 100%;
 		position: relative;
 		padding: rem(12) 0;
 		display: flex;
@@ -97,6 +98,9 @@
 				display: none;
 			}
 		}
+	}
+	&__content {
+		margin-top: auto;
 	}
 	&__title {
 		font-weight: 700;

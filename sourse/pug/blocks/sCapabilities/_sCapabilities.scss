@@ -162,8 +162,15 @@
 		h6 {
 			line-height: 1.42em;
     	margin-bottom: rem(10);
-			span {
+			a {
 				color: $secondary;
+				&:hover {
+					color: $primary;
+				}
+			}
+			img {
+				width: 100%;
+				max-width: rem(24);
 			}
 		}
 		p {
