@@ -30,15 +30,17 @@ class Stories {
 				slideChangeTransitionEnd(swiper) { 
 					Stories.setAnimate(swiper.activeIndex + 1, 300);
 					
+					$(`.headerBlock__inner-row  .col-auto:nth-child(${swiper.activeIndex}) .headerBlock__stories-item--js`).removeClass('active');
 					// setTimeout(() => {
-					// 	}, 3000)
-				},
-				reachEnd(swiper) {
-					
-					setTimeout(() => {
-						console.log(swiper.progress);
-						if (swiper.progress == 1) {
-
+						// 	}, 3000)
+					},
+					reachEnd(swiper) {
+						
+						setTimeout(() => {
+							console.log(swiper.progress);
+							if (swiper.progress == 1) {
+								
+								$(`.headerBlock__inner-row  .col-auto:nth-child(${swiper.activeIndex + 1}) .headerBlock__stories-item--js`).removeClass('active');
 								Fancybox.close();
 						}
 					}, Stories.getAutoplay() + 300);
