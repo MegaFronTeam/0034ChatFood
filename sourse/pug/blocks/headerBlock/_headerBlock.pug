@@ -20,7 +20,7 @@ mixin headerBlock()
 						+e.inner-row.row
 							mixin item(icon, text, bgColor)
 								.col-auto
-									+e.stories-item--js(href=`#` data-src='modal-stories' data-fancybox="modal" style=`--iconBgColor: ${bgColor}`)&attributes(attributes)
+									+e.stories-item--js(href=`#` data-src='modal-stories' style=`--iconBgColor: ${bgColor}`)&attributes(attributes)
 										+e.icon-wrap
 											+img(`img/${icon}`)
 										p!= text

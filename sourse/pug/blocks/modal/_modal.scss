@@ -152,6 +152,12 @@ a {
       --swiperArrowPosition: #{rem(-60)};
       border: none;
       background-color: transparent;
+      &::before{
+        content: '';
+        @include a-cent1;
+        width: 400%;
+        height: 400%;
+      }
       .icon {
         font-size: rem(24);
       }

@@ -1,5 +1,6 @@
 'use strict';
 const JSCCommon = {
+
   modalCall() {
     const link = '[data-fancybox="modal"], .link-modal-js';
 
@@ -330,9 +331,10 @@ const JSCCommon = {
       });
     });
   },
-  setActiveAnchor(sectionsParam, navLiParam) {
-    const sections = document.querySelectorAll(sectionsParam);
+  setActiveAnchor(  navLiParam) {
     const navLi = document.querySelectorAll(navLiParam);
+    
+    const sections = document.querySelectorAll(`.hrefs-js [id]`);
     if (sections.length > 0 && navLi.length > 0) {
       document.addEventListener(
         'scroll',
@@ -372,8 +374,7 @@ function eventHandler() {
   JSCCommon.scrollToTopOfPage(['.footer__scrollTop--js', '.scrolToTop']);
   // JSCCommon.scrollToTopOfPage('.scrolToTop');
 
-  JSCCommon.setActiveAnchor('.hrefs-js > li', '.nav-block__item', '.hrefs-js > h4');
-  JSCCommon.setActiveAnchor('.hrefs-js > .dd-group__item', '.nav-block__item');
+  JSCCommon.setActiveAnchor('.nav-block__item');
   // JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
   JSCCommon.animateScroll();
 
@@ -571,6 +572,7 @@ function eventHandler() {
     telInputs.forEach((telInput) => {
       intlTelInput(telInput, {
         separateDialCode: true,
+        hiddenInput: "full_phone",
         initialCountry: 'ru',
         preferredCountries: ['ru', 'by', 'kz'],
       });
@@ -590,59 +592,86 @@ function eventHandler() {
       },
     });
   }
-  $(document).on('click', '[data-src="modal-stories"]', function () {
-    let id = document.querySelector('#' + this.dataset.src);
-    let autoplay = 5000;
-    function frame() {
-      var progressBar = id.querySelector('.modal-slider__status-line-wrap span');
-      progressBar.style.transform = `scaleX(0)`;
-      progressBar.animate(
-        [
-          { transform: "scaleX(0)" },
-          { transform: "scaleX(1)" },
-        ],
-        {
-          duration: autoplay,
-        }
-      )
+  // ====================================================================================================
+  // let autoplay = 5000;
+  let autoplay = 1500;
+
+  let settings = {
+    slidesPerView: 1,
+    observer: true, 
+    navigation: {
+      nextEl: '.modal-slider__arrow-wrap .swiper-button-next',
+      prevEl: '.modal-slider__arrow-wrap .swiper-button-prev',
+    },
+    on: {
+      slideChange(swiper) {
+        frame(swiper.activeIndex + 1);
+      }
+    },
+
+  }
+  let modalSwiper = new Swiper('.modal-slider__slider--js', settings);
+
+  function frame(index) {
+    var progressBar = document.querySelector('.modal-slider__status-line-wrap span'); 
+    progressBar.style.transform =  "scaleX(0)"; 
+    console.log(index);
+    progressBar.animate(
+      [
+      { transform: "scaleX(0)"},
+      { transform: "scaleX(1)"},
+    ],
+    {
+      duration: autoplay,
     }
-    const modalSwiper = new Swiper(id.querySelector('.modal-slider__slider--js'), {
-      slidesPerView: 1,
-      observer: true,
-      navigation: {
-        nextEl: id.querySelector('.modal-slider__arrow-wrap .swiper-button-next'),
-        prevEl: id.querySelector('.modal-slider__arrow-wrap .swiper-button-prev'),
-      },
-      autoplay: {
-        delay: autoplay,
-        stopOnLastSlide: true,
-        disableOnInteraction: false,
-      },
-      on: {
-        init: function () {
-          frame();
-        },
-        slideChange: function () {
-          frame();
-        },
-        reachEnd: function() {
-          setTimeout(() =>{
-            Fancybox.close();
-          }, autoplay);
-        }
-      },
+    ).finished.then(function () {
+      modalSwiper.slideTo(index); 
+      if (index == document.querySelectorAll(".modal-slider__slider--js .swiper-slide").length) {  
+          Fancybox.close();
+      }
+
+      $(`.headerBlock__inner-row  .col-auto:nth-child(${index}) .headerBlock__stories-item--js`).removeClass('active');
     });
+  };
+ 
+  // modalSwiper.disable();
+
+  $(document).on('click', '[data-src="modal-stories"]', function () { 
+      
+    let index = $(this).parent().index();
+    
+    console.log('click ' + index);
+    modalSwiper = new Swiper('.modal-slider__slider--js', settings);
+    // modalSwiper.enable()
+    modalSwiper.slideTo(index); 
+
+    frame(index + 1); 
+  });
+  
+
+  Fancybox.bind('[data-src="modal-stories"]', {
+    on: {
+      destroy: () => {
+        console.log('close');
+        modalSwiper.disable()
+        // modalSwiper = new Swiper('.modal-slider__slider--js', settings)
+      },
+    },
+    src: "#modal-stories",
+    type: "inline",
+    arrows: false,
+    // infobar: false,
+    touch: false,
+    trapFocus: false,
+    placeFocusBack: false,
+    infinite: false,
+    dragToClose: false,
+    autoFocus: false,
+    groupAll: false,
+    groupAttr: false,
   });
 
-  let storiesItems = document.querySelectorAll('.headerBlock__stories-item--js');
-  if (storiesItems) {
-    storiesItems.forEach((storiesItem) => {
-      storiesItem.addEventListener('click', () => {
-        storiesItem.classList.remove('active');
-      });
-    });
-  }
-
+  // ===========================================================================
   let searchBlock = document.querySelector('.search-block');
   if (searchBlock) {
     let searchBlockInput = searchBlock.querySelector('.search-block input');
