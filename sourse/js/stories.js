@@ -78,8 +78,6 @@ class Stories {
 	static showModal() {
 		$(document).on('click', '[data-src="modal-stories"]', function () {
 			let index = $(this).parent().index();
-	
-			console.log('click ' + index);
 			Stories.modalSwiper = new Swiper('.modal-slider__slider--js', Stories.settings(index));
 			Stories.setAnimate();
 			// modalSwiper.enable()
