@@ -22,12 +22,21 @@ mixin modal()
 				+e.slider--js.swiper
 					.swiper-wrapper
 						+e.slide.swiper-slide
+							+b.modal-stories(style='--storiesBg: #191C1F; color: #fff')
+								//- +e.status-line
+								+e.icon-wrap: +img('img/stories-icon-black.png')
+								.h5 Удваиваем платеж в&nbsp;Черную пятницу!
+								p С&nbsp;23&nbsp;по&nbsp;30&nbsp;ноября при пополнении баланса от&nbsp;10&nbsp;000&nbsp;₽ &mdash; удвоим платеж
+								+e.btn.btn.btn-warning(href='#') Пополнить баланс
+
+						+e.slide.swiper-slide
 							+b.modal-stories(style='--storiesBg: linear-gradient(0deg, rgba(245, 176, 77, 0.12), rgba(245, 176, 77, 0.12))')
 								//- +e.status-line
 								+e.icon-wrap: +img('img/stories-icon-1.png')
 								.h5 Дарим 1000 ₽ в&nbsp;качестве бонуса за регистрацию
 								p Просто создайте аккаунт и получите 1000 ₽ на баланс личного кабинета
 								+e.btn.btn.btn-warning(href='#') Зарегистрироваться
+								
 						+e.slide.swiper-slide
 							+b.modal-stories(style='--storiesBg: linear-gradient(0deg, rgba(111, 100, 236, 0.12), rgba(111, 100, 236, 0.12))')
 								//- +e.status-line
