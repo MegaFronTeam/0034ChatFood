@@ -1,5 +1,10 @@
 .top-nav {
-	padding-top: #{rem(14)};
+	.container{
+		padding-top: #{rem(14)};
+		@include media-breakpoint-up(lg) { 
+			padding-top: #{rem(0)};
+		}
+	}
 	padding-bottom: #{rem(14)};
 	// --sTPB: #{rem()};
 	border-bottom: rem(1) solid $gray-200;
@@ -11,8 +16,7 @@
 	z-index: 100;
 	min-height: rem(61);
 	@include media-breakpoint-up(lg) {
-		min-height: rem(69.5);
-		padding-top: #{rem(0)};
+		min-height: rem(69.5); 
 		padding-bottom: #{rem(0)};
 	}
 	@include media-breakpoint-up(xl) {
