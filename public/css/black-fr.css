@@ -1,0 +1,30 @@
+:root{
+  --black-line-h: 60px;
+}
+.black-line{
+  color: #fff;
+  background: var(--primary-black, #191C1F);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+.black-line .container{
+  position: relative;
+  max-width: 1128px;
+}
+.black-line__close{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  cursor: pointer;
+}
+.black-line__date{
+  color: #FF7A00;
+  font-weight: 700;
+}

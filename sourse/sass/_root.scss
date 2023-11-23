@@ -13,7 +13,13 @@
 		--sTPB: #{rem(48)};
 	}
 
-
+	--padding-top: calc(#{rem(61)} + var(--black-line-h,0));
+  @include media-breakpoint-up(lg) {
+    --padding-top: calc(#{rem(69.5)} + var(--black-line-h,0));
+  }
+  @include media-breakpoint-up(xl) {
+    --padding-top: calc(#{rem(71)} + var(--black-line-h,0));
+  }
 
 	--fancybox-content-color: var(--bs-body-color);
 	--swiperArrowSize: #{rem(40)};

@@ -11,6 +11,7 @@
 		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
 		<link href="libs/intl-tel-input/build/css/intlTelInput.min.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
+		<link href="css/black-fr.css" rel="stylesheet"/>
 		<script>
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -292,5 +293,14 @@
 		<script src="libs/hc-sticky/hc-sticky.js"> </script>
 		<script src="js/common.js"></script>
 		<script src="js/stories.js"> </script>
+		<script>
+			document.addEventListener("click", function(event){
+				let target = event.target.closest('.black-line__close')
+				if (!target) return;
+				document.querySelector(".black-line").remove()
+				document.documentElement.style.setProperty('--black-line-h', `0`);
+			
+			}) 
+		</script>
 	</body>
 </html>
