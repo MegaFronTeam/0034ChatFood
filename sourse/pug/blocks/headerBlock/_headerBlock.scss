@@ -168,6 +168,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     border-radius: 50%;
     border: 2px solid $gray-200;
@@ -183,6 +184,7 @@
       margin-bottom: rem(18);
     }
     img {
+      flex: 0 0 auto;
       @include mt;
       // width: 100%;
       max-width: rem(32);
