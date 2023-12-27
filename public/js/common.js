@@ -366,7 +366,7 @@ const $ = jQuery;
 
 function eventHandler() {
   JSCCommon.modalCall();
-  // JSCCommon.tabscostume('tabs');
+  JSCCommon.tabscostume('tabs');
   JSCCommon.mobileMenu();
   JSCCommon.inputMask();
   // JSCCommon.sendForm();
@@ -680,6 +680,10 @@ function eventHandler() {
       });
     });
   }
+
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 }
 if (document.readyState !== 'loading') {
   eventHandler();

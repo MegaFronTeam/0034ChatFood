@@ -13,7 +13,7 @@
 	width: 100%;
 	background-color: #fff;
 	position: fixed;
-	z-index: 100;
+	z-index: 800;
 	min-height: rem(61);
 	@include media-breakpoint-up(lg) {
 		min-height: rem(69.5); 

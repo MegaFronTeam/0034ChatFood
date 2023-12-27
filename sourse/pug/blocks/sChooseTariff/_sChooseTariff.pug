@@ -4,82 +4,92 @@ mixin sChooseTariff(data)
 		.container
 			+b.section-title.text-center
 				h2 Выберите свой тариф
-				+e.switch.form-check.form-switch
-					label.form-check-label(for='flexSwitchCheckDefault') За месяц
-					input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
-					label.form-check-label(for='flexSwitchCheckDefault') За год
-			+e.slider.swiper.defaultSwiper--js
-				.swiper-wrapper
-					mixin item(type, price, pricePerDay, img, popular)
-						+e.item&attributes(attributes)
-							if popular
-								+e.popular Популярный
-							+e.wrap
-								+e.type
-									if img
-										+img('img/fire.png')
-									!= type
-								.h4!= price
-								if pricePerDay
-									+e.price-per-day!= pricePerDay
-								p За одного чат-бота
-							block
-							+e.inner-btn.btn.btn-success(href='#') Выбрать тариф
-					+e.slide.swiper-slide 
-						+item('Бесплатный', '0 ₽')
-							ul
-								li До 15 товаров
-								li 1 рассылка в месяц
-								li 1 управляющий пользователь
-								li Опции товаров
-								li(style="--mark: url('../img/svg/bad.svg')") Расчет стоимости доставки
-								li(style="--mark: url('../img/svg/bad.svg')") Скрытие логотипа ChatFood
-								li(style="--mark: url('../img/svg/bad.svg')") Вариативные товары
-								li(style="--mark: url('../img/svg/bad.svg')") Онлайн-оплата
-								li(style="--mark: url('../img/svg/bad.svg')") API
-								li(style="--mark: url('../img/svg/bad.svg')") Премиум поддержка
-					+e.slide.swiper-slide 
-						+item('Старт', '19 200 ₽', '89 ₽ в день')
-							ul
-								li До 30 товаров
-								li До 5 рассылок в месяц
-								li До 3 управляющих пользователей
-								li Опции товаров
-								li Расчет стоимости доставки
-								li Скрытие логотипа ChatFood
-								li(style="--mark: url('../img/svg/bad.svg')") Вариативные товары
-								li(style="--mark: url('../img/svg/bad.svg')") Онлайн-оплата
-								li(style="--mark: url('../img/svg/bad.svg')") API
-								li(style="--mark: url('../img/svg/bad.svg')") Премиум поддержка
-					+e.slide.swiper-slide 
-						+item('Стандарт', '28 800 ₽', '119 ₽ в день', true, true)
-							ul
-								li До 80 товаров
-								li До 10 рассылок в месяц
-								li До 7 управляющих пользователей
-								li Опции товаров
-								li Расчет стоимости доставки
-								li Скрытие логотипа ChatFood
-								li Вариативные товары
-								li Онлайн-оплата
-								li API
-								li(style="--mark: url('../img/svg/bad.svg')") Премиум поддержка
-					+e.slide.swiper-slide 
-						+item('Профи', '57 600 ₽', '149 ₽ в день')
-							ul
-								li(style="--mark: url('../img/svg/infinity.svg')") Товары не ограничены
-								li(style="--mark: url('../img/svg/infinity.svg')") Рассылки не ограничены
-								li До 10 управляющих пользователей
-								li Опции товаров
-								li Расчет стоимости доставки
-								li Скрытие логотипа ChatFood
-								li Вариативные товары
-								li Онлайн-оплата
-								li API
-								li Премиум поддержка
-				.swiper-pagination
-			+e.text Оплата по&nbsp;тарифу списывается ежедневно с&nbsp;баланса личного кабинета. Минимальная сумма пополнения&nbsp;&mdash; 500&nbsp;₽
-			+e.btn.btn.btn-outline-primary(href='#' data-src='modal-tariffs' data-fancybox="modal") Все тарифы списком
+				//- +e.switch.form-check.form-switch
+				//- 	label.form-check-label(for='flexSwitchCheckDefault') За месяц
+				//- 	input#flexSwitchCheckDefault.form-check-input(type='checkbox' role='switch')
+				//- 	label.form-check-label(for='flexSwitchCheckDefault') За год
+			.tabs
+				.tabs__caption
+					.tabs__btn.active Месяц
+					.tabs__btn 3 меcяца #[.badge.bg-warning -10%]
+					.tabs__btn 6 месяцев #[.badge.bg-orange -15%]
+					.tabs__btn Год #[.badge.bg-danger -20%]
+				-for(let i = 0; i < 4; i++)
+					.tabs__content(class=(i == 0 ? 'active': ''))
+						+e.slider.swiper.defaultSwiper--js
+							.swiper-wrapper
+								mixin item(type, price, pricePerDay, img, popular)
+									+e.item&attributes(attributes)
+										if popular
+											+e.popular Популярный
+										+e.wrap
+											+e.type
+												if img
+													+img('img/fire.png')
+												!= type
+											.h4!= price
+											if pricePerDay
+												+e.price-per-day!= pricePerDay
+											p За одного чат-бота
+										block
+										+e.inner-btn.btn.btn-success(href='#') Выбрать тариф
+								+e.slide.swiper-slide 
+									+item('Бесплатный', '0 ₽')
+										ul
+											li До 15 товаров
+											li 1 рассылка в месяц
+											li 1 управляющий пользователь
+											li Опции товаров
+											li(style="--mark: url('../img/svg/bad.svg')") Расчет стоимости доставки
+											li(style="--mark: url('../img/svg/bad.svg')") Скрытие логотипа ChatFood
+											li(style="--mark: url('../img/svg/bad.svg')") Вариативные товары
+											li(style="--mark: url('../img/svg/bad.svg')") Онлайн-оплата
+											li(style="--mark: url('../img/svg/bad.svg')") API
+											li(style="--mark: url('../img/svg/bad.svg')") Премиум поддержка
+								+e.slide.swiper-slide 
+									+item('Старт', '19 200 ₽', '89 ₽ в день')
+										ul
+											li До 30 товаров
+											li До 5 рассылок в месяц
+											li До 3 управляющих пользователей
+											li Опции товаров
+											li Расчет стоимости доставки
+											li Скрытие логотипа ChatFood
+											li(style="--mark: url('../img/svg/bad.svg')") Вариативные товары
+											li(style="--mark: url('../img/svg/bad.svg')") Онлайн-оплата
+											li(style="--mark: url('../img/svg/bad.svg')") API
+											li(style="--mark: url('../img/svg/bad.svg')") Премиум поддержка
+								+e.slide.swiper-slide 
+									+item('Стандарт', '28 800 ₽', '119 ₽ в день', true, true)
+										ul
+											li До 80 товаров
+											li До 10 рассылок в месяц
+											li До 7 управляющих пользователей
+											li Опции товаров
+											li Расчет стоимости доставки
+											li Скрытие логотипа ChatFood
+											li Вариативные товары
+											li Онлайн-оплата
+											li API
+											li(style="--mark: url('../img/svg/bad.svg')") Премиум поддержка
+								+e.slide.swiper-slide 
+									+item('Профи', '57 600 ₽', '149 ₽ в день')
+										ul
+											li(style="--mark: url('../img/svg/infinity.svg')") Товары не ограничены
+											li(style="--mark: url('../img/svg/infinity.svg')") Рассылки не ограничены
+											li До 10 управляющих пользователей
+											li Опции товаров
+											li Расчет стоимости доставки
+											li Скрытие логотипа ChatFood
+											li Вариативные товары
+											li Онлайн-оплата
+											li API
+											li Премиум поддержка
+							.swiper-pagination
+			//- +e.text Оплата по&nbsp;тарифу списывается ежедневно с&nbsp;баланса личного кабинета. Минимальная сумма пополнения&nbsp;&mdash; 500&nbsp;₽
+			//- +e.btn.btn.btn-outline-primary(href='#' data-src='modal-tariffs' data-fancybox="modal") Смотреть полное описание тарифов
+			+e.btn.btn.btn-outline-primary(href='#') Смотреть полное описание тарифов
+			+table()
 	// end sChooseTariff
 
 
