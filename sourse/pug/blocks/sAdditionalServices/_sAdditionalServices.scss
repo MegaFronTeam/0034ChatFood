@@ -1,11 +1,11 @@
 // start .sAdditionalServices
 .sAdditionalServices {
 	--sPT: #{rem(48)};
-	--sPB: #{rem(0)};
+	--sPB: #{rem(24)};
 	--sTPB: #{rem(24)};
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(60)};
-		// --sPB: #{rem(90)};
+		--sPB: #{rem(60)};
 		--sTPB: #{rem(48)};
 	}
 	&__row{
